@@ -1,0 +1,109 @@
+# Reading C:/modeltech64_10.4/tcl/vsim/pref.tcl
+# //  ModelSim SE-64 10.4 Dec  3 2014 
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# Loading project tiny_eyeriss
+project close
+# reading C:/modeltech64_10.4/win64/../modelsim.ini
+project open "C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project"
+# Project file C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project.mpf was not found.
+# Unable to open project.
+cd "C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/"
+pwd
+# C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign
+cd run
+# couldn't change working directory to "run": no such file or directory
+cd "run"
+# couldn't change working directory to "run": no such file or directory
+pwd
+# C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign
+cd project
+cd run
+.main clear
+cd ..
+project new
+# wrong # args: should be "project new homedir name ?defaultlibrary? ?initalini? ?reference?"
+project new run fft
+# Loading project fft
+project addfile ../rtl/mux4to1.vhd
+project addfile ../rtl/mux4to1.vhd
+do mux4to1run.do
+# ** Error: invalid command name ",main"
+# Error in macro ./mux4to1run.do line 1
+# invalid command name ",main"
+#     while executing
+# ",main clear"
+do mux4to1run.do
+# Compile of mux4to1.vhd failed with 1 errors.
+do mux4to1run.do
+# Compile of mux4to1.vhd was successful.
+project addfile ../tb/mux4to1tb.vhd
+do mux4to1run.do
+# Compile of mux4to1tb.vhd failed with 1 errors.
+# Compile of mux4to1.vhd was successful.
+# 2 compiles, 1 failed with 1 error.
+do mux4to1run.do
+# Compile of mux4to1tb.vhd failed with 1 errors.
+# Compile of mux4to1.vhd was successful.
+# 2 compiles, 1 failed with 1 error.
+do mux4to1run.do
+# Compile of mux4to1tb.vhd was successful.
+# Compile of mux4to1.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui -novopt work.mux4to1tb
+# vsim -gui 
+# Start time: 04:36:50 on May 11,2021
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading std.standard
+# Refreshing C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/run/work.mux4to1tb(tb)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.mux4to1tb(tb)
+# Refreshing C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/run/work.mux4to1(behavioural)
+# Loading work.mux4to1(behavioural)
+add wave -position insertpoint sim:/mux4to1tb/*
+run
+do mux4to1run.do
+# Compile of mux4to1tb.vhd was successful.
+# Compile of mux4to1.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+# vsim 
+# Start time: 04:38:54 on May 11,2021
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading std.standard
+# Refreshing C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/run/work.mux4to1tb(tb)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.mux4to1tb(tb)
+# Refreshing C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/run/work.mux4to1(behavioural)
+# Loading work.mux4to1(behavioural)
+do mux4to1run.do
+# Compile of mux4to1tb.vhd was successful.
+# Compile of mux4to1.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+# vsim 
+# Start time: 04:39:06 on May 11,2021
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading std.standard
+# Refreshing C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/run/work.mux4to1tb(tb)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.mux4to1tb(tb)
+# Refreshing C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/run/work.mux4to1(behavioural)
+# Loading work.mux4to1(behavioural)
+# End time: 04:39:23 on May 11,2021, Elapsed time: 0:00:17
+# Errors: 0, Warnings: 1

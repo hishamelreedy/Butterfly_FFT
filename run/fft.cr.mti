@@ -1,0 +1,22 @@
+{C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/fftc0.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/fftc0.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module fftc0
+
+Top level modules:
+	fftc0
+
+} {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/compmult.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/compmult.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module compmult
+
+Top level modules:
+	compmult
+
+} {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/butterfly_stage1.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/butterfly_stage1.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module butterfly
+
+Top level modules:
+	butterfly
+
+} {} {}}
