@@ -29,6 +29,7 @@ begin
     assign sampmemoutc1i[i]=sampmemoutc1[i][7:0];
 end
 
+//stage 1 - Column 0
 fftc0 st0({sampmeminp[0],8'h00},{sampmeminp[16],8'h00},sampmemoutc0[0],sampmemoutc0[1]);
 fftc0 st1({sampmeminp[8],8'h00},{sampmeminp[24],8'h00},sampmemoutc0[2],sampmemoutc0[3]);
 fftc0 st2({sampmeminp[4],8'h00},{sampmeminp[20],8'h00},sampmemoutc0[4],sampmemoutc0[5]);
@@ -46,7 +47,7 @@ fftc0 st13({sampmeminp[11],8'h00},{sampmeminp[27],8'h00},sampmemoutc0[26],sampme
 fftc0 st14({sampmeminp[7],8'h00},{sampmeminp[23],8'h00},sampmemoutc0[28],sampmemoutc0[29]);
 fftc0 st15({sampmeminp[15],8'h00},{sampmeminp[31],8'h00},sampmemoutc0[30],sampmemoutc0[31]);
 
-
+//stage 2 - Column 1
 fftc1 xt0(sampmemoutc0[0],sampmemoutc0[1],sampmemoutc0[2],sampmemoutc0[3],sampmemoutc1[0],sampmemoutc1[1],sampmemoutc1[2],sampmemoutc1[3]);
 fftc1 xt1(sampmemoutc0[4],sampmemoutc0[5],sampmemoutc0[6],sampmemoutc0[7],sampmemoutc1[4],sampmemoutc1[5],sampmemoutc1[6],sampmemoutc1[7]);
 fftc1 xt2(sampmemoutc0[8],sampmemoutc0[9],sampmemoutc0[10],sampmemoutc0[11],sampmemoutc1[8],sampmemoutc1[9],sampmemoutc1[10],sampmemoutc1[11]);
