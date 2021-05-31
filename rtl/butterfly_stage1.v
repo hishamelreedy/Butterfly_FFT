@@ -9,7 +9,10 @@ wire [7:0] sampmemoutc0i [0:31];
 wire [15:0] sampmemoutc1 [0:31];
 wire [7:0] sampmemoutc1r [0:31];
 wire [7:0] sampmemoutc1i [0:31];
-
+//stage 3 - Column2
+wire [15:0] sampmemoutc2 [0:31];
+wire [7:0] sampmemoutc2r [0:31];
+wire [7:0] sampmemoutc2i [0:31];
 
 reg [7:0] sampmeminp [0:31];
 
@@ -27,6 +30,9 @@ begin
 
     assign sampmemoutc1r[i]=sampmemoutc1[i][15:8];
     assign sampmemoutc1i[i]=sampmemoutc1[i][7:0];
+
+    assign sampmemoutc2r[i]=sampmemoutc2[i][15:8];
+    assign sampmemoutc2i[i]=sampmemoutc2[i][7:0];
 end
 
 //stage 1 - Column 0
@@ -57,5 +63,10 @@ fftc1 xt5(sampmemoutc0[20],sampmemoutc0[21],sampmemoutc0[22],sampmemoutc0[23],sa
 fftc1 xt6(sampmemoutc0[24],sampmemoutc0[25],sampmemoutc0[26],sampmemoutc0[27],sampmemoutc1[24],sampmemoutc1[25],sampmemoutc1[26],sampmemoutc1[27]);
 fftc1 xt7(sampmemoutc0[28],sampmemoutc0[29],sampmemoutc0[30],sampmemoutc0[31],sampmemoutc1[28],sampmemoutc1[29],sampmemoutc1[30],sampmemoutc1[31]);
 
+//stage 3 - Column 2
+fftc2 yt0(sampmemoutc1[0],sampmemoutc1[1],sampmemoutc1[2],sampmemoutc1[3],sampmemoutc1[4],sampmemoutc1[5],sampmemoutc1[6],sampmemoutc1[7],sampmemoutc2[0],sampmemoutc2[1],sampmemoutc2[2],sampmemoutc2[3],sampmemoutc2[4],sampmemoutc2[5],sampmemoutc2[6],sampmemoutc2[7]);
+fftc2 yt1(sampmemoutc1[4],sampmemoutc1[5],sampmemoutc1[6],sampmemoutc1[7],sampmemoutc1[8],sampmemoutc1[9],sampmemoutc1[10],sampmemoutc1[11],sampmemoutc2[4],sampmemoutc2[5],sampmemoutc2[6],sampmemoutc2[7],sampmemoutc2[8],sampmemoutc2[9],sampmemoutc2[10],sampmemoutc2[11]);
+fftc2 yt2(sampmemoutc1[8],sampmemoutc1[9],sampmemoutc1[10],sampmemoutc1[11],sampmemoutc1[12],sampmemoutc1[13],sampmemoutc1[14],sampmemoutc1[15],sampmemoutc2[8],sampmemoutc2[9],sampmemoutc2[10],sampmemoutc2[11],sampmemoutc2[12],sampmemoutc2[13],sampmemoutc2[14],sampmemoutc2[15]);
+fftc2 yt3(sampmemoutc1[12],sampmemoutc1[13],sampmemoutc1[14],sampmemoutc1[15],sampmemoutc1[16],sampmemoutc1[17],sampmemoutc1[18],sampmemoutc1[19],sampmemoutc2[12],sampmemoutc2[13],sampmemoutc2[14],sampmemoutc2[15],sampmemoutc2[16],sampmemoutc2[17],sampmemoutc2[18],sampmemoutc2[19]);
 
 endmodule
