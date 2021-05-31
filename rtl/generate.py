@@ -3,7 +3,13 @@ y=[16,24,20,28,18,26,22,30,17,25,21,29,19,27,23,31]
 places=[]
 for i in range (0,32,2):
     #places.append("fftc0 st%d({8'h00,indit[%d:%d]},{8'h00,indit[%d:%d]},outdit[%d:%d],outdit[%d:%d]);"%((i/2),((x[int(i/2)]*8)+8-1),(x[int(i/2)]*8),(y[int(i/2)]*8+8-1),(y[int(i/2)]*8),((i/2*16*2)+16-1),(i/2*16*2),((i/2*16*2)+16-1+16),((i/2*16*2)+16)))
-    places.append("fftc0 st%d({8'h00,sampmem[%d]},{8'h00,sampmem[%d]},sampmemout[%d],sampmemout[%d]);"%((i/2),(x[int(i/2)]),(y[int(i/2)]),i,(i+1)))
+    places.append("fftc0 st%d({8'h00,sampmeminp[%d]},{8'h00,sampmeminp[%d]},sampmemoutc0[%d],sampmemoutc0[%d]);"%((i/2),(x[int(i/2)]),(y[int(i/2)]),i,(i+1)))
+
+places=[]
+for i in range (0,16,2):
+    #places.append("fftc0 st%d({8'h00,indit[%d:%d]},{8'h00,indit[%d:%d]},outdit[%d:%d],outdit[%d:%d]);"%((i/2),((x[int(i/2)]*8)+8-1),(x[int(i/2)]*8),(y[int(i/2)]*8+8-1),(y[int(i/2)]*8),((i/2*16*2)+16-1),(i/2*16*2),((i/2*16*2)+16-1+16),((i/2*16*2)+16)))
+    places.append("fftc1 xt%d(sampmemoutc0[%d],sampmemoutc0[%d],sampmemoutc0[%d],sampmemoutc0[%d],sampmemoutc1[%d],sampmemoutc1[%d],sampmemoutc1[%d],sampmemoutc1[%d]);"%((i/2),(i*2),(i*2+1),(i*2+2),(i*2+3),(i*2),(i*2+1),(i*2+2),(i*2+3)))
+
 with open('rtl/generate.txt', 'w') as filehandle:
     for listitem in places:
         filehandle.write('%s\n' % listitem)
