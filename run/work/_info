@@ -32,15 +32,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 RF3`QOjG]0FnlVg_N1I[X3
-IUHQG2Pch_T8KQIFeN3Uan3
+!s100 6V7kL6I0Yo1a7OL82YV@^3
+InJ[]Ml<Qd7oYfAIok_0TN0
 Z4 dC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/run
-w1622497834
+w1622558425
 8C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/butterfly_stage1.v
 FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/butterfly_stage1.v
 L0 1
 Z5 OL;L;10.4;61
-!s108 1622497844.508000
+!s108 1622559286.306000
 !s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/butterfly_stage1.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/butterfly_stage1.v|
 !i113 0
@@ -51,34 +51,35 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 2XGRG6Q;RL@]b@K3gj9jB2
-IQNF?iz8=N7@8WN?[zM1Jz2
+!s100 i0i0STKbV4KF^1^;>P_4M3
+I7^RaIh?_lZYngn5jfAAOX3
 R4
-w1622451510
+w1622559277
 8C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compadder.v
 FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compadder.v
 L0 1
 R5
-!s108 1622497844.646000
+!s108 1622559286.436000
 !s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compadder.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compadder.v|
 !i113 0
 R6
 vcompmult
-R3
-r1
-!s85 0
-31
+Z7 !s110 1622559286
 !i10b 1
 !s100 Z0AnS2^<>ZeHVAlPOGW2X3
 I3azdSZf>YAIlVNVkjAJ442
+R3
 R4
 w1622453321
 8C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compmult.v
 FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compmult.v
 L0 1
 R5
-!s108 1622497844.602000
+r1
+!s85 0
+31
+!s108 1622559286.394000
 !s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compmult.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compmult.v|
 !i113 0
@@ -91,7 +92,7 @@ r1
 !i10b 1
 !s100 gCcULZGG8Fn6lj`b14Lk01
 ImIV;Q1>Hj@LPN3`ZAidbG3
-Z7 dC:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/run
+Z8 dC:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/run
 w1622390945
 8C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/compmultv.v
 FC:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/compmultv.v
@@ -103,17 +104,17 @@ R5
 !i113 0
 R6
 Pconvolution_pkg
-Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z9 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z9 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z10 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 w1622311157
-R7
+R8
 8C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/compmult.vhd
 FC:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/compmult.vhd
 l0
 L4
 V2mZA@>XjVhN6hLU[QW>1d3
 !s100 c6Dc7<ZD>AjWmDc`<15]N2
-Z10 OL;C;10.4;61
+Z11 OL;C;10.4;61
 32
 !s110 1622387558
 !i10b 1
@@ -121,141 +122,245 @@ Z10 OL;C;10.4;61
 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/compmult.vhd|
 !s107 C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/compmult.vhd|
 !i113 0
-Z11 o-work work -2002 -explicit
-Z12 tExplicit 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1
 vfftc0
 R3
 r1
 !s85 0
 31
 !i10b 1
-!s100 C3]92VEID5LR;zibCJz413
-I?>hSBb_Wfa?:9=oOMjL<=1
+!s100 hf0M0M39JgMDFjid=[XZ]0
+IKmT][6W9KCb<<W[4fF:GC1
 R4
-w1622451644
+w1622558298
 8C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc0.v
 FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc0.v
 L0 1
 R5
-!s108 1622497844.552000
+!s108 1622559286.352000
 !s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc0.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc0.v|
 !i113 0
 R6
 vfftc1
-R3
-r1
-!s85 0
-31
+R7
 !i10b 1
 !s100 ?1OU8AHi<eXYdNBRclWI_3
 IU64<Zc4hkQiKRoW02AiKd2
+R3
 R4
 w1622454438
 8C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc1.v
 FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc1.v
 L0 1
 R5
-!s108 1622497844.688000
+r1
+!s85 0
+31
+!s108 1622559286.478000
 !s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc1.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc1.v|
 !i113 0
 R6
 vfftc2
+R7
+!i10b 1
+!s100 ?[RN`aE2M<VM3N1Rg4]480
+IKBNLAhBb@[N6YAnG5foOf3
+R3
+R4
+w1622500455
+8C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc2.v
+FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc2.v
+L0 1
+R5
+r1
+!s85 0
+31
+!s108 1622559286.521000
+!s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc2.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc2.v|
+!i113 0
+R6
+vfladder
 R3
 r1
 !s85 0
 31
 !i10b 1
-!s100 ?[RN`aE2M<VM3N1Rg4]480
-IKBNLAhBb@[N6YAnG5foOf3
+!s100 3e=U?S8i]V0g@aUS@<^U`0
+Inf9PDEW`_l0IE9MG0ZG=41
 R4
-w1622497774
-8C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc2.v
-FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc2.v
-L0 1
+w1622557191
+8C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fladder.v
+FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fladder.v
+Z14 L0 20
 R5
-!s108 1622497844.731000
-!s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc2.v|
-!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc2.v|
+!s108 1622559286.691000
+!s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fladder.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fladder.v|
 !i113 0
 R6
-Emux4to1
-Z13 w1620700117
-R8
-R9
+vFloating_adder
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 NBDW[7BjUac2T103D9z4a2
+ILR=JH3Qn@@1J?3`?ZjO7H1
+R4
+Z15 w1520598624
+8C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/Floating_adder.v
+FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/Floating_adder.v
+R14
+R5
+!s108 1622554355.068000
+!s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/Floating_adder.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/Floating_adder.v|
+!i113 0
+R6
+n@floating_adder
+vFPU
 R7
-Z14 8C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/mux4to1.vhd
-Z15 FC:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/mux4to1.vhd
+!i10b 1
+!s100 aP=z=HAnG1OL>7j`?CFLU2
+I6ce<NI3Pednd4imDTO`Xf0
+R3
+R4
+R15
+8C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/FPU.v
+FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/FPU.v
+R14
+R5
+r1
+!s85 0
+31
+!s108 1622559286.649000
+!s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/FPU.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/FPU.v|
+!i113 0
+R6
+n@f@p@u
+vMulti_Sing_float
+R7
+!i10b 1
+!s100 EmLZ[BC7R8CQEgF:CD>8O3
+IQ]<M=OQc6f>n6=T?jz@Pm1
+R3
+R4
+R15
+8C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/Multi_Sing_float.v
+FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/Multi_Sing_float.v
+R14
+R5
+r1
+!s85 0
+31
+!s108 1622559286.607000
+!s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/Multi_Sing_float.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/Multi_Sing_float.v|
+!i113 0
+R6
+n@multi_@sing_float
+vMultiplier
+R7
+!i10b 1
+!s100 V_hP3QFVlVGLPR7GWP@Fo3
+IEGfzFa^hE?@dSf^1aTCa>3
+R3
+R4
+R15
+8C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/Multiplier.v
+FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/Multiplier.v
+R14
+R5
+r1
+!s85 0
+31
+!s108 1622559286.563000
+!s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/Multiplier.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/Multiplier.v|
+!i113 0
+R6
+n@multiplier
+Emux4to1
+Z16 w1620700117
+R9
+R10
+R8
+Z17 8C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/mux4to1.vhd
+Z18 FC:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/mux4to1.vhd
 l0
 L3
 VWgI8kdzc1@HVoWB5IdBl?3
 !s100 aYB`8KF_;<G>72=4Th4WJ1
-R10
-32
-Z16 !s110 1620700746
-!i10b 1
-Z17 !s108 1620700746.218000
-Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/mux4to1.vhd|
-Z19 !s107 C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/mux4to1.vhd|
-!i113 0
 R11
-R12
-Abehavioural
-R8
-R9
-Z20 DEx4 work 7 mux4to1 0 22 WgI8kdzc1@HVoWB5IdBl?3
 32
-R16
+Z19 !s110 1620700746
+!i10b 1
+Z20 !s108 1620700746.218000
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/mux4to1.vhd|
+Z22 !s107 C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/rtl/mux4to1.vhd|
+!i113 0
+R12
+R13
+Abehavioural
+R9
+R10
+Z23 DEx4 work 7 mux4to1 0 22 WgI8kdzc1@HVoWB5IdBl?3
+32
+R19
 l12
 L11
 V^ZTMo`<c?;UCKz0PKZ>jk2
 !s100 I1lO[>>3GX?V6]X@UX08m3
-R10
-!i10b 1
-R17
-R18
-R19
-!i113 0
 R11
+!i10b 1
+R20
+R21
+R22
+!i113 0
 R12
+R13
 Emux4to1tb
-Z21 w1620700597
-R8
+Z24 w1620700597
 R9
-R7
-Z22 8C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/tb/mux4to1tb.vhd
-Z23 FC:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/tb/mux4to1tb.vhd
+R10
+R8
+Z25 8C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/tb/mux4to1tb.vhd
+Z26 FC:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/tb/mux4to1tb.vhd
 l0
 L4
 VQjNIMjc=jEImV<V4<134^3
 !s100 RhE7_FB[>=IHG]FA6?QiM0
-R10
-32
-R16
-!i10b 1
-Z24 !s108 1620700746.167000
-Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/tb/mux4to1tb.vhd|
-Z26 !s107 C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/tb/mux4to1tb.vhd|
-!i113 0
 R11
+32
+R19
+!i10b 1
+Z27 !s108 1620700746.167000
+Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/tb/mux4to1tb.vhd|
+Z29 !s107 C:/Users/Hisham Elreedy/OneDrive/Documents/4thyear_DigitalICDesign/project/tb/mux4to1tb.vhd|
+!i113 0
 R12
+R13
 Atb
-R20
-R8
+R23
 R9
+R10
 DEx4 work 9 mux4to1tb 0 22 QjNIMjc=jEImV<V4<134^3
 32
-R16
+R19
 l11
 L7
 V<5hb[V0[9[z;DRdO=YV^l0
 !s100 I3K11]RDA?Yc3?H_E1lIz2
-R10
-!i10b 1
-R24
-R25
-R26
-!i113 0
 R11
+!i10b 1
+R27
+R28
+R29
+!i113 0
 R12
+R13
