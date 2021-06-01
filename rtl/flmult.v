@@ -1,29 +1,12 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Created By : Y.U.P De Silva
-// 
-// Create Date:    16:53:42 08/09/2014 
-// Design Name: 
-// Module Name:    Multi_Sing_float 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
-module Multi_Sing_float(
+
+module flmult(
 	input [31:0] num1,
 	input [31:0] num2,
-	input enable,
 	output [31:0] result
     );
-
+    wire enable;
+    assign enable=1'b1;
 	reg [7:0] exp1,exp2;
 	reg [22:0] man1,man2;
 	wire [27:0] man_r;
@@ -45,6 +28,6 @@ module Multi_Sing_float(
 		answer[31] = num1[31] ^ num2[31];
 	end
 	
-	assign result = answer;
+	assign result = (!num1||!num2)?32'h00000000: answer;
 	
 endmodule
