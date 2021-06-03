@@ -22,7 +22,7 @@ w1622569078
 FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/butterfly_stage1.v
 L0 1
 Z2 OL;L;10.4;61
-!s108 1622763632.835000
+!s108 1622764427.212000
 !s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/butterfly_stage1.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/butterfly_stage1.v|
 !i113 0
@@ -41,7 +41,7 @@ w1622559565
 FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compadder.v
 L0 1
 R2
-!s108 1622763632.968000
+!s108 1622764427.338000
 !s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compadder.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compadder.v|
 !i113 0
@@ -60,7 +60,7 @@ w1622561191
 FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compmult.v
 L0 1
 R2
-!s108 1622763632.923000
+!s108 1622764427.297000
 !s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compmult.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compmult.v|
 !i113 0
@@ -79,7 +79,7 @@ w1622558298
 FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc0.v
 L0 1
 R2
-!s108 1622763632.877000
+!s108 1622764427.254000
 !s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc0.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc0.v|
 !i113 0
@@ -98,7 +98,7 @@ w1622567786
 FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc1.v
 L0 1
 R2
-!s108 1622763633.009000
+!s108 1622764427.381000
 !s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc1.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc1.v|
 !i113 0
@@ -109,15 +109,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 0U4Mh>>GoibTjlQUdWS3k2
-Ih36oCV@YkSPDZA`l>dC:;1
+!s100 T;PbYV`Mid9A[alnLKDL;1
+I7H^hlBI<U8dK`1oXaAGiT3
 R0
-w1622645021
+w1622764424
 8C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc2.v
 FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc2.v
 L0 1
 R2
-!s108 1622763633.056000
+!s108 1622764427.422000
 !s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc2.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc2.v|
 !i113 0
@@ -136,7 +136,7 @@ w1622557191
 FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fladder.v
 L0 20
 R2
-!s108 1622763633.097000
+!s108 1622764427.464000
 !s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fladder.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fladder.v|
 !i113 0
@@ -150,31 +150,32 @@ r1
 !s100 P3f1OS]df_5fYY=Wh4X2M3
 I6J7FV2=T;fz=ZKD_bcT8a3
 R0
-w1622763621
+w1622763801
 8C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/flmult.v
 FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/flmult.v
 Z4 L0 10
 R2
-!s108 1622763633.140000
+!s108 1622764427.505000
 !s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/flmult.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/flmult.v|
 !i113 0
 R3
 vflmult_tb
-R1
-r1
-!s85 0
-31
+!s110 1622764427
 !i10b 1
 !s100 R66nzdo3i`4j?dP2LIMEF2
 IWMbPILQdS143>3hVOc>CT3
+R1
 R0
 w1622763501
 8C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/tb/flmult_tb.v
 FC:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/tb/flmult_tb.v
 R4
 R2
-!s108 1622763633.183000
+r1
+!s85 0
+31
+!s108 1622764427.547000
 !s107 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/tb/flmult_tb.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/tb/flmult_tb.v|
 !i113 0

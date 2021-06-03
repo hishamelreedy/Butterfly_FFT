@@ -1,16 +1,16 @@
-{C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc1.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc1.v}
+{C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/flmult.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/flmult.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module flmult
+
+Top level modules:
+	flmult
+
+} {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc1.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc1.v}
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module fftc1
 
 Top level modules:
 	fftc1
-
-} {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/tb/flmult_tb.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/tb/flmult_tb.v}
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module flmult_tb
-
-Top level modules:
-	flmult_tb
 
 } {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc2.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc2.v}
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
@@ -18,6 +18,13 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 
 Top level modules:
 	fftc2
+
+} {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/tb/flmult_tb.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/tb/flmult_tb.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module flmult_tb
+
+Top level modules:
+	flmult_tb
 
 } {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/butterfly_stage1.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/butterfly_stage1.v}
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
