@@ -12,20 +12,6 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	fftc1
 
-} {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc2.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc2.v}
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module fftc2
-
-Top level modules:
-	fftc2
-
-} {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/tb/flmult_tb.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/tb/flmult_tb.v}
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module flmult_tb
-
-Top level modules:
-	flmult_tb
-
 } {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/butterfly_stage1.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/butterfly_stage1.v}
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module butterfly
@@ -40,6 +26,27 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	compmult
 
+} {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/tb/flmult_tb.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/tb/flmult_tb.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module flmult_tb
+
+Top level modules:
+	flmult_tb
+
+} {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc2.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc2.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module fftc2
+
+Top level modules:
+	fftc2
+
+} {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc3.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc3.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module fftc3
+
+Top level modules:
+	fftc3
+
 } {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fladder.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fladder.v}
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module fladder
@@ -47,18 +54,18 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	fladder
 
-} {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compadder.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compadder.v}
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module compadder
-
-Top level modules:
-	compadder
-
 } {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc0.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc0.v}
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module fftc0
 
 Top level modules:
 	fftc0
+
+} {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compadder.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compadder.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module compadder
+
+Top level modules:
+	compadder
 
 } {} {}}

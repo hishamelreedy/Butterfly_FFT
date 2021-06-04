@@ -13,6 +13,10 @@ wire [31:0] sampmemoutc1i [0:31];
 wire [63:0] sampmemoutc2 [0:31];
 wire [31:0] sampmemoutc2r [0:31];
 wire [31:0] sampmemoutc2i [0:31];
+//stage 4 - Column 3
+wire [63:0] sampmemoutc3 [0:31];
+wire [31:0] sampmemoutc3r [0:31];
+wire [31:0] sampmemoutc3i [0:31];
 
 reg [31:0] sampmeminp [0:31];
 
@@ -33,6 +37,9 @@ begin
 
     assign sampmemoutc2r[i]=sampmemoutc2[i][63:32];
     assign sampmemoutc2i[i]=sampmemoutc2[i][31:0];
+
+    assign sampmemoutc3r[i]=sampmemoutc3[i][63:32];
+    assign sampmemoutc3i[i]=sampmemoutc3[i][31:0];
 end
 
 //stage 1 - Column 0
@@ -70,5 +77,9 @@ fftc2 yt0(sampmemoutc1[0],sampmemoutc1[1],sampmemoutc1[2],sampmemoutc1[3],sampme
 fftc2 yt1(sampmemoutc1[8],sampmemoutc1[9],sampmemoutc1[10],sampmemoutc1[11],sampmemoutc1[12],sampmemoutc1[13],sampmemoutc1[14],sampmemoutc1[15],sampmemoutc2[8],sampmemoutc2[9],sampmemoutc2[10],sampmemoutc2[11],sampmemoutc2[12],sampmemoutc2[13],sampmemoutc2[14],sampmemoutc2[15]);
 fftc2 yt2(sampmemoutc1[16],sampmemoutc1[17],sampmemoutc1[18],sampmemoutc1[19],sampmemoutc1[20],sampmemoutc1[21],sampmemoutc1[22],sampmemoutc1[23],sampmemoutc2[16],sampmemoutc2[17],sampmemoutc2[18],sampmemoutc2[19],sampmemoutc2[20],sampmemoutc2[21],sampmemoutc2[22],sampmemoutc2[23]);
 fftc2 yt3(sampmemoutc1[24],sampmemoutc1[25],sampmemoutc1[26],sampmemoutc1[27],sampmemoutc1[28],sampmemoutc1[29],sampmemoutc1[30],sampmemoutc1[31],sampmemoutc2[24],sampmemoutc2[25],sampmemoutc2[26],sampmemoutc2[27],sampmemoutc2[28],sampmemoutc2[29],sampmemoutc2[30],sampmemoutc2[31]);
+
+//stage 4 - Column 3
+fftc3 zt0(sampmemoutc2[0],sampmemoutc2[1],sampmemoutc2[2],sampmemoutc2[3],sampmemoutc2[4],sampmemoutc2[5],sampmemoutc2[6],sampmemoutc2[7],sampmemoutc2[8],sampmemoutc2[9],sampmemoutc2[10],sampmemoutc2[11],sampmemoutc2[12],sampmemoutc2[13],sampmemoutc2[14],sampmemoutc2[15],sampmemoutc3[0],sampmemoutc3[1],sampmemoutc3[2],sampmemoutc3[3],sampmemoutc3[4],sampmemoutc3[5],sampmemoutc3[6],sampmemoutc3[7],sampmemoutc3[8],sampmemoutc3[9],sampmemoutc3[10],sampmemoutc3[11],sampmemoutc3[12],sampmemoutc3[13],sampmemoutc3[14],sampmemoutc3[15]);
+fftc3 zt1(sampmemoutc2[16],sampmemoutc2[17],sampmemoutc2[18],sampmemoutc2[19],sampmemoutc2[20],sampmemoutc2[21],sampmemoutc2[22],sampmemoutc2[23],sampmemoutc2[24],sampmemoutc2[25],sampmemoutc2[26],sampmemoutc2[27],sampmemoutc2[28],sampmemoutc2[29],sampmemoutc2[30],sampmemoutc2[31],sampmemoutc3[16],sampmemoutc3[17],sampmemoutc3[18],sampmemoutc3[19],sampmemoutc3[20],sampmemoutc3[21],sampmemoutc3[22],sampmemoutc3[23],sampmemoutc3[24],sampmemoutc3[25],sampmemoutc3[26],sampmemoutc3[27],sampmemoutc3[28],sampmemoutc3[29],sampmemoutc3[30],sampmemoutc3[31]);
 
 endmodule

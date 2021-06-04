@@ -56,18 +56,25 @@ def IEEE754(n) :
 
 x=[0,8,4,12,2,10,6,14,1,9,5,13,3,11,7,15]
 y=[16,24,20,28,18,26,22,30,17,25,21,29,19,27,23,31]
-# places=[]
-# for i in range (0,32,2):
-#     #places.append("fftc0 st%d({8'h00,indit[%d:%d]},{8'h00,indit[%d:%d]},outdit[%d:%d],outdit[%d:%d]);"%((i/2),((x[int(i/2)]*8)+8-1),(x[int(i/2)]*8),(y[int(i/2)]*8+8-1),(y[int(i/2)]*8),((i/2*16*2)+16-1),(i/2*16*2),((i/2*16*2)+16-1+16),((i/2*16*2)+16)))
-#     places.append("fftc0 st%d({sampmeminp[%d],32'h00000000},{sampmeminp[%d],32'h00000000},sampmemoutc0[%d],sampmemoutc0[%d]);"%((i/2),(x[int(i/2)]),(y[int(i/2)]),i,(i+1)))
-
-# places=[]
-# for i in range (0,16,2):
-#     #places.append("fftc0 st%d({8'h00,indit[%d:%d]},{8'h00,indit[%d:%d]},outdit[%d:%d],outdit[%d:%d]);"%((i/2),((x[int(i/2)]*8)+8-1),(x[int(i/2)]*8),(y[int(i/2)]*8+8-1),(y[int(i/2)]*8),((i/2*16*2)+16-1),(i/2*16*2),((i/2*16*2)+16-1+16),((i/2*16*2)+16)))
-#     places.append("fftc1 xt%d(sampmemoutc0[%d],sampmemoutc0[%d],sampmemoutc0[%d],sampmemoutc0[%d],sampmemoutc1[%d],sampmemoutc1[%d],sampmemoutc1[%d],sampmemoutc1[%d]);"%((i/2),(i*2),(i*2+1),(i*2+2),(i*2+3),(i*2),(i*2+1),(i*2+2),(i*2+3)))
 places=[]
+places.append("//Column 0")
+for i in range (0,32,2):
+    #places.append("fftc0 st%d({8'h00,indit[%d:%d]},{8'h00,indit[%d:%d]},outdit[%d:%d],outdit[%d:%d]);"%((i/2),((x[int(i/2)]*8)+8-1),(x[int(i/2)]*8),(y[int(i/2)]*8+8-1),(y[int(i/2)]*8),((i/2*16*2)+16-1),(i/2*16*2),((i/2*16*2)+16-1+16),((i/2*16*2)+16)))
+    places.append("fftc0 st%d({sampmeminp[%d],32'h00000000},{sampmeminp[%d],32'h00000000},sampmemoutc0[%d],sampmemoutc0[%d]);"%((i/2),(x[int(i/2)]),(y[int(i/2)]),i,(i+1)))
+
+places.append("//Column 1")
+for i in range (0,16,2):
+    #places.append("fftc0 st%d({8'h00,indit[%d:%d]},{8'h00,indit[%d:%d]},outdit[%d:%d],outdit[%d:%d]);"%((i/2),((x[int(i/2)]*8)+8-1),(x[int(i/2)]*8),(y[int(i/2)]*8+8-1),(y[int(i/2)]*8),((i/2*16*2)+16-1),(i/2*16*2),((i/2*16*2)+16-1+16),((i/2*16*2)+16)))
+    places.append("fftc1 xt%d(sampmemoutc0[%d],sampmemoutc0[%d],sampmemoutc0[%d],sampmemoutc0[%d],sampmemoutc1[%d],sampmemoutc1[%d],sampmemoutc1[%d],sampmemoutc1[%d]);"%((i/2),(i*2),(i*2+1),(i*2+2),(i*2+3),(i*2),(i*2+1),(i*2+2),(i*2+3)))
+
+places.append("//Column 2")
 for i in range (0,8,2):
     places.append("fftc2 yt%d(sampmemoutc1[%d],sampmemoutc1[%d],sampmemoutc1[%d],sampmemoutc1[%d],sampmemoutc1[%d],sampmemoutc1[%d],sampmemoutc1[%d],sampmemoutc1[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d]);"%((i/2),(i*4),(i*4+1),(i*4+2),(i*4+3),(i*4+4),(i*4+5),(i*4+6),(i*4+7),(i*4),(i*4+1),(i*4+2),(i*4+3),(i*4+4),(i*4+5),(i*4+6),(i*4+7)))
+
+places.append("//Column 3")
+for i in range (0,4,2):
+    places.append("fftc3 zt%d(sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc2[%d],sampmemoutc3[%d],sampmemoutc3[%d],sampmemoutc3[%d],sampmemoutc3[%d],sampmemoutc3[%d],sampmemoutc3[%d],sampmemoutc3[%d],sampmemoutc3[%d],sampmemoutc3[%d],sampmemoutc3[%d],sampmemoutc3[%d],sampmemoutc3[%d],sampmemoutc3[%d],sampmemoutc3[%d],sampmemoutc3[%d],sampmemoutc3[%d]);"%((i/2),(i*8),(i*8+1),(i*8+2),(i*8+3),(i*8+4),(i*8+5),(i*8+6),(i*8+7),(i*8+8),(i*8+9),(i*8+10),(i*8+11),(i*8+12),(i*8+13),(i*8+14),(i*8+15),(i*8),(i*8+1),(i*8+2),(i*8+3),(i*8+4),(i*8+5),(i*8+6),(i*8+7),(i*8+8),(i*8+9),(i*8+10),(i*8+11),(i*8+12),(i*8+13),(i*8+14),(i*8+15)))
+
 with open('rtl/generate.txt', 'w') as filehandle:
     for listitem in places:
         filehandle.write('%s\n' % listitem)
