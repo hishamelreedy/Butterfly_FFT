@@ -65,29 +65,29 @@ compmult cmpmul9(w9,i9,temp9);
 compadder cmpadd9(i1,temp9,1'b0,o9);
 
 wire [63:0] temp10;
-compmult cmpmul10(w2,i10,temp10);
+compmult cmpmul10(w10,i10,temp10);
 compadder cmpadd10(i2,temp10,1'b0,o10);
 
 wire [63:0] temp11;
-compmult cmpmul11(w3,i11,temp11);
+compmult cmpmul11(w11,i11,temp11);
 compadder cmpadd11(i3,temp11,1'b0,o11);
 
 wire [63:0] temp12;
-compmult cmpmul12(w4,i12,temp12);
+compmult cmpmul12(w12,i12,temp12);
 compadder cmpadd12(i4,temp12,1'b0,o12);
 
 
 wire [63:0] temp13;
-compmult cmpmul13(w5,i13,temp13);
+compmult cmpmul13(w13,i13,temp13);
 compadder cmpadd13(i5,temp13,1'b0,o13);
 
 wire [63:0] temp14;
-compmult cmpmul14(w6,i14,temp14);
+compmult cmpmul14(w14,i14,temp14);
 compadder cmpadd14(i6,temp14,1'b0,o14);
 
 
 wire [63:0] temp15;
-compmult cmpmul15(w7,i15,temp15);
+compmult cmpmul15(w15,i15,temp15);
 compadder cmpadd15(i7,temp15,1'b0,o15);
 
 endmodule
