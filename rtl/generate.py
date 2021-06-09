@@ -88,5 +88,18 @@ for i in range(1,33,1):
 with open('rtl/timesamples.txt', 'w') as filehandle:
     for listitem in places:
         filehandle.write('%s\n' % listitem)
+
 print (IEEE754(1.0)[0][2:])
 print (IEEE754(-263.3))
+
+
+oc0real=[18,-16,34,-16,26,-16,42,-16,22,-16,38,-16,30,-16,46,-16,20,-16,36,-16,28,-16,44,-16,24,-16,40,-16,32,-16,48,-16]
+places=[]
+for i in range(0,32,1):
+    data=IEEE754(float(oc0real[i]))[0][2:]
+    data=data+"00000000"
+    places.append(data)
+
+with open('rtl/column0_output.txt', 'w') as filehandle:
+    for listitem in places:
+        filehandle.write('%s\n' % listitem)
