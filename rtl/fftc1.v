@@ -14,8 +14,8 @@ compadder cmpadd0(i0,temp0,1'b0,o0);
 
 wire [63:0] temp1,tmp1;
 compmult cmpmul1(w1,i3,temp1);
-compadder cmpadd1(i1,temp1,1'b0,tmp1);
-compmult cmul1(tmp1,w2,o1);
+compadder cmpadd1(i1,temp1,1'b0,o1);
+//compmult cmul1(tmp1,w2,o1);
 
 wire [63:0] temp2;
 compmult cmpmul2(w2,i2,temp2);
@@ -23,7 +23,7 @@ compadder cmpadd2(i0,temp2,1'b0,o2);
 
 wire [63:0] temp3,tmp3;
 compmult cmpmul3(w3,i3,temp3);
-compadder cmpadd3(i1,temp3,1'b0,tmp3);
-compmult cmul3(tmp3,w2,o3);
+compadder cmpadd3(i1,temp3,1'b0,o3);
+//compmult cmul3(tmp3,w2,o3);
 
 endmodule
