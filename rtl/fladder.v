@@ -81,6 +81,6 @@ module fladder(
 			result = 0;
 	end
 	
-	assign ans = result;
+	assign ans =(a=={a[31],b[30:0]}&&a[31]==~b[31])?32'h00000000: result;
 	
 endmodule

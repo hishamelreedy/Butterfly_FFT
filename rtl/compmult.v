@@ -19,7 +19,10 @@ flmult mul0(op1r, op2r, op1r_op2r);
 wire [31:0] op1i_op2i;
 flmult mul1(op1i, op2i, op1i_op2i);
 
-fladder add0(op1r_op2r,op1i_op2i,1'b1,oprr);
+wire [31:0] temp0;
+flmult mul01(op1i_op2i,32'hbf800000,temp0);
+
+fladder add0(op1r_op2r,temp0,1'b0,oprr);
 
 wire [31:0] op1r_op2i;
 flmult mul2(op1r, op2i, op1r_op2i);
