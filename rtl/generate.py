@@ -48,9 +48,12 @@ def IEEE754(n) :
  
     # the IEEE754 notation in binary    
     final = str(sign) + exponent_bits.zfill(8) + mantissa
+
  
     # convert the binary to hexadecimal
     hstr = '0x%0*X' %((len(final) + 3) // 4, int(final, 2))
+    if n==0:
+        hstr="0x00000000"
     return (hstr, final)
  
 
@@ -89,7 +92,7 @@ with open('rtl/timesamples.txt', 'w') as filehandle:
     for listitem in places:
         filehandle.write('%s\n' % listitem)
 
-print (IEEE754(1.0)[0][2:])
+print (IEEE754(0.0)[0][2:])
 print (IEEE754(-263.3))
 
 
@@ -101,5 +104,18 @@ for i in range(0,32,1):
     places.append(data)
 
 with open('rtl/column0_output.txt', 'w') as filehandle:
+    for listitem in places:
+        filehandle.write('%s\n' % listitem)
+
+oc1real=[52,-16,-16,-16,68,-16,-16,-16,60,-16,-16,-16,76,-16,-16,-16,56,-16,-16,-16,72,-16,-16,-16,64,-16,-16,-16,80,-16,-16,-16]
+oc1imag=[0,16,0,-16,0,16,0,-16,0,16,0,-16,0,16,0,-16,0,16,0,-16,0,16,0,-16,0,16,0,-16,0,16,0,-16]
+print(len(oc1imag))
+places=[]
+for i in range(0,32,1):
+    data=IEEE754(float(oc1real[i]))[0][2:]
+    data=data+IEEE754(float(oc1imag[i]))[0][2:]
+    places.append(data)
+
+with open('rtl/column1_output.txt', 'w') as filehandle:
     for listitem in places:
         filehandle.write('%s\n' % listitem)
