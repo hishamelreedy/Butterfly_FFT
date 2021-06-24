@@ -291,16 +291,6 @@ case (mac_sel)
         end
 endcase
 
-//Controller
-reg [1:0] macselcounter;
-always @(posedge clk)
-    if (reset==1'b1)
-        macselcounter<=2'h0;
-    else
-        macselcounter<=macselcounter+1;
-
-assign mac_sel=macselcounter;
-
 
 mac mac3(mac3_muxout1,mac3_muxout2,mac3_muxw1out,mac3_muxw2out,mac3_demuxin1w,mac3_demuxin2w);
 
@@ -393,4 +383,15 @@ case (mac_sel)
 endcase
 
 mac mac4(mac4_muxout1,mac4_muxout2,mac4_muxw1out,mac4_muxw2out,mac4_demuxin1w,mac4_demuxin2w);
+
+//Controller
+reg [1:0] macselcounter;
+always @(posedge clk)
+    if (reset==1'b1)
+        macselcounter<=2'h0;
+    else
+        macselcounter<=macselcounter+1;
+
+assign mac_sel=macselcounter;
+
 endmodule

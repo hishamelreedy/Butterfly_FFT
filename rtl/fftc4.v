@@ -1,178 +1,455 @@
-module fftc4(i0,i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i14,i15,i16,i17,i18,i19,i20,i21,i22,i23,i24,i25,i26,i27,i28,i29,i30,i31,o0,o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13,o14,o15,o16,o17,o18,o19,o20,o21,o22,o23,o24,o25,o26,o27,o28,o29,o30,o31);
-input [63:0] i0,i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i14,i15,i16,i17,i18,i19,i20,i21,i22,i23,i24,i25,i26,i27,i28,i29,i30,i31;
-output [63:0] o0,o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13,o14,o15,o16,o17,o18,o19,o20,o21,o22,o23,o24,o25,o26,o27,o28,o29,o30,o31;
+module fftc4(clk,reset,inpmac,outmac);
+input clk,reset;
+input [64*32-1:0] inpmac;
+output [64*32-1:0] outmac;
 
+//Adjusting Input
+reg [64-1:0] inpmacmem [0:31];
+wire [64-1:0] outmacmem [0:31];
 
-wire [63:0] w0,w1,w2,w3,w4,w5,w6,w7,w8,w9,w10,w11,w12,w13,w14,w15,w16,w17,w18,w19,w20,w21,w22,w23,w24,w25,w26,w27,w28,w29,w30,w31;
-assign w0=64'h3f80000000000000;//1+0j
-assign w1=64'h3f7b15b5be47c84b;//0.9808 - 0.1951i
-assign w2=64'h3f6c84b6bec3f141;//0.9239 - 0.3827i
-assign w3=64'h3f54dd2fbf0e3bcd;//0.8315 - 0.5556i
-assign w4=64'h3f34fdf4bf34fdf4;//0.7071 - 0.7071i
-assign w5=64'h3f0e3bcdbf54dd2f;//0.5556 - 0.8315i
-assign w6=64'h3ec3f141bf6c84b6;// 0.3827 - 0.9239i
-assign w7=64'h3e47c84bbf7b15b5;//0.1951 - 0.9808i
-assign w8=64'h00000000bf800000;//-1j
-assign w9=64'hbe47c84bbf7b15b5;//-0.1951 - 0.9808i
-assign w10=64'hbec3f141bf6c84b6;//-0.3827 - 0.9239i
-assign w11=64'hbf0e3bcdbf54dd2f;//-0.5556 - 0.8315i
-assign w12=64'hbf34fdf4bf34fdf4;//-0.7071 - 0.7071i
-assign w13=64'hbf54dd2fbf0e3bcd;//-0.8315 - 0.5556i
-assign w14=64'hbf6c84b6bec3f141;//-0.9239 - 0.3827i
-assign w15=64'hbf7b15b5be47c84b;//-0.9808 - 0.1951i
-assign w16=64'hbf80000000000000;//-1+0j
-assign w17=64'hbf7b15b53e47c84b;//-0.9808 + 0.1951i
-assign w18=64'hbf6c84b63ec3f141;//-0.9239 + 0.3827i
-assign w19=64'hbf54dd2f3f0e3bcd;//-0.8315 + 0.5556i
-assign w20=64'hbf34fdf43f34fdf4;//-0.7071 + 0.7071i
-assign w21=64'hbf0e3bcd3f54dd2f;//-0.5556 + 0.8315i
-assign w22=64'hbec3f1413f6c84b6;//-0.3827 + 0.9239i
-assign w23=64'hbe47c84b3f7b15b5;//-0.1951 + 0.9808i
-assign w24=64'h000000003f800000;//1j
-assign w25=64'h3e47c84b3f7b15b5;//0.1951 + 0.9808i
-assign w26=64'h3ec3f1413f6c84b6;// 0.3827 + 0.9239i
-assign w27=64'h3f0e3bcd3f54dd2f;//0.5556 + 0.8315i
-assign w28=64'h3f34fdf43f34fdf4;//0.7071 + 0.7071i
-assign w29=64'h3f54dd2f3f0e3bcd;//0.8315 + 0.5556i
-assign w30=64'h3f6c84b63ec3f141;//0.9239 + 0.3827i
-assign w31=64'h3f7b15b53e47c84b;//0.9808 + 0.1951i
+//Adjusting weights
+wire [64-1:0] weights [0:31];
+assign weights[0]=64'h3f80000000000000;//1+0j
+assign weights[1]=64'h3f7b15b5be47c84b;//0.9808 - 0.1951i
+assign weights[2]=64'h3f6c84b6bec3f141;//0.9239 - 0.3827i
+assign weights[3]=64'h3f54dd2fbf0e3bcd;//0.8315 - 0.5556i
+assign weights[4]=64'h3f34fdf4bf34fdf4;//0.7071 - 0.7071i
+assign weights[5]=64'h3f0e3bcdbf54dd2f;//0.5556 - 0.8315i
+assign weights[6]=64'h3ec3f141bf6c84b6;// 0.3827 - 0.9239i
+assign weights[7]=64'h3e47c84bbf7b15b5;//0.1951 - 0.9808i
+assign weights[8]=64'h00000000bf800000;//-1j
+assign weights[9]=64'hbe47c84bbf7b15b5;//-0.1951 - 0.9808i
+assign weights[10]=64'hbec3f141bf6c84b6;//-0.3827 - 0.9239i
+assign weights[11]=64'hbf0e3bcdbf54dd2f;//-0.5556 - 0.8315i
+assign weights[12]=64'hbf34fdf4bf34fdf4;//-0.7071 - 0.7071i
+assign weights[13]=64'hbf54dd2fbf0e3bcd;//-0.8315 - 0.5556i
+assign weights[14]=64'hbf6c84b6bec3f141;//-0.9239 - 0.3827i
+assign weights[15]=64'hbf7b15b5be47c84b;//-0.9808 - 0.1951i
+assign weights[16]=64'hbf80000000000000;//-1+0j
+assign weights[17]=64'hbf7b15b53e47c84b;//-0.9808 + 0.1951i
+assign weights[18]=64'hbf6c84b63ec3f141;//-0.9239 + 0.3827i
+assign weights[19]=64'hbf54dd2f3f0e3bcd;//-0.8315 + 0.5556i
+assign weights[20]=64'hbf34fdf43f34fdf4;//-0.7071 + 0.7071i
+assign weights[21]=64'hbf0e3bcd3f54dd2f;//-0.5556 + 0.8315i
+assign weights[22]=64'hbec3f1413f6c84b6;//-0.3827 + 0.9239i
+assign weights[23]=64'hbe47c84b3f7b15b5;//-0.1951 + 0.9808i
+assign weights[24]=64'h000000003f800000;//1j
+assign weights[25]=64'h3e47c84b3f7b15b5;//0.1951 + 0.9808i
+assign weights[26]=64'h3ec3f1413f6c84b6;// 0.3827 + 0.9239i
+assign weights[27]=64'h3f0e3bcd3f54dd2f;//0.5556 + 0.8315i
+assign weights[28]=64'h3f34fdf43f34fdf4;//0.7071 + 0.7071i
+assign weights[29]=64'h3f54dd2f3f0e3bcd;//0.8315 + 0.5556i
+assign weights[30]=64'h3f6c84b63ec3f141;//0.9239 + 0.3827i
+assign weights[31]=64'h3f7b15b53e47c84b;//0.9808 + 0.1951i
 
-wire [63:0] temp0;
-compmult cmpmul0(w0,i16,temp0);
-compadder cmpadd0(i0,temp0,1'b0,o0);
+//Reading into mem
+initial begin
+    $display("Loading rom.");
+    $readmemh("../rtl/column3_output.txt", inpmacmem);
+end
 
-wire [63:0] temp1;
-compmult cmpmul1(w1,i17,temp1);
-compadder cmpadd1(i1,temp1,1'b0,o1);
+//-----Mac 1-------
+//Selection Lines for MUX and DeMUX
+wire [1:0] mac_sel;
 
-wire [63:0] temp2;
-compmult cmpmul2(w2,i18,temp2);
-compadder cmpadd2(i2,temp2,1'b0,o2);
+//Input Mux
+//Input
+wire [63:0] mac1_muxin1;
+wire [63:0] mac1_muxin2;
+wire [63:0] mac1_muxin3;
+wire [63:0] mac1_muxin4,mac1_muxin5,mac1_muxin6,mac1_muxin7,mac1_muxin8;
+//Output
+wire [63:0] mac1_muxout1;
+wire [63:0] mac1_muxout2;
 
+//Read Input from mem
+assign mac1_muxin1=inpmacmem[0];
+assign mac1_muxin2=inpmacmem[1];
+assign mac1_muxin3=inpmacmem[2];
+assign mac1_muxin4=inpmacmem[3];
+assign mac1_muxin5=inpmacmem[16];
+assign mac1_muxin6=inpmacmem[17];
+assign mac1_muxin7=inpmacmem[18];
+assign mac1_muxin8=inpmacmem[19];
 
-wire [63:0] temp3;
-compmult cmpmul3(w3,i19,temp3);
-compadder cmpadd3(i3,temp3,1'b0,o3);
+//make MUX
+assign mac1_muxout1=mac_sel[1]?(mac_sel[0]?mac1_muxin4:mac1_muxin3):(mac_sel[0]?mac1_muxin2:mac1_muxin1);
+assign mac1_muxout2=mac_sel[1]?(mac_sel[0]?mac1_muxin8:mac1_muxin7):(mac_sel[0]?mac1_muxin6:mac1_muxin5);
 
-wire [63:0] temp4;
-compmult cmpmul4(w4,i20,temp4);
-compadder cmpadd4(i4,temp4,1'b0,o4);
+//Weights MUX
+//Input
+wire [63:0] mac1_muxw1;
+wire [63:0] mac1_muxw2;
+wire [63:0] mac1_muxw3;
+wire [63:0] mac1_muxw4;
+//Output
+wire [63:0] mac1_muxw1out;
+wire [63:0] mac1_muxw2out;
 
+//Read Weights from mem
+assign mac1_muxw1=weights[0];
+assign mac1_muxw2=weights[1];
+assign mac1_muxw3=weights[2];
+assign mac1_muxw4=weights[3];
+assign mac1_muxw5=weights[16];
+assign mac1_muxw6=weights[17];
+assign mac1_muxw7=weights[18];
+assign mac1_muxw8=weights[19];
 
-wire [63:0] temp5;
-compmult cmpmul5(w5,i21,temp5);
-compadder cmpadd5(i5,temp5,1'b0,o5);
+//make MUX
+assign mac1_muxw1out=mac_sel[1]?(mac_sel[0]?mac1_muxw4:mac1_muxw3):(mac_sel[0]?mac1_muxw2:mac1_muxw1);
+assign mac1_muxw2out=mac_sel[1]?(mac_sel[0]?mac1_muxw8:mac1_muxw7):(mac_sel[0]?mac1_muxw6:mac1_muxw5);
 
-wire [63:0] temp6;
-compmult cmpmul6(w6,i22,temp6);
-compadder cmpadd6(i6,temp6,1'b0,o6);
+//Output DeMux Assignment
+//Input
+reg [63:0] mac1_demuxin1;
+reg [63:0] mac1_demuxin2;
+wire [63:0] mac1_demuxin1w;
+wire [63:0] mac1_demuxin2w;
+always@(*)
+begin
+mac1_demuxin1=mac1_demuxin1w;
+mac1_demuxin2=mac1_demuxin2w;
+end
 
+//Output
+reg [63:0] mac1_demuxout1;
+reg [63:0] mac1_demuxout2;
+reg [63:0] mac1_demuxout3;
+reg [63:0] mac1_demuxout4;
+reg [63:0] mac1_demuxout5;
+reg [63:0] mac1_demuxout6;
+reg [63:0] mac1_demuxout7;
+reg [63:0] mac1_demuxout8;
 
-wire [63:0] temp7;
-compmult cmpmul7(w7,i23,temp7);
-compadder cmpadd7(i7,temp7,1'b0,o7);
+//make DeMUX
+always@(*)
+case (mac_sel)
+2'b00 : begin 
+         mac1_demuxout1 = mac1_demuxin1; mac1_demuxout5 = mac1_demuxin2;
+        end
+2'b01 : begin 
+         mac1_demuxout2 = mac1_demuxin1; mac1_demuxout6 = mac1_demuxin2;
+        end
+2'b10 : begin 
+         mac1_demuxout3 = mac1_demuxin1; mac1_demuxout7 = mac1_demuxin2;
+         end
+2'b11 : begin 
+         mac1_demuxout4 = mac1_demuxin1; mac1_demuxout8 = mac1_demuxin2;
+        end
+endcase
+mac mac1(mac1_muxout1,mac1_muxout2,mac1_muxw1out,mac1_muxw2out,mac1_demuxin1w,mac1_demuxin2w);
+//-----Mac 2-------
+//Input Mux
+//Input
+wire [63:0] mac2_muxin1;
+wire [63:0] mac2_muxin2;
+wire [63:0] mac2_muxin3;
+wire [63:0] mac2_muxin4,mac2_muxin5,mac2_muxin6,mac2_muxin7,mac2_muxin8;
+//Output
+wire [63:0] mac2_muxout1;
+wire [63:0] mac2_muxout2;
 
-wire [63:0] temp8;
-compmult cmpmul8(w8,i24,temp8);
-compadder cmpadd8(i8,temp8,1'b0,o8);
+//Read Input from mem
+assign mac2_muxin1=inpmacmem[4];
+assign mac2_muxin2=inpmacmem[5];
+assign mac2_muxin3=inpmacmem[6];
+assign mac2_muxin4=inpmacmem[7];
+assign mac2_muxin5=inpmacmem[20];
+assign mac2_muxin6=inpmacmem[21];
+assign mac2_muxin7=inpmacmem[22];
+assign mac2_muxin8=inpmacmem[23];
 
-wire [63:0] temp9;
-compmult cmpmul9(w9,i25,temp9);
-compadder cmpadd9(i9,temp9,1'b0,o9);
+//make MUX
+assign mac2_muxout1=mac_sel[1]?(mac_sel[0]?mac2_muxin4:mac2_muxin3):(mac_sel[0]?mac2_muxin2:mac2_muxin1);
+assign mac2_muxout2=mac_sel[1]?(mac_sel[0]?mac2_muxin8:mac2_muxin7):(mac_sel[0]?mac2_muxin6:mac2_muxin5);
 
-wire [63:0] temp10;
-compmult cmpmul10(w10,i26,temp10);
-compadder cmpadd10(i10,temp10,1'b0,o10);
+//Weights MUX
+//Input
+wire [63:0] mac2_muxw1;
+wire [63:0] mac2_muxw2;
+wire [63:0] mac2_muxw3;
+wire [63:0] mac2_muxw4;
+//Output
+wire [63:0] mac2_muxw1out;
+wire [63:0] mac2_muxw2out;
 
-wire [63:0] temp11;
-compmult cmpmul11(w11,i27,temp11);
-compadder cmpadd11(i11,temp11,1'b0,o11);
+//Read Weights from mem
+assign mac2_muxw1=weights[4];
+assign mac2_muxw2=weights[5];
+assign mac2_muxw3=weights[6];
+assign mac2_muxw4=weights[7];
+assign mac2_muxw5=weights[20];
+assign mac2_muxw6=weights[21];
+assign mac2_muxw7=weights[22];
+assign mac2_muxw8=weights[23];
 
-wire [63:0] temp12;
-compmult cmpmul12(w12,i28,temp12);
-compadder cmpadd12(i12,temp12,1'b0,o12);
+//make MUX
+assign mac2_muxw1out=mac_sel[1]?(mac_sel[0]?mac2_muxw4:mac2_muxw3):(mac_sel[0]?mac2_muxw2:mac2_muxw1);
+assign mac2_muxw2out=mac_sel[1]?(mac_sel[0]?mac2_muxw8:mac2_muxw7):(mac_sel[0]?mac2_muxw6:mac2_muxw5);
 
+//Output DeMux Assignment
+//Input
+reg [63:0] mac2_demuxin1;
+reg [63:0] mac2_demuxin2;
+wire [63:0] mac2_demuxin1w;
+wire [63:0] mac2_demuxin2w;
+always@(*)
+begin
+mac2_demuxin1=mac2_demuxin1w;
+mac2_demuxin2=mac2_demuxin2w;
+end
 
-wire [63:0] temp13;
-compmult cmpmul13(w13,i29,temp13);
-compadder cmpadd13(i13,temp13,1'b0,o13);
+//Output
+reg [63:0] mac2_demuxout1;
+reg [63:0] mac2_demuxout2;
+reg [63:0] mac2_demuxout3;
+reg [63:0] mac2_demuxout4;
+reg [63:0] mac2_demuxout5;
+reg [63:0] mac2_demuxout6;
+reg [63:0] mac2_demuxout7;
+reg [63:0] mac2_demuxout8;
 
-wire [63:0] temp14;
-compmult cmpmul14(w14,i30,temp14);
-compadder cmpadd14(i14,temp14,1'b0,o14);
+//make DeMUX
+always@(*)
+case (mac_sel)
+2'b00 : begin 
+         mac2_demuxout1 = mac2_demuxin1; mac2_demuxout5 = mac2_demuxin2;
+        end
+2'b01 : begin 
+         mac2_demuxout2 = mac2_demuxin1; mac2_demuxout6 = mac2_demuxin2;
+        end
+2'b10 : begin 
+         mac2_demuxout3 = mac2_demuxin1; mac2_demuxout7 = mac2_demuxin2;
+         end
+2'b11 : begin 
+         mac2_demuxout4 = mac2_demuxin1; mac2_demuxout8 = mac2_demuxin2;
+        end
+endcase
+mac mac2(mac2_muxout1,mac2_muxout2,mac2_muxw1out,mac2_muxw2out,mac2_demuxin1w,mac2_demuxin2w);
+//-----Mac 3-------
+//Input Mux
+//Input
+wire [63:0] mac3_muxin1;
+wire [63:0] mac3_muxin2;
+wire [63:0] mac3_muxin3;
+wire [63:0] mac3_muxin4,mac3_muxin5,mac3_muxin6,mac3_muxin7,mac3_muxin8;
+//Output
+wire [63:0] mac3_muxout1;
+wire [63:0] mac3_muxout2;
 
+//Read Input from mem
+assign mac3_muxin1=inpmacmem[8];
+assign mac3_muxin2=inpmacmem[9];
+assign mac3_muxin3=inpmacmem[10];
+assign mac3_muxin4=inpmacmem[11];
+assign mac3_muxin5=inpmacmem[24];
+assign mac3_muxin6=inpmacmem[25];
+assign mac3_muxin7=inpmacmem[26];
+assign mac3_muxin8=inpmacmem[27];
 
-wire [63:0] temp15;
-compmult cmpmul15(w15,i31,temp15);
-compadder cmpadd15(i15,temp15,1'b0,o15);
+//make MUX
+assign mac3_muxout1=mac_sel[1]?(mac_sel[0]?mac3_muxin4:mac3_muxin3):(mac_sel[0]?mac3_muxin2:mac3_muxin1);
+assign mac3_muxout2=mac_sel[1]?(mac_sel[0]?mac3_muxin8:mac3_muxin7):(mac_sel[0]?mac3_muxin6:mac3_muxin5);
 
-wire [63:0] temp16;
-compmult cmpmul16(w16,i16,temp16);
-compadder cmpadd16(i0,temp16,1'b0,o16);
+//Weights MUX
+//Input
+wire [63:0] mac3_muxw1;
+wire [63:0] mac3_muxw2;
+wire [63:0] mac3_muxw3;
+wire [63:0] mac3_muxw4;
+//Output
+wire [63:0] mac3_muxw1out;
+wire [63:0] mac3_muxw2out;
 
-wire [63:0] temp17;
-compmult cmpmul17(w17,i17,temp17);
-compadder cmpadd17(i1,temp17,1'b0,o17);
+//Read Weights from mem
+assign mac3_muxw1=weights[8];
+assign mac3_muxw2=weights[9];
+assign mac3_muxw3=weights[10];
+assign mac3_muxw4=weights[11];
+assign mac3_muxw5=weights[24];
+assign mac3_muxw6=weights[25];
+assign mac3_muxw7=weights[26];
+assign mac3_muxw8=weights[27];
 
-wire [63:0] temp18;
-compmult cmpmul18(w18,i18,temp18);
-compadder cmpadd18(i2,temp18,1'b0,o18);
+//make MUX
+assign mac3_muxw1out=mac_sel[1]?(mac_sel[0]?mac3_muxw4:mac3_muxw3):(mac_sel[0]?mac3_muxw2:mac3_muxw1);
+assign mac3_muxw2out=mac_sel[1]?(mac_sel[0]?mac3_muxw8:mac3_muxw7):(mac_sel[0]?mac3_muxw6:mac3_muxw5);
 
+//Output DeMux Assignment
+//Input
+reg [63:0] mac3_demuxin1;
+reg [63:0] mac3_demuxin2;
+wire [63:0] mac3_demuxin1w;
+wire [63:0] mac3_demuxin2w;
+always@(*)
+begin
+mac3_demuxin1=mac3_demuxin1w;
+mac3_demuxin2=mac3_demuxin2w;
+end
 
-wire [63:0] temp19;
-compmult cmpmul19(w19,i19,temp19);
-compadder cmpadd19(i3,temp19,1'b0,o19);
+//Output
+reg [63:0] mac3_demuxout1;
+reg [63:0] mac3_demuxout2;
+reg [63:0] mac3_demuxout3;
+reg [63:0] mac3_demuxout4;
+reg [63:0] mac3_demuxout5;
+reg [63:0] mac3_demuxout6;
+reg [63:0] mac3_demuxout7;
+reg [63:0] mac3_demuxout8;
 
-wire [63:0] temp20;
-compmult cmpmul20(w20,i20,temp20);
-compadder cmpadd20(i4,temp20,1'b0,o20);
+//make DeMUX
+always@(*)
+case (mac_sel)
+2'b00 : begin 
+         mac3_demuxout1 = mac3_demuxin1; mac3_demuxout5 = mac3_demuxin2;
+        end
+2'b01 : begin 
+         mac3_demuxout2 = mac3_demuxin1; mac3_demuxout6 = mac3_demuxin2;
+        end
+2'b10 : begin 
+         mac3_demuxout3 = mac3_demuxin1; mac3_demuxout7 = mac3_demuxin2;
+         end
+2'b11 : begin 
+         mac3_demuxout4 = mac3_demuxin1; mac3_demuxout8 = mac3_demuxin2;
+        end
+endcase
 
+mac mac3(mac3_muxout1,mac3_muxout2,mac3_muxw1out,mac3_muxw2out,mac3_demuxin1w,mac3_demuxin2w);
 
-wire [63:0] temp21;
-compmult cmpmul21(w21,i21,temp21);
-compadder cmpadd21(i5,temp21,1'b0,o21);
+//-----Mac 4-------
+//Input Mux
+//Input
+wire [63:0] mac4_muxin1;
+wire [63:0] mac4_muxin2;
+wire [63:0] mac4_muxin3;
+wire [63:0] mac4_muxin4,mac4_muxin5,mac4_muxin6,mac4_muxin7,mac4_muxin8;
+//Output
+wire [63:0] mac4_muxout1;
+wire [63:0] mac4_muxout2;
 
-wire [63:0] temp22;
-compmult cmpmul22(w22,i22,temp22);
-compadder cmpadd22(i6,temp22,1'b0,o22);
+//Read Input from mem
+assign mac4_muxin1=inpmacmem[12];
+assign mac4_muxin2=inpmacmem[13];
+assign mac4_muxin3=inpmacmem[14];
+assign mac4_muxin4=inpmacmem[15];
+assign mac4_muxin5=inpmacmem[28];
+assign mac4_muxin6=inpmacmem[29];
+assign mac4_muxin7=inpmacmem[30];
+assign mac4_muxin8=inpmacmem[31];
 
+//make MUX
+assign mac4_muxout1=mac_sel[1]?(mac_sel[0]?mac4_muxin4:mac4_muxin3):(mac_sel[0]?mac4_muxin2:mac4_muxin1);
+assign mac4_muxout2=mac_sel[1]?(mac_sel[0]?mac4_muxin8:mac4_muxin7):(mac_sel[0]?mac4_muxin6:mac4_muxin5);
 
-wire [63:0] temp23;
-compmult cmpmul23(w23,i23,temp23);
-compadder cmpadd23(i7,temp23,1'b0,o23);
+//Weights MUX
+//Input
+wire [63:0] mac4_muxw1;
+wire [63:0] mac4_muxw2;
+wire [63:0] mac4_muxw3;
+wire [63:0] mac4_muxw4;
+//Output
+wire [63:0] mac4_muxw1out;
+wire [63:0] mac4_muxw2out;
 
-wire [63:0] temp24;
-compmult cmpmul24(w24,i24,temp24);
-compadder cmpadd24(i8,temp24,1'b0,o24);
+//Read Weights from mem
+assign mac4_muxw1=weights[12];
+assign mac4_muxw2=weights[13];
+assign mac4_muxw3=weights[14];
+assign mac4_muxw4=weights[15];
+assign mac4_muxw5=weights[28];
+assign mac4_muxw6=weights[29];
+assign mac4_muxw7=weights[30];
+assign mac4_muxw8=weights[31];
 
-wire [63:0] temp25;
-compmult cmpmul25(w25,i25,temp25);
-compadder cmpadd25(i9,temp25,1'b0,o25);
+//make MUX
+assign mac4_muxw1out=mac_sel[1]?(mac_sel[0]?mac4_muxw4:mac4_muxw3):(mac_sel[0]?mac4_muxw2:mac4_muxw1);
+assign mac4_muxw2out=mac_sel[1]?(mac_sel[0]?mac4_muxw8:mac4_muxw7):(mac_sel[0]?mac4_muxw6:mac4_muxw5);
 
-wire [63:0] temp26;
-compmult cmpmul26(w26,i26,temp26);
-compadder cmpadd26(i10,temp26,1'b0,o26);
+//Output DeMux Assignment
+//Input
+reg [63:0] mac4_demuxin1;
+reg [63:0] mac4_demuxin2;
+wire [63:0] mac4_demuxin1w;
+wire [63:0] mac4_demuxin2w;
+always@(*)
+begin
+mac4_demuxin1=mac4_demuxin1w;
+mac4_demuxin2=mac4_demuxin2w;
+end
 
-wire [63:0] temp27;
-compmult cmpmul27(w27,i27,temp27);
-compadder cmpadd27(i11,temp27,1'b0,o27);
+//Output
+reg [63:0] mac4_demuxout1;
+reg [63:0] mac4_demuxout2;
+reg [63:0] mac4_demuxout3;
+reg [63:0] mac4_demuxout4;
+reg [63:0] mac4_demuxout5;
+reg [63:0] mac4_demuxout6;
+reg [63:0] mac4_demuxout7;
+reg [63:0] mac4_demuxout8;
 
-wire [63:0] temp28;
-compmult cmpmul28(w28,i28,temp28);
-compadder cmpadd28(i12,temp28,1'b0,o28);
+//make DeMUX
+always@(*)
+case (mac_sel)
+2'b00 : begin 
+         mac4_demuxout1 = mac4_demuxin1; mac4_demuxout5 = mac4_demuxin2;
+        end
+2'b01 : begin 
+         mac4_demuxout2 = mac4_demuxin1; mac4_demuxout6 = mac4_demuxin2;
+        end
+2'b10 : begin 
+         mac4_demuxout3 = mac4_demuxin1; mac4_demuxout7 = mac4_demuxin2;
+         end
+2'b11 : begin 
+         mac4_demuxout4 = mac4_demuxin1; mac4_demuxout8 = mac4_demuxin2;
+        end
+endcase
 
+mac mac4(mac4_muxout1,mac4_muxout2,mac4_muxw1out,mac4_muxw2out,mac4_demuxin1w,mac4_demuxin2w);
+//Controller
+reg [1:0] macselcounter;
+always @(posedge clk)
+    if (reset==1'b1)
+        macselcounter<=2'h0;
+    else
+        macselcounter<=macselcounter+1;
 
-wire [63:0] temp29;
-compmult cmpmul29(w29,i29,temp29);
-compadder cmpadd29(i13,temp29,1'b0,o29);
+assign mac_sel=macselcounter;
 
-wire [63:0] temp30;
-compmult cmpmul30(w30,i30,temp30);
-compadder cmpadd30(i14,temp30,1'b0,o30);
+//Output 2D
+assign outmacmem[0]=mac1_demuxout1;
+assign outmacmem[1]=mac1_demuxout2;
+assign outmacmem[2]=mac1_demuxout3;
+assign outmacmem[3]=mac1_demuxout4;
+assign outmacmem[4]=mac2_demuxout1;
+assign outmacmem[5]=mac2_demuxout2;
+assign outmacmem[6]=mac2_demuxout3;
+assign outmacmem[7]=mac2_demuxout4;
 
+assign outmacmem[8]=mac3_demuxout1;
+assign outmacmem[9]=mac3_demuxout2;
+assign outmacmem[10]=mac3_demuxout3;
+assign outmacmem[11]=mac3_demuxout4;
+assign outmacmem[12]=mac4_demuxout1;
+assign outmacmem[13]=mac4_demuxout2;
+assign outmacmem[14]=mac4_demuxout3;
+assign outmacmem[15]=mac4_demuxout4;
 
-wire [63:0] temp31;
-compmult cmpmul31(w31,i31,temp31);
-compadder cmpadd31(i15,temp31,1'b0,o31);
+assign outmacmem[16]=mac1_demuxout5;
+assign outmacmem[17]=mac1_demuxout6;
+assign outmacmem[18]=mac1_demuxout7;
+assign outmacmem[19]=mac1_demuxout8;
+assign outmacmem[20]=mac2_demuxout5;
+assign outmacmem[21]=mac2_demuxout6;
+assign outmacmem[22]=mac2_demuxout7;
+assign outmacmem[23]=mac2_demuxout8;
 
+assign outmacmem[24]=mac3_demuxout5;
+assign outmacmem[25]=mac3_demuxout6;
+assign outmacmem[26]=mac3_demuxout7;
+assign outmacmem[27]=mac3_demuxout8;
+assign outmacmem[28]=mac4_demuxout5;
+assign outmacmem[29]=mac4_demuxout6;
+assign outmacmem[30]=mac4_demuxout7;
+assign outmacmem[31]=mac4_demuxout8;
 endmodule

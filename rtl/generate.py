@@ -119,3 +119,16 @@ for i in range(0,32,1):
 with open('rtl/column1_output.txt', 'w') as filehandle:
     for listitem in places:
         filehandle.write('%s\n' % listitem)
+
+oc3real=[256,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,272,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16]
+oc3imag=[0,80.437,38.627,23.946,16,10.691,6.6274,3.1826,0,-3.1826,-6.6274,-10.691,-16,-23.946,-38.627,-80.437,0,80.437,38.627,23.946,16,10.691,6.6274,3.1826,0,-3.1826,-6.6274,-10.691,-16,-23.946,-38.627,-80.437]
+print(len(oc3imag))
+places=[]
+for i in range(0,32,1):
+    data=IEEE754(float(oc3real[i]))[0][2:]
+    data=data+IEEE754(float(oc3imag[i]))[0][2:]
+    places.append(data)
+
+with open('rtl/column3_output.txt', 'w') as filehandle:
+    for listitem in places:
+        filehandle.write('%s\n' % listitem)
