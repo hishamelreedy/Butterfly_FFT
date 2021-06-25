@@ -120,6 +120,19 @@ with open('rtl/column1_output.txt', 'w') as filehandle:
     for listitem in places:
         filehandle.write('%s\n' % listitem)
 
+oc2real=[120,-16,-16,-16,-16,-16,-16,-16,136,-16,-16,-16,-16,-16,-16,-16,128,-16,-16,-16,-16,-16,-16,-16,144,-16,-16,-16,-16,-16,-16,-16]
+oc2imag=[0,38.627,16,6.6274,0,-6.6274,-16,-38.627,0,38.627,16,6.6274,0,-6.6274,-16,-38.627,0,38.627,16,6.6274,0,-6.6274,-16,-38.627,0,38.627,16,6.6274,0,-6.6274,-16,-38.627]
+print(len(oc2imag))
+places=[]
+for i in range(0,32,1):
+    data=IEEE754(float(oc2real[i]))[0][2:]
+    data=data+IEEE754(float(oc2imag[i]))[0][2:]
+    places.append(data)
+
+with open('rtl/column2_output.txt', 'w') as filehandle:
+    for listitem in places:
+        filehandle.write('%s\n' % listitem)
+
 oc3real=[256,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,272,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16]
 oc3imag=[0,80.437,38.627,23.946,16,10.691,6.6274,3.1826,0,-3.1826,-6.6274,-10.691,-16,-23.946,-38.627,-80.437,0,80.437,38.627,23.946,16,10.691,6.6274,3.1826,0,-3.1826,-6.6274,-10.691,-16,-23.946,-38.627,-80.437]
 print(len(oc3imag))
@@ -130,5 +143,18 @@ for i in range(0,32,1):
     places.append(data)
 
 with open('rtl/column3_output.txt', 'w') as filehandle:
+    for listitem in places:
+        filehandle.write('%s\n' % listitem)
+
+oc4real=[528,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16,-16]
+oc4imag=[0,162.45,80.437,52.745,38.627,29.934,23.946,19.496,16,13.131,10.691,8.5522,6.6274,4.8535,3.1826,1.5759,0,-1.5759,-3.1826,-4.8535,-6.6274,-8.5522,-10.691,-13.131,-16,-19.496,-23.946,-29.934,-38.627,-52.745,-80.437,-162.45]
+print(len(oc4imag))
+places=[]
+for i in range(0,32,1):
+    data=IEEE754(float(oc4real[i]))[0][2:]
+    data=data+IEEE754(float(oc4imag[i]))[0][2:]
+    places.append(data)
+
+with open('rtl/column4_output.txt', 'w') as filehandle:
     for listitem in places:
         filehandle.write('%s\n' % listitem)
