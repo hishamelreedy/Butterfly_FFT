@@ -3,7 +3,7 @@ input clk,reset;
 input [64*32-1:0] inpmac;
 output [64*32-1:0] outmac;
 
-//Adjusting Input
+//Adjusting Input\Output 2D
 reg [64-1:0] inpmacmem [0:31];
 wire [64-1:0] outmacmem [0:31];
 

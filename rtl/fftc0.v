@@ -3,7 +3,7 @@ input clk,reset;
 input [64*32-1:0] inpmac;
 output [64*32-1:0] outmac;
 
-//Adjusting Input
+//Adjusting Input\Output 2D
 reg [32-1:0] inpmacmem [0:31];
 wire [64-1:0] outmacmem [0:31];
 
@@ -85,17 +85,6 @@ case (mac_sel)
          mac1_demuxout4 = mac1_demuxin1; mac1_demuxout8 = mac1_demuxin2;
         end
 endcase
-
-
-//Controller
-reg [1:0] macselcounter;
-always @(posedge clk)
-    if (reset==1'b1)
-        macselcounter<=2'h0;
-    else
-        macselcounter<=macselcounter+1;
-
-assign mac_sel=macselcounter;
 
 
 mac mac1(mac1_muxout1,mac1_muxout2,weights[0],weights[1],mac1_demuxin1w,mac1_demuxin2w);
@@ -297,4 +286,51 @@ case (mac_sel)
 endcase
 
 mac mac4(mac4_muxout1,mac4_muxout2,weights[0],weights[1],mac4_demuxin1w,mac4_demuxin2w);
+
+//Controller
+reg [1:0] macselcounter;
+always @(posedge clk)
+    if (reset==1'b1)
+        macselcounter<=2'h0;
+    else
+        macselcounter<=macselcounter+1;
+
+assign mac_sel=macselcounter;
+
+//Output 2D
+assign outmacmem[0]=mac1_demuxout1;
+assign outmacmem[8]=mac1_demuxout2;
+assign outmacmem[4]=mac1_demuxout3;
+assign outmacmem[12]=mac1_demuxout4;
+assign outmacmem[16]=mac1_demuxout5;
+assign outmacmem[24]=mac1_demuxout6;
+assign outmacmem[20]=mac1_demuxout7;
+assign outmacmem[28]=mac1_demuxout8;
+
+assign outmacmem[2]=mac2_demuxout1;
+assign outmacmem[18]=mac2_demuxout2;
+assign outmacmem[6]=mac2_demuxout3;
+assign outmacmem[26]=mac2_demuxout4;
+assign outmacmem[16]=mac2_demuxout5;
+assign outmacmem[22]=mac2_demuxout6;
+assign outmacmem[20]=mac2_demuxout7;
+assign outmacmem[30]=mac2_demuxout8;
+
+assign outmacmem[1]=mac3_demuxout1;
+assign outmacmem[9]=mac3_demuxout2;
+assign outmacmem[5]=mac3_demuxout3;
+assign outmacmem[13]=mac3_demuxout4;
+assign outmacmem[17]=mac3_demuxout5;
+assign outmacmem[25]=mac3_demuxout6;
+assign outmacmem[21]=mac3_demuxout7;
+assign outmacmem[29]=mac3_demuxout8;
+
+assign outmacmem[3]=mac4_demuxout1;
+assign outmacmem[11]=mac4_demuxout2;
+assign outmacmem[7]=mac4_demuxout3;
+assign outmacmem[15]=mac4_demuxout4;
+assign outmacmem[19]=mac4_demuxout5;
+assign outmacmem[27]=mac4_demuxout6;
+assign outmacmem[23]=mac4_demuxout7;
+assign outmacmem[31]=mac4_demuxout8;
 endmodule
