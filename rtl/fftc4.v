@@ -452,4 +452,15 @@ assign outmacmem[28]=mac4_demuxout5;
 assign outmacmem[29]=mac4_demuxout6;
 assign outmacmem[30]=mac4_demuxout7;
 assign outmacmem[31]=mac4_demuxout8;
+
+//Output 1D
+assign outmac={outmacmem[31],outmacmem[30],outmacmem[29],outmacmem[28],
+outmacmem[27],outmacmem[26],outmacmem[25],outmacmem[24],
+outmacmem[23],outmacmem[22],outmacmem[21],outmacmem[20],
+outmacmem[19],outmacmem[18],outmacmem[17],outmacmem[16],
+outmacmem[15],outmacmem[14],outmacmem[13],outmacmem[12],
+outmacmem[11],outmacmem[10],outmacmem[9],outmacmem[8],
+outmacmem[7],outmacmem[6],outmacmem[5],outmacmem[4],
+outmacmem[3],outmacmem[2],outmacmem[1],outmacmem[0]};
+
 endmodule
