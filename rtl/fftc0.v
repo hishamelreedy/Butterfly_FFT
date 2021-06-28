@@ -4,7 +4,7 @@ input [64*32-1:0] inpmac;
 output [64*32-1:0] outmac;
 
 //Adjusting Input\Output 2D
-reg [32-1:0] inpmacmem [0:31];
+reg [64-1:0] inpmacmem [0:31];
 wire [64-1:0] outmacmem [0:31];
 
 //Adjusting weights
@@ -13,9 +13,39 @@ assign weights[0]=64'h3f80000000000000;
 assign weights[1]=64'hbf80000000000000;
 
 //Reading into mem
-initial begin
-    $display("Loading rom.");
-    $readmemh("../rtl/timesamples.txt", inpmacmem);
+always@(*)begin
+inpmacmem[31]=inpmac[2047:1984];
+inpmacmem[30]=inpmac[1983:1920];
+inpmacmem[29]=inpmac[1919:1856];
+inpmacmem[28]=inpmac[1855:1792];
+inpmacmem[27]=inpmac[1791:1728];
+inpmacmem[26]=inpmac[1727:1664];
+inpmacmem[25]=inpmac[1663:1600];
+inpmacmem[24]=inpmac[1599:1536];
+inpmacmem[23]=inpmac[1535:1472];
+inpmacmem[22]=inpmac[1471:1408];
+inpmacmem[21]=inpmac[1407:1344];
+inpmacmem[20]=inpmac[1343:1280];
+inpmacmem[19]=inpmac[1279:1216];
+inpmacmem[18]=inpmac[1215:1152];
+inpmacmem[17]=inpmac[1151:1088];
+inpmacmem[16]=inpmac[1087:1024];
+inpmacmem[15]=inpmac[1023:960];
+inpmacmem[14]=inpmac[959:896];
+inpmacmem[13]=inpmac[895:832];
+inpmacmem[12]=inpmac[831:768];
+inpmacmem[11]=inpmac[767:704];
+inpmacmem[10]=inpmac[703:640];
+inpmacmem[9]=inpmac[639:576];
+inpmacmem[8]=inpmac[575:512];
+inpmacmem[7]=inpmac[511:448];
+inpmacmem[6]=inpmac[447:384];
+inpmacmem[5]=inpmac[383:320];
+inpmacmem[4]=inpmac[319:256];
+inpmacmem[3]=inpmac[255:192];
+inpmacmem[2]=inpmac[191:128];
+inpmacmem[1]=inpmac[127:64];
+inpmacmem[0]=inpmac[63:0];
 end
 
 
@@ -34,14 +64,14 @@ wire [63:0] mac1_muxout1;
 wire [63:0] mac1_muxout2;
 
 //Read Input from mem
-assign mac1_muxin1={inpmacmem[0],32'd0};
-assign mac1_muxin2={inpmacmem[8],32'd0};
-assign mac1_muxin3={inpmacmem[4],32'd0};
-assign mac1_muxin4={inpmacmem[12],32'd0};
-assign mac1_muxin5={inpmacmem[16],32'd0};
-assign mac1_muxin6={inpmacmem[24],32'd0};
-assign mac1_muxin7={inpmacmem[20],32'd0};
-assign mac1_muxin8={inpmacmem[28],32'd0};
+assign mac1_muxin1=inpmacmem[0];
+assign mac1_muxin2=inpmacmem[8];
+assign mac1_muxin3=inpmacmem[4];
+assign mac1_muxin4=inpmacmem[12];
+assign mac1_muxin5=inpmacmem[16];
+assign mac1_muxin6=inpmacmem[24];
+assign mac1_muxin7=inpmacmem[20];
+assign mac1_muxin8=inpmacmem[28];
 
 //make MUX
 assign mac1_muxout1=mac_sel[1]?(mac_sel[0]?mac1_muxin4:mac1_muxin3):(mac_sel[0]?mac1_muxin2:mac1_muxin1);
@@ -101,14 +131,14 @@ wire [63:0] mac2_muxout1;
 wire [63:0] mac2_muxout2;
 
 //Read Input from mem
-assign mac2_muxin1={inpmacmem[2],32'd0};
-assign mac2_muxin2={inpmacmem[18],32'd0};
-assign mac2_muxin3={inpmacmem[6],32'd0};
-assign mac2_muxin4={inpmacmem[26],32'd0};
-assign mac2_muxin5={inpmacmem[16],32'd0};
-assign mac2_muxin6={inpmacmem[22],32'd0};
-assign mac2_muxin7={inpmacmem[20],32'd0};
-assign mac2_muxin8={inpmacmem[30],32'd0};
+assign mac2_muxin1=inpmacmem[2];
+assign mac2_muxin2=inpmacmem[18];
+assign mac2_muxin3=inpmacmem[6];
+assign mac2_muxin4=inpmacmem[26];
+assign mac2_muxin5=inpmacmem[16];
+assign mac2_muxin6=inpmacmem[22];
+assign mac2_muxin7=inpmacmem[20];
+assign mac2_muxin8=inpmacmem[30];
 
 //make MUX
 assign mac2_muxout1=mac_sel[1]?(mac_sel[0]?mac2_muxin4:mac2_muxin3):(mac_sel[0]?mac2_muxin2:mac2_muxin1);
@@ -167,14 +197,14 @@ wire [63:0] mac3_muxout1;
 wire [63:0] mac3_muxout2;
 
 //Read Input from mem
-assign mac3_muxin1={inpmacmem[1],32'd0};
-assign mac3_muxin2={inpmacmem[9],32'd0};
-assign mac3_muxin3={inpmacmem[5],32'd0};
-assign mac3_muxin4={inpmacmem[13],32'd0};
-assign mac3_muxin5={inpmacmem[17],32'd0};
-assign mac3_muxin6={inpmacmem[25],32'd0};
-assign mac3_muxin7={inpmacmem[21],32'd0};
-assign mac3_muxin8={inpmacmem[29],32'd0};
+assign mac3_muxin1=inpmacmem[1];
+assign mac3_muxin2=inpmacmem[9];
+assign mac3_muxin3=inpmacmem[5];
+assign mac3_muxin4=inpmacmem[13];
+assign mac3_muxin5=inpmacmem[17];
+assign mac3_muxin6=inpmacmem[25];
+assign mac3_muxin7=inpmacmem[21];
+assign mac3_muxin8=inpmacmem[29];
 
 //make MUX
 assign mac3_muxout1=mac_sel[1]?(mac_sel[0]?mac3_muxin4:mac3_muxin3):(mac_sel[0]?mac3_muxin2:mac3_muxin1);
@@ -233,14 +263,14 @@ wire [63:0] mac4_muxout1;
 wire [63:0] mac4_muxout2;
 
 //Read Input from mem
-assign mac4_muxin1={inpmacmem[3],32'd0};
-assign mac4_muxin2={inpmacmem[11],32'd0};
-assign mac4_muxin3={inpmacmem[7],32'd0};
-assign mac4_muxin4={inpmacmem[15],32'd0};
-assign mac4_muxin5={inpmacmem[19],32'd0};
-assign mac4_muxin6={inpmacmem[27],32'd0};
-assign mac4_muxin7={inpmacmem[23],32'd0};
-assign mac4_muxin8={inpmacmem[31],32'd0};
+assign mac4_muxin1=inpmacmem[3];
+assign mac4_muxin2=inpmacmem[11];
+assign mac4_muxin3=inpmacmem[7];
+assign mac4_muxin4=inpmacmem[15];
+assign mac4_muxin5=inpmacmem[19];
+assign mac4_muxin6=inpmacmem[27];
+assign mac4_muxin7=inpmacmem[23];
+assign mac4_muxin8=inpmacmem[31];
 
 //make MUX
 assign mac4_muxout1=mac_sel[1]?(mac_sel[0]?mac4_muxin4:mac4_muxin3):(mac_sel[0]?mac4_muxin2:mac4_muxin1);

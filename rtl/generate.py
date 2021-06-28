@@ -86,9 +86,11 @@ with open('rtl/generate.txt', 'w') as filehandle:
 
 places=[]
 for i in range(1,33,1):
-    places.append(IEEE754(float(i))[0][2:])
+    data=IEEE754(float(i))[0][2:]
+    data+="00000000"
+    places.append(data)
 
-with open('rtl/timesamples.txt', 'w') as filehandle:
+with open('data/timesamples.txt', 'w') as filehandle:
     for listitem in places:
         filehandle.write('%s\n' % listitem)
 
@@ -103,7 +105,7 @@ for i in range(0,32,1):
     data=data+"00000000"
     places.append(data)
 
-with open('rtl/column0_output.txt', 'w') as filehandle:
+with open('data/column0_output.txt', 'w') as filehandle:
     for listitem in places:
         filehandle.write('%s\n' % listitem)
 
@@ -116,7 +118,7 @@ for i in range(0,32,1):
     data=data+IEEE754(float(oc1imag[i]))[0][2:]
     places.append(data)
 
-with open('rtl/column1_output.txt', 'w') as filehandle:
+with open('data/column1_output.txt', 'w') as filehandle:
     for listitem in places:
         filehandle.write('%s\n' % listitem)
 
@@ -129,7 +131,7 @@ for i in range(0,32,1):
     data=data+IEEE754(float(oc2imag[i]))[0][2:]
     places.append(data)
 
-with open('rtl/column2_output.txt', 'w') as filehandle:
+with open('data/column2_output.txt', 'w') as filehandle:
     for listitem in places:
         filehandle.write('%s\n' % listitem)
 
@@ -142,7 +144,7 @@ for i in range(0,32,1):
     data=data+IEEE754(float(oc3imag[i]))[0][2:]
     places.append(data)
 
-with open('rtl/column3_output.txt', 'w') as filehandle:
+with open('data/column3_output.txt', 'w') as filehandle:
     for listitem in places:
         filehandle.write('%s\n' % listitem)
 
@@ -155,18 +157,45 @@ for i in range(0,32,1):
     data=data+IEEE754(float(oc4imag[i]))[0][2:]
     places.append(data)
 
-with open('rtl/column4_output.txt', 'w') as filehandle:
+with open('data/column4_output.txt', 'w') as filehandle:
     for listitem in places:
         filehandle.write('%s\n' % listitem)
 
 
 
 places=[]
-k=0
+k=31
 for i in range(64*32-1,-1,-64):
     data='inpmacmem[%s]=inpmac[%s:%s];'%(k,i,i-63)
-    k=k+1
+    k=k-1
     places.append(data)
+
+places=[]
+k=31
+for i in range(64*32-1,-1,-64):
+    data='inpmac[%s:%s]=inpmacmem[%s];'%(i,i-63,k)
+    k=k-1
+    places.append(data)
+
+places=[]
+k=31
+for i in range(64*32-1,-1,-64):
+    data='assign outmacmem[%s]=outmac[%s:%s];'%(k,i,i-63)
+    k=k-1
+    places.append(data)
+
+places=[]
+for k in range(31,-1,-1):
+    data='assign outmacmemreal[%s]=outmacmem[%s][%s:%s];\n'%(k,k,63,32)
+    data+='assign outmacmemimag[%s]=outmacmem[%s][%s:%s];'%(k,k,31,0)
+    places.append(data)
+
+places=[]
+places.append("always @(*)begin")
+for k in range(31,-1,-1):
+    data='writemacmem[%s]=outmacmem[%s];'%(k,k)
+    places.append(data)
+places.append("end")    
 
 with open('rtl/gencode.txt', 'w') as filehandle:
     for listitem in places:
