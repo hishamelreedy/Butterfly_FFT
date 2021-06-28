@@ -158,3 +158,16 @@ for i in range(0,32,1):
 with open('rtl/column4_output.txt', 'w') as filehandle:
     for listitem in places:
         filehandle.write('%s\n' % listitem)
+
+
+
+places=[]
+k=0
+for i in range(64*32-1,-1,-64):
+    data='inpmacmem[%s]=inpmac[%s:%s];'%(k,i,i-63)
+    k=k+1
+    places.append(data)
+
+with open('rtl/gencode.txt', 'w') as filehandle:
+    for listitem in places:
+        filehandle.write('%s\n' % listitem)
