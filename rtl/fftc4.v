@@ -82,6 +82,11 @@ wire [63:0] mac1_muxw1;
 wire [63:0] mac1_muxw2;
 wire [63:0] mac1_muxw3;
 wire [63:0] mac1_muxw4;
+wire [63:0] mac1_muxw5;
+wire [63:0] mac1_muxw6;
+wire [63:0] mac1_muxw7;
+wire [63:0] mac1_muxw8;
+
 //Output
 wire [63:0] mac1_muxw1out;
 wire [63:0] mac1_muxw2out;
@@ -170,6 +175,10 @@ wire [63:0] mac2_muxw1;
 wire [63:0] mac2_muxw2;
 wire [63:0] mac2_muxw3;
 wire [63:0] mac2_muxw4;
+wire [63:0] mac2_muxw5;
+wire [63:0] mac2_muxw6;
+wire [63:0] mac2_muxw7;
+wire [63:0] mac2_muxw8;
 //Output
 wire [63:0] mac2_muxw1out;
 wire [63:0] mac2_muxw2out;
@@ -258,6 +267,10 @@ wire [63:0] mac3_muxw1;
 wire [63:0] mac3_muxw2;
 wire [63:0] mac3_muxw3;
 wire [63:0] mac3_muxw4;
+wire [63:0] mac3_muxw5;
+wire [63:0] mac3_muxw6;
+wire [63:0] mac3_muxw7;
+wire [63:0] mac3_muxw8;
 //Output
 wire [63:0] mac3_muxw1out;
 wire [63:0] mac3_muxw2out;
@@ -348,6 +361,10 @@ wire [63:0] mac4_muxw1;
 wire [63:0] mac4_muxw2;
 wire [63:0] mac4_muxw3;
 wire [63:0] mac4_muxw4;
+wire [63:0] mac4_muxw5;
+wire [63:0] mac4_muxw6;
+wire [63:0] mac4_muxw7;
+wire [63:0] mac4_muxw8;
 //Output
 wire [63:0] mac4_muxw1out;
 wire [63:0] mac4_muxw2out;
