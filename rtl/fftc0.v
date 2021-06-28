@@ -132,12 +132,12 @@ wire [63:0] mac2_muxout2;
 
 //Read Input from mem
 assign mac2_muxin1=inpmacmem[2];
-assign mac2_muxin2=inpmacmem[18];
+assign mac2_muxin2=inpmacmem[10];
 assign mac2_muxin3=inpmacmem[6];
-assign mac2_muxin4=inpmacmem[26];
-assign mac2_muxin5=inpmacmem[16];
-assign mac2_muxin6=inpmacmem[22];
-assign mac2_muxin7=inpmacmem[20];
+assign mac2_muxin4=inpmacmem[14];
+assign mac2_muxin5=inpmacmem[18];
+assign mac2_muxin6=inpmacmem[26];
+assign mac2_muxin7=inpmacmem[22];
 assign mac2_muxin8=inpmacmem[30];
 
 //make MUX

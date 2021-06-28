@@ -1,68 +1,216 @@
-`timescale 1ns / 1ps
-module fladder_b(
-    input [31:0] a,
-    input [31:0] b,
-    input ctrl,	// 0- add , 1-subtract
-    output [31:0] ans
-    );
-	wire enable;
-	assign enable=1'b1;
-	reg [31:0] val_b,val_s; //bigger and smaller
-	reg [23:0] aligned;
-	reg [31:0] result;
-	reg [24:0] sum,sum_norm;
-	reg [4:0] lead0;	//leading zeros can be go up to 23
-	reg sig_a, sig_b;
-	
-	integer i;
-	
-	always @ (*) begin
-		if(enable) begin
-			sig_a = a[31];
-			sig_b = (ctrl)? ~b[31] : b[31];	//ctrl sign 1 means value will invert
-	// 1st stage - sort to find the bigger number		
-			if(a[30:0] > b[30:0]) begin
-				val_b = a;
-				val_s = b; 
-			end else begin
-				val_b = b;
-				val_s = a;
-			end
-	// 2nd stage - align small number		
-			aligned = {1'b1,val_s[22:0]} >> (val_b[30:23] - val_s[30:23]);
-	// 3rd stage - perform add/sub operation		
-			if(sig_a == sig_b) begin
-				sum = {2'b01,val_b[22:0]} + aligned;
-			end else begin
-				sum = {2'b01,val_b[22:0]} - aligned;
-			end		
-	// 4th stage - normalizing
-			for(i=23; i>=0; i=i-1) begin
-				if(sum[i]) begin
-					lead0 = 23 - i;
-					i = -1;
-				end else
-					lead0 = 0;
-			end
-			sum_norm = sum << lead0;	//shift the mantissa
-	// 5th stage - setting the result
-			if(sum[24]) begin
-				result[30:23] = val_b[30:23] + 1'b1;
-				result[22:0] = sum[23:1];
-			end else begin
-				
-				if(lead0 > val_b[30:23]) begin	//number too small should throw underflow exception if mantissa not equal to zero
-					result[30:0] = 0;
-				end else begin
-					result[30:23] = val_b[30:23] - lead0;
-					result[22:0] = sum_norm[22:0];
-				end
-			end
-			result[31] = val_b[31];
-		end else
-			result = 0;
-	end
-	
-	assign ans =((a=={a[31],b[30:0]}&&a[31]==~b[31])||(b=={b[31],a[30:0]}&&b[31]==~a[31]))?32'h00000000: result;
-	
+module priority_encoder(
+			input [24:0] significand,
+			input [7:0] exp_a,
+			output reg [24:0] Significand,
+			output [7:0] exp_sub
+			);
+
+reg [4:0] shift;
+
+always @(significand)
+begin
+	casex (significand)
+		25'b1_1xxx_xxxx_xxxx_xxxx_xxxx_xxxx :	begin
+													Significand = significand;
+									 				shift = 5'd0;
+								 			  	end
+		25'b1_01xx_xxxx_xxxx_xxxx_xxxx_xxxx : 	begin						
+										 			Significand = significand << 1;
+									 				shift = 5'd1;
+								 			  	end
+
+		25'b1_001x_xxxx_xxxx_xxxx_xxxx_xxxx : 	begin						
+										 			Significand = significand << 2;
+									 				shift = 5'd2;
+								 				end
+
+		25'b1_0001_xxxx_xxxx_xxxx_xxxx_xxxx : 	begin 							
+													Significand = significand << 3;
+								 	 				shift = 5'd3;
+								 				end
+
+		25'b1_0000_1xxx_xxxx_xxxx_xxxx_xxxx : 	begin						
+									 				Significand = significand << 4;
+								 	 				shift = 5'd4;
+								 				end
+
+		25'b1_0000_01xx_xxxx_xxxx_xxxx_xxxx : 	begin						
+									 				Significand = significand << 5;
+								 	 				shift = 5'd5;
+								 				end
+
+		25'b1_0000_001x_xxxx_xxxx_xxxx_xxxx : 	begin						// 24'h020000
+									 				Significand = significand << 6;
+								 	 				shift = 5'd6;
+								 				end
+
+		25'b1_0000_0001_xxxx_xxxx_xxxx_xxxx : 	begin						// 24'h010000
+									 				Significand = significand << 7;
+								 	 				shift = 5'd7;
+								 				end
+
+		25'b1_0000_0000_1xxx_xxxx_xxxx_xxxx : 	begin						// 24'h008000
+									 				Significand = significand << 8;
+								 	 				shift = 5'd8;
+								 				end
+
+		25'b1_0000_0000_01xx_xxxx_xxxx_xxxx : 	begin						// 24'h004000
+									 				Significand = significand << 9;
+								 	 				shift = 5'd9;
+								 				end
+
+		25'b1_0000_0000_001x_xxxx_xxxx_xxxx : 	begin						// 24'h002000
+									 				Significand = significand << 10;
+								 	 				shift = 5'd10;
+								 				end
+
+		25'b1_0000_0000_0001_xxxx_xxxx_xxxx : 	begin						// 24'h001000
+									 				Significand = significand << 11;
+								 	 				shift = 5'd11;
+								 				end
+
+		25'b1_0000_0000_0000_1xxx_xxxx_xxxx : 	begin						// 24'h000800
+									 				Significand = significand << 12;
+								 	 				shift = 5'd12;
+								 				end
+
+		25'b1_0000_0000_0000_01xx_xxxx_xxxx : 	begin						// 24'h000400
+									 				Significand = significand << 13;
+								 	 				shift = 5'd13;
+								 				end
+
+		25'b1_0000_0000_0000_001x_xxxx_xxxx : 	begin						// 24'h000200
+									 				Significand = significand << 14;
+								 	 				shift = 5'd14;
+								 				end
+
+		25'b1_0000_0000_0000_0001_xxxx_xxxx  : 	begin						// 24'h000100
+									 				Significand = significand << 15;
+								 	 				shift = 5'd15;
+								 				end
+
+		25'b1_0000_0000_0000_0000_1xxx_xxxx : 	begin						// 24'h000080
+									 				Significand = significand << 16;
+								 	 				shift = 5'd16;
+								 				end
+
+		25'b1_0000_0000_0000_0000_01xx_xxxx : 	begin						// 24'h000040
+											 		Significand = significand << 17;
+										 	 		shift = 5'd17;
+												end
+
+		25'b1_0000_0000_0000_0000_001x_xxxx : 	begin						// 24'h000020
+									 				Significand = significand << 18;
+								 	 				shift = 5'd18;
+								 				end
+
+		25'b1_0000_0000_0000_0000_0001_xxxx : 	begin						// 24'h000010
+									 				Significand = significand << 19;
+								 	 				shift = 5'd19;
+												end
+
+		25'b1_0000_0000_0000_0000_0000_1xxx :	begin						// 24'h000008
+									 				Significand = significand << 20;
+								 					shift = 5'd20;
+								 				end
+
+		25'b1_0000_0000_0000_0000_0000_01xx : 	begin						// 24'h000004
+									 				Significand = significand << 21;
+								 	 				shift = 5'd21;
+								 				end
+
+		25'b1_0000_0000_0000_0000_0000_001x : 	begin						// 24'h000002
+									 				Significand = significand << 22;
+								 	 				shift = 5'd22;
+								 				end
+
+		25'b1_0000_0000_0000_0000_0000_0001 : 	begin						// 24'h000001
+									 				Significand = significand << 23;
+								 	 				shift = 5'd23;
+								 				end
+
+		25'b1_0000_0000_0000_0000_0000_0000 : 	begin						// 24'h000000
+								 					Significand = significand << 24;
+							 	 					shift = 5'd24;
+								 				end
+		default : 	begin
+						Significand = (~significand) + 1'b1;
+						shift = 8'd0;
+					end
+
+	endcase
+end
+assign exp_sub = exp_a - shift;
+
+endmodule
+
+module fladder_b(input [31:0] a,b,
+input add_sub_signal,				// If 0 then addition otherwise subtraction
+//output exception,
+output [31:0] res );
+
+wire exception;
+wire operation_add_sub_signal;
+wire enable;
+wire output_sign;
+
+wire [31:0] op_a,op_b;
+wire [23:0] significand_a,significand_b;
+wire [7:0] exp_diff;
+
+
+wire [23:0] significand_b_add_sub;
+wire [7:0] exp_b_add_sub;
+
+wire [24:0] significand_add;
+wire [30:0] add_sum;
+
+wire [23:0] significand_sub_complement;
+wire [24:0] significand_sub;
+wire [30:0] sub_diff;
+wire [24:0] subtraction_diff; 
+wire [7:0] exp_sub;
+
+assign {enable,op_a,op_b} = (a[30:0] < b[30:0]) ? {1'b1,b,a} : {1'b0,a,b};							// For operations always op_a must not be less than b
+
+assign exp_a = op_a[30:23];
+assign exp_b = op_b[30:23];
+
+assign exception = (&op_a[30:23]) | (&op_b[30:23]);										// Exception flag sets 1 if either one of the exponent is 255.
+
+assign output_sign = !add_sub_signal ? enable ? !op_a[31] : op_a[31] : op_a[31] ;
+
+assign operation_add_sub_signal = !add_sub_signal ? op_a[31] ^ op_b[31] : ~(op_a[31] ^ op_b[31]);
+																// Assign significand values according to Hidden Bit.
+assign significand_a = (|op_a[30:23]) ? {1'b1,op_a[22:0]} : {1'b0,op_a[22:0]};							// If exponent is zero,hidden bit = 0,else 1
+assign significand_b = (|op_b[30:23]) ? {1'b1,op_b[22:0]} : {1'b0,op_b[22:0]};
+
+assign exp_diff = op_a[30:23] - op_b[30:23];											// Exponent difference calculation
+assign significand_b_add_sub = significand_b >> exp_diff;
+assign exp_b_add_sub = op_b[30:23] + exp_diff; 
+
+assign perform = (op_a[30:23] == exp_b_add_sub);										// Checking if exponents are same
+
+
+// Add Block //
+assign significand_add = (perform & operation_add_sub_signal) ? (significand_a + significand_b_add_sub) : 25'd0; 
+
+assign add_sum[22:0] = significand_add[24] ? significand_add[23:1] : significand_add[22:0];					// res will be most 23 bits if carry generated, else least 22 bits.
+
+assign add_sum[30:23] = significand_add[24] ? (1'b1 + op_a[30:23]) : op_a[30:23];						// If carry generates in sum value then exponent is added with 1 else feed as it is.
+
+// Sub Block //
+assign significand_sub_complement = (perform & !operation_add_sub_signal) ? ~(significand_b_add_sub) + 24'd1 : 24'd0 ; 
+
+assign significand_sub = perform ? (significand_a + significand_sub_complement) : 25'd0;
+
+priority_encoder pe(significand_sub,op_a[30:23],subtraction_diff,exp_sub);
+
+assign sub_diff[30:23] = exp_sub;
+
+assign sub_diff[22:0] = subtraction_diff[22:0];
+
+// Output //
+assign res = exception ? 32'b0 : ((!operation_add_sub_signal) ? {output_sign,sub_diff} : {output_sign,add_sum});
+
 endmodule
