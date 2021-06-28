@@ -1,4 +1,4 @@
-always(*)begin
+always @(*)begin
 writemacmem[31]=outmacmem[31];
 writemacmem[30]=outmacmem[30];
 writemacmem[29]=outmacmem[29];

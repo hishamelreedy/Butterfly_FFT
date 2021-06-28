@@ -1,11 +1,10 @@
-{C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/tb/fftc0_tb.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/tb/fftc0_tb.v}
+{C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/tb/fftc0_tb.v} {0 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/tb/fftc0_tb.v}
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module fftc0_tb
+** Error: (vlog-13069) C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/tb/fftc0_tb.v(89): near ")": syntax error, unexpected ')', expecting *) or ';' or ','.
 
-Top level modules:
-	fftc0_tb
 
-} {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/mac.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/mac.v}
+} {4.0 5.0} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/mac.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/mac.v}
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module mac
 
@@ -75,6 +74,13 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 
 Top level modules:
 	fftc3
+
+} {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc4.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/fftc4.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module fftc4
+
+Top level modules:
+	fftc4
 
 } {} {}} {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compadder.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/rtl/compadder.v}
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014

@@ -13,7 +13,7 @@ reg [64-1:0] writemacmem[0:31];
 //Read data from input into regfile
 initial begin
     $display("Loading rom.");
-    $readmemh("../rtl/timesamples.txt", inpmacmem);
+    $readmemh("../data/timesamples.txt", inpmacmem);
 end
 
 //2D in to 1D
@@ -84,6 +84,42 @@ assign outmacmem[3]=outmac[255:192];
 assign outmacmem[2]=outmac[191:128];
 assign outmacmem[1]=outmac[127:64];
 assign outmacmem[0]=outmac[63:0];
+
+//Write data
+always@(*)begin
+writemacmem[31]=outmacmem[31];
+writemacmem[30]=outmacmem[30];
+writemacmem[29]=outmacmem[29];
+writemacmem[28]=outmacmem[28];
+writemacmem[27]=outmacmem[27];
+writemacmem[26]=outmacmem[26];
+writemacmem[25]=outmacmem[25];
+writemacmem[24]=outmacmem[24];
+writemacmem[23]=outmacmem[23];
+writemacmem[22]=outmacmem[22];
+writemacmem[21]=outmacmem[21];
+writemacmem[20]=outmacmem[20];
+writemacmem[19]=outmacmem[19];
+writemacmem[18]=outmacmem[18];
+writemacmem[17]=outmacmem[17];
+writemacmem[16]=outmacmem[16];
+writemacmem[15]=outmacmem[15];
+writemacmem[14]=outmacmem[14];
+writemacmem[13]=outmacmem[13];
+writemacmem[12]=outmacmem[12];
+writemacmem[11]=outmacmem[11];
+writemacmem[10]=outmacmem[10];
+writemacmem[9]=outmacmem[9];
+writemacmem[8]=outmacmem[8];
+writemacmem[7]=outmacmem[7];
+writemacmem[6]=outmacmem[6];
+writemacmem[5]=outmacmem[5];
+writemacmem[4]=outmacmem[4];
+writemacmem[3]=outmacmem[3];
+writemacmem[2]=outmacmem[2];
+writemacmem[1]=outmacmem[1];
+writemacmem[0]=outmacmem[0];
+end
 
 //Real and Imag part of outmacmem
 assign outmacmemreal[31]=outmacmem[31][63:32];
@@ -170,7 +206,7 @@ reset=0;
 #100;
 #100;
 #100;
-$writememh("../rtl/c0_output.txt", outmacmem);
+$writememh("../data/c0_output.txt", writemacmem);
 #100
 $finish;
 
