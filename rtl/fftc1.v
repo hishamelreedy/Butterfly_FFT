@@ -120,21 +120,41 @@ reg [63:0] mac1_demuxout7;
 reg [63:0] mac1_demuxout8;
 
 //make DeMUX
+//make DeMUX
 always@(*)
 case (mac_sel)
 2'b00 : begin 
          mac1_demuxout1 = mac1_demuxin1; mac1_demuxout5 = mac1_demuxin2;
+        mac1_demuxout2 = 0;     mac1_demuxout6 = 0;
+        mac1_demuxout3 = 0;     mac1_demuxout7 = 0;
+        mac1_demuxout4 = 0;     mac1_demuxout8 = 0;        
         end
 2'b01 : begin 
          mac1_demuxout2 = mac1_demuxin1; mac1_demuxout6 = mac1_demuxin2;
+                 mac1_demuxout1 = 0;     mac1_demuxout5 = 0;
+        mac1_demuxout3 = 0;     mac1_demuxout7 = 0;
+        mac1_demuxout4 = 0;     mac1_demuxout8 = 0;        
         end
 2'b10 : begin 
          mac1_demuxout3 = mac1_demuxin1; mac1_demuxout7 = mac1_demuxin2;
+                 mac1_demuxout1 = 0;     mac1_demuxout5 = 0;
+        mac1_demuxout2 = 0;     mac1_demuxout6 = 0;
+        mac1_demuxout4 = 0;     mac1_demuxout8 = 0;        
          end
 2'b11 : begin 
          mac1_demuxout4 = mac1_demuxin1; mac1_demuxout8 = mac1_demuxin2;
+                 mac1_demuxout1 = 0;     mac1_demuxout5 = 0;
+        mac1_demuxout2 = 0;     mac1_demuxout6 = 0;
+        mac1_demuxout3 = 0;     mac1_demuxout7 = 0;
+        end
+default : begin
+        mac1_demuxout1 = 0;     mac1_demuxout5 = 0;
+        mac1_demuxout2 = 0;     mac1_demuxout6 = 0;
+        mac1_demuxout3 = 0;     mac1_demuxout7 = 0;
+        mac1_demuxout4 = 0;     mac1_demuxout8 = 0;        
         end
 endcase
+
 mac mac1(mac1_muxout1,mac1_muxout2,mac1_muxw1out,mac1_muxw2out,mac1_demuxin1w,mac1_demuxin2w);
 
 //-----Mac 2-------
@@ -209,15 +229,33 @@ always@(*)
 case (mac_sel)
 2'b00 : begin 
          mac2_demuxout1 = mac2_demuxin1; mac2_demuxout5 = mac2_demuxin2;
+        mac2_demuxout2 = 0;     mac2_demuxout6 = 0;
+        mac2_demuxout3 = 0;     mac2_demuxout7 = 0;
+        mac2_demuxout4 = 0;     mac2_demuxout8 = 0;   
         end
 2'b01 : begin 
          mac2_demuxout2 = mac2_demuxin1; mac2_demuxout6 = mac2_demuxin2;
+                 mac2_demuxout1 = 0;     mac2_demuxout5 = 0;
+        mac2_demuxout3 = 0;     mac2_demuxout7 = 0;
+        mac2_demuxout4 = 0;     mac2_demuxout8 = 0;   
         end
 2'b10 : begin 
          mac2_demuxout3 = mac2_demuxin1; mac2_demuxout7 = mac2_demuxin2;
+                 mac2_demuxout1 = 0;     mac2_demuxout5 = 0;
+        mac2_demuxout2 = 0;     mac2_demuxout6 = 0;
+        mac2_demuxout4 = 0;     mac2_demuxout8 = 0;   
          end
 2'b11 : begin 
          mac2_demuxout4 = mac2_demuxin1; mac2_demuxout8 = mac2_demuxin2;
+                 mac2_demuxout1 = 0;     mac2_demuxout5 = 0;
+        mac2_demuxout2 = 0;     mac2_demuxout6 = 0;
+        mac2_demuxout3 = 0;     mac2_demuxout7 = 0;
+        end
+default : begin
+        mac2_demuxout1 = 0;     mac2_demuxout5 = 0;
+        mac2_demuxout2 = 0;     mac2_demuxout6 = 0;
+        mac2_demuxout3 = 0;     mac2_demuxout7 = 0;
+        mac2_demuxout4 = 0;     mac2_demuxout8 = 0;        
         end
 endcase
 mac mac2(mac2_muxout1,mac2_muxout2,mac2_muxw1out,mac2_muxw2out,mac2_demuxin1w,mac2_demuxin2w);
@@ -233,7 +271,7 @@ wire [63:0] mac3_muxout2;
 
 //Read Input from mem
 assign mac3_muxin1 = inpmacmem[16];
-assign mac3_muxin2 = inpmacmem[7];
+assign mac3_muxin2 = inpmacmem[17];
 assign mac3_muxin3 = inpmacmem[20];
 assign mac3_muxin4 = inpmacmem[21];
 assign mac3_muxin5 = inpmacmem[18];
@@ -294,15 +332,33 @@ always@(*)
 case (mac_sel)
 2'b00 : begin 
          mac3_demuxout1 = mac3_demuxin1; mac3_demuxout5 = mac3_demuxin2;
+        mac3_demuxout2 = 0;     mac3_demuxout6 = 0;
+        mac3_demuxout3 = 0;     mac3_demuxout7 = 0;
+        mac3_demuxout4 = 0;     mac3_demuxout8 = 0; 
         end
 2'b01 : begin 
          mac3_demuxout2 = mac3_demuxin1; mac3_demuxout6 = mac3_demuxin2;
+                 mac3_demuxout1 = 0;     mac3_demuxout5 = 0;
+        mac3_demuxout3 = 0;     mac3_demuxout7 = 0;
+        mac3_demuxout4 = 0;     mac3_demuxout8 = 0; 
         end
 2'b10 : begin 
          mac3_demuxout3 = mac3_demuxin1; mac3_demuxout7 = mac3_demuxin2;
+                 mac3_demuxout1 = 0;     mac3_demuxout5 = 0;
+        mac3_demuxout2 = 0;     mac3_demuxout6 = 0;
+        mac3_demuxout4 = 0;     mac3_demuxout8 = 0; 
          end
 2'b11 : begin 
          mac3_demuxout4 = mac3_demuxin1; mac3_demuxout8 = mac3_demuxin2;
+                 mac3_demuxout1 = 0;     mac3_demuxout5 = 0;
+        mac3_demuxout2 = 0;     mac3_demuxout6 = 0;
+        mac3_demuxout3 = 0;     mac3_demuxout7 = 0;
+        end
+default : begin
+        mac3_demuxout1 = 0;     mac3_demuxout5 = 0;
+        mac3_demuxout2 = 0;     mac3_demuxout6 = 0;
+        mac3_demuxout3 = 0;     mac3_demuxout7 = 0;
+        mac3_demuxout4 = 0;     mac3_demuxout8 = 0;        
         end
 endcase
 mac mac3(mac3_muxout1,mac3_muxout2,mac3_muxw1out,mac3_muxw2out,mac3_demuxin1w,mac3_demuxin2w);
@@ -378,18 +434,37 @@ reg [63:0] mac4_demuxout8;
 always@(*)
 case (mac_sel)
 2'b00 : begin 
-         mac4_demuxout1 = mac4_demuxin1; mac4_demuxout5 = mac4_demuxin2;
+        mac4_demuxout1 = mac4_demuxin1; mac4_demuxout5 = mac4_demuxin2;
+        mac4_demuxout2 = 0;     mac4_demuxout6 = 0;
+        mac4_demuxout3 = 0;     mac4_demuxout7 = 0;
+        mac4_demuxout4 = 0;     mac4_demuxout8 = 0;   
         end
 2'b01 : begin 
-         mac4_demuxout2 = mac4_demuxin1; mac4_demuxout6 = mac4_demuxin2;
+        mac4_demuxout2 = mac4_demuxin1; mac4_demuxout6 = mac4_demuxin2;
+        mac4_demuxout1 = 0;     mac4_demuxout5 = 0;
+        mac4_demuxout3 = 0;     mac4_demuxout7 = 0;
+        mac4_demuxout4 = 0;     mac4_demuxout8 = 0;  
         end
 2'b10 : begin 
-         mac4_demuxout3 = mac4_demuxin1; mac4_demuxout7 = mac4_demuxin2;
+        mac4_demuxout3 = mac4_demuxin1; mac4_demuxout7 = mac4_demuxin2;
+        mac4_demuxout1 = 0;     mac4_demuxout5 = 0;
+        mac4_demuxout2 = 0;     mac4_demuxout6 = 0;
+        mac4_demuxout4 = 0;     mac4_demuxout8 = 0;  
          end
 2'b11 : begin 
-         mac4_demuxout4 = mac4_demuxin1; mac4_demuxout8 = mac4_demuxin2;
+        mac4_demuxout4 = mac4_demuxin1; mac4_demuxout8 = mac4_demuxin2;
+        mac4_demuxout1 = 0;     mac4_demuxout5 = 0;
+        mac4_demuxout2 = 0;     mac4_demuxout6 = 0;
+        mac4_demuxout3 = 0;     mac4_demuxout7 = 0;
+        end
+default : begin
+        mac4_demuxout1 = 0;     mac4_demuxout5 = 0;
+        mac4_demuxout2 = 0;     mac4_demuxout6 = 0;
+        mac4_demuxout3 = 0;     mac4_demuxout7 = 0;
+        mac4_demuxout4 = 0;     mac4_demuxout8 = 0;        
         end
 endcase
+
 mac mac4(mac4_muxout1,mac4_muxout2,mac4_muxw1out,mac4_muxw2out,mac4_demuxin1w,mac4_demuxin2w);
 
 //Controller

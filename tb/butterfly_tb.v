@@ -230,24 +230,47 @@ assign outmacmemimag[0]=outmacmem[0][31:0];
 butterfly FFT (clk,reset,inpmac,outmac);
 
 //clk
-always clk = #10 ~clk;
+//clk
+always clk = #50 ~clk;
 
 //Begin Simulation
 initial begin
 reset=1;
-#10;
+#100;
 reset=0;
-#10;
-#10;
-#10;
-#10;
-#10;
-#10;
-#10;
-#10;
+#100;
+#100;
+#100;
+#100;
+#100;
+
+#100;
+#100;
+#100;
+#100;
+#100;
+
+#100;
+#100;
+#100;
+#100;
+#100;
+
+#100;
+#100;
+#100;
+#100;
+#100;
+
+#100;
+#100;
+#100;
+#100;
+#100;
+
 $writememh("../data/Final_output.txt", writemacmem);
-#10;
-//$finish;
+#100
+$finish;
 
 end
 endmodule
