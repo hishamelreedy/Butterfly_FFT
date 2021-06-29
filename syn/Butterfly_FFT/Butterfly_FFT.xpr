@@ -56,10 +56,19 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/imports/rtl/priority_encoder.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/priority_encoder.v"/>
+          <Attr Name="ImportTime" Val="1624973226"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/rtl/fladder.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/fladder.v"/>
-          <Attr Name="ImportTime" Val="1624894519"/>
+          <Attr Name="ImportTime" Val="1624973465"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>

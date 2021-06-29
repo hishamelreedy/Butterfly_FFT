@@ -17,40 +17,79 @@ initial begin
 end
 
 //2D in to 1D
-always @(*)begin
-inpmac[2047:1984]=inpmacmem[31];
-inpmac[1983:1920]=inpmacmem[30];
-inpmac[1919:1856]=inpmacmem[29];
-inpmac[1855:1792]=inpmacmem[28];
-inpmac[1791:1728]=inpmacmem[27];
-inpmac[1727:1664]=inpmacmem[26];
-inpmac[1663:1600]=inpmacmem[25];
-inpmac[1599:1536]=inpmacmem[24];
-inpmac[1535:1472]=inpmacmem[23];
-inpmac[1471:1408]=inpmacmem[22];
-inpmac[1407:1344]=inpmacmem[21];
-inpmac[1343:1280]=inpmacmem[20];
-inpmac[1279:1216]=inpmacmem[19];
-inpmac[1215:1152]=inpmacmem[18];
-inpmac[1151:1088]=inpmacmem[17];
-inpmac[1087:1024]=inpmacmem[16];
-inpmac[1023:960]=inpmacmem[15];
-inpmac[959:896]=inpmacmem[14];
-inpmac[895:832]=inpmacmem[13];
-inpmac[831:768]=inpmacmem[12];
-inpmac[767:704]=inpmacmem[11];
-inpmac[703:640]=inpmacmem[10];
-inpmac[639:576]=inpmacmem[9];
-inpmac[575:512]=inpmacmem[8];
-inpmac[511:448]=inpmacmem[7];
-inpmac[447:384]=inpmacmem[6];
-inpmac[383:320]=inpmacmem[5];
-inpmac[319:256]=inpmacmem[4];
-inpmac[255:192]=inpmacmem[3];
-inpmac[191:128]=inpmacmem[2];
-inpmac[127:64]=inpmacmem[1];
-inpmac[63:0]=inpmacmem[0];
-end
+always @(*)
+ begin
+  if(reset == 1)
+   begin
+    inpmac[2047:1984]=32'b0;
+    inpmac[1983:1920]=32'b0;
+    inpmac[1919:1856]=32'b0;
+    inpmac[1855:1792]=32'b0;
+    inpmac[1791:1728]=32'b0;
+    inpmac[1727:1664]=32'b0;
+    inpmac[1663:1600]=32'b0;
+    inpmac[1599:1536]=32'b0;
+    inpmac[1535:1472]=32'b0;
+    inpmac[1471:1408]=32'b0;
+    inpmac[1407:1344]=32'b0;
+    inpmac[1343:1280]=32'b0;
+    inpmac[1279:1216]=32'b0;
+    inpmac[1215:1152]=32'b0;
+    inpmac[1151:1088]=32'b0;
+    inpmac[1087:1024]=32'b0;
+    inpmac[1023:960]=32'b0;
+    inpmac[959:896]=32'b0;
+    inpmac[895:832]=32'b0;
+    inpmac[831:768]=32'b0;
+    inpmac[767:704]=32'b0;
+    inpmac[703:640]=32'b0;
+    inpmac[639:576]=32'b0;
+    inpmac[575:512]=32'b0;
+    inpmac[511:448]=32'b0;
+    inpmac[447:384]=32'b0;
+    inpmac[383:320]=32'b0;
+    inpmac[319:256]=32'b0;
+    inpmac[255:192]=32'b0;
+    inpmac[191:128]=32'b0;
+    inpmac[127:64]=32'b0;
+    inpmac[63:0]=32'b0;
+   end
+ else
+  begin
+    inpmac[2047:1984]=inpmacmem[31];
+    inpmac[1983:1920]=inpmacmem[30];
+    inpmac[1919:1856]=inpmacmem[29];
+    inpmac[1855:1792]=inpmacmem[28];
+    inpmac[1791:1728]=inpmacmem[27];
+    inpmac[1727:1664]=inpmacmem[26];
+    inpmac[1663:1600]=inpmacmem[25];
+    inpmac[1599:1536]=inpmacmem[24];
+    inpmac[1535:1472]=inpmacmem[23];
+    inpmac[1471:1408]=inpmacmem[22];
+    inpmac[1407:1344]=inpmacmem[21];
+    inpmac[1343:1280]=inpmacmem[20];
+    inpmac[1279:1216]=inpmacmem[19];
+    inpmac[1215:1152]=inpmacmem[18];
+    inpmac[1151:1088]=inpmacmem[17];
+    inpmac[1087:1024]=inpmacmem[16];
+    inpmac[1023:960]=inpmacmem[15];
+    inpmac[959:896]=inpmacmem[14];
+    inpmac[895:832]=inpmacmem[13];
+    inpmac[831:768]=inpmacmem[12];
+    inpmac[767:704]=inpmacmem[11];
+    inpmac[703:640]=inpmacmem[10];
+    inpmac[639:576]=inpmacmem[9];
+    inpmac[575:512]=inpmacmem[8];
+    inpmac[511:448]=inpmacmem[7];
+    inpmac[447:384]=inpmacmem[6];
+    inpmac[383:320]=inpmacmem[5];
+    inpmac[319:256]=inpmacmem[4];
+    inpmac[255:192]=inpmacmem[3];
+    inpmac[191:128]=inpmacmem[2];
+    inpmac[127:64]=inpmacmem[1];
+    inpmac[63:0]=inpmacmem[0];
+  end
+ end
 //1D out to 2D out
 assign outmacmem[31]=outmac[2047:1984];
 assign outmacmem[30]=outmac[1983:1920];
@@ -191,24 +230,24 @@ assign outmacmemimag[0]=outmacmem[0][31:0];
 butterfly FFT (clk,reset,inpmac,outmac);
 
 //clk
-always clk = #50 ~clk;
+always clk = #10 ~clk;
 
 //Begin Simulation
 initial begin
 reset=1;
-#100;
+#10;
 reset=0;
-#100;
-#100;
-#100;
-#100;
-#100;
-#100;
-#100;
-#100;
+#10;
+#10;
+#10;
+#10;
+#10;
+#10;
+#10;
+#10;
 $writememh("../data/Final_output.txt", writemacmem);
-#100
-$finish;
+#10;
+//$finish;
 
 end
 endmodule
