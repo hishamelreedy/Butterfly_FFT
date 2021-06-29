@@ -12,8 +12,10 @@ module fladder(
 	reg [31:0] result;
 	reg [24:0] sum,sum_norm;
 	reg [4:0] lead0;	//leading zeros can be go up to 23
+	wire [4:0] lead0w;	//leading zeros can be go up to 23
 	reg sig_a, sig_b;
 	
+	priority_encoder pr1 (sum[23:0],lead0w);
 	integer i;
 	
 	always @ (*) begin
@@ -37,13 +39,7 @@ module fladder(
 				sum = {2'b01,val_b[22:0]} - aligned;
 			end		
 	// 4th stage - normalizing
-			for(i=23; i>=0; i=i-1) begin
-				if(sum[i]) begin
-					lead0 = 23 - i;
-					i = -1;
-				end else
-					lead0 = 0;
-			end
+			lead0=lead0w;
 			sum_norm = sum << lead0;	//shift the mantissa
 	// 5th stage - setting the result
 			if(sum[24]) begin
