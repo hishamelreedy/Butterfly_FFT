@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module compmult(op1,op2,opr);
 input [63:0] op1, op2;
 output [63:0] opr;

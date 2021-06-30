@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log fladder.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source fladder.tcl
+EAStep vivado -log butterfly.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source butterfly.tcl

@@ -3,4 +3,16 @@
 Dec  7 2018
 00:33:28
 C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.sim/sim_1/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
-C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fladder.v,1623232266,verilog,,,,fladder,,,,,,,,
+,,,,,,fftc0_tb,,,,,,,,
+C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v,1625049462,verilog,,C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/compadder.v,,butterfly,,,,,,,,
+C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/compadder.v,1625051644,verilog,,C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/compmult.v,,compadder,,,,,,,,
+C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/compmult.v,1625051650,verilog,,C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc0.v,,compmult,,,,,,,,
+C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc0.v,1625050488,verilog,,C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fladder.v,,fftc0,,,,,,,,
+C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc1.v,1624993881,verilog,,C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc2.v,,fftc1,,,,,,,,
+C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc2.v,1624993890,verilog,,C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc3.v,,fftc2,,,,,,,,
+C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc3.v,1624993900,verilog,,C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc4.v,,fftc3,,,,,,,,
+C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc4.v,1624993947,verilog,,C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fladder.v,,fftc4,,,,,,,,
+C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fladder.v,1624973313,verilog,,C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/flmult.v,,fladder,,,,,,,,
+,,,,C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/mac.v,,flmult,,,,,,,,
+,,,,C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/priority_encoder.v,,mac,,,,,,,,
+,,,,C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sim_1/imports/tb/fftc0_tb.v,,priority_encoder,,,,,,,,

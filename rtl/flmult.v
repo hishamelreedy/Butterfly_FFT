@@ -1,12 +1,4 @@
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//File Name: Multiplication.v
-//Created By: Sheetal Swaroop Burada
-//Date: 30-04-2019
-//Project Name: Design of 32 Bit Floating Point ALU Based on Standard IEEE-754 in Verilog and its implementation on FPGA.
-//University: Dayalbagh Educational Institute
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
+`timescale 1ns / 1ps
 module flmult(
 		input [31:0] a_operand,
 		input [31:0] b_operand,

@@ -1,10 +1,14 @@
+`timescale 1ns / 1ps
+
 module butterfly(input clk,
               input reset,
               input [64*32-1:0] inpmac,
               output [64*32-1:0] outmac
               );
+//Stages Controller
 
-// Input Data
+//stage 1 - Column 0
+//Load Input
 reg [64*32-1:0] Reg_Input;
 always @(posedge clk)
  begin
@@ -13,10 +17,11 @@ always @(posedge clk)
     else
      Reg_Input <= inpmac;
  end
-//stage 1 - Column 0
+//Process
 wire [64*32-1:0] outmacst0;
-reg [64*32-1:0] Reg_outmacst0;
 fftc0 c0 (clk,reset,Reg_Input,outmacst0);
+//Save Output
+reg [64*32-1:0] Reg_outmacst0;
 always @(posedge clk)
  begin
     if (reset == 1)

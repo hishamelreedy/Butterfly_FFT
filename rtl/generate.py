@@ -85,7 +85,7 @@ with open('rtl/generate.txt', 'w') as filehandle:
         filehandle.write('%s\n' % listitem)
 
 places=[]
-for i in range(4,36,1):
+for i in range(1,33,1):
     data=IEEE754(float(i))[0][2:]
     data+="00000000"
     places.append(data)

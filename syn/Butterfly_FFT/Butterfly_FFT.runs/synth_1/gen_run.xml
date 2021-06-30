@@ -1,16 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1624973496">
-  <File Type="PA-TCL" Name="fladder.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="fladder_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="fladder_reports.tcl"/>
-  <File Type="RDS-RDS" Name="fladder.vds"/>
-  <File Type="RDS-UTIL" Name="fladder_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="fladder_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="fladder.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="fladder_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="fladder_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1625051740">
+  <File Type="PA-TCL" Name="butterfly.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="butterfly_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="butterfly_reports.tcl"/>
+  <File Type="RDS-RDS" Name="butterfly.vds"/>
+  <File Type="RDS-UTIL" Name="butterfly_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="butterfly_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="butterfly.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="butterfly_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="butterfly_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/compadder.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/compadder.v"/>
+        <Attr Name="ImportTime" Val="1625051644"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/compmult.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/compmult.v"/>
+        <Attr Name="ImportTime" Val="1625051650"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/fftc0.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/fftc0.v"/>
+        <Attr Name="ImportTime" Val="1625051595"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/fftc1.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/fftc1.v"/>
+        <Attr Name="ImportTime" Val="1625051603"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/fftc2.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/fftc2.v"/>
+        <Attr Name="ImportTime" Val="1625051613"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/fftc3.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/fftc3.v"/>
+        <Attr Name="ImportTime" Val="1625051622"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/fftc4.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/fftc4.v"/>
+        <Attr Name="ImportTime" Val="1625051630"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/fladder.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/fladder.v"/>
+        <Attr Name="ImportTime" Val="1624973313"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/flmult.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/flmult.v"/>
+        <Attr Name="ImportTime" Val="1625051664"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/mac.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/mac.v"/>
+        <Attr Name="ImportTime" Val="1623273072"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/priority_encoder.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/priority_encoder.v"/>
@@ -20,10 +110,10 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/rtl/fladder.v">
+    <File Path="$PSRCDIR/sources_1/imports/rtl/butterfly.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/fladder.v"/>
-        <Attr Name="ImportTime" Val="1624973465"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/butterfly.v"/>
+        <Attr Name="ImportTime" Val="1625051678"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -31,7 +121,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="fladder"/>
+      <Option Name="TopModule" Val="butterfly"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>

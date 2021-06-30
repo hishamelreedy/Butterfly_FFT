@@ -1,0 +1,1577 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Jun 30 13:15:41 2021
+# Process ID: 11856
+# Current directory: C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.runs/synth_1
+# Command line: vivado.exe -log butterfly.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source butterfly.tcl
+# Log file: C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.runs/synth_1/butterfly.vds
+# Journal file: C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source butterfly.tcl -notrace
+Command: synth_design -top butterfly -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 17992 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 436.539 ; gain = 99.473
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'butterfly' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:3]
+INFO: [Synth 8-6157] synthesizing module 'fftc0' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc0.v:2]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc0.v:105]
+INFO: [Synth 8-6157] synthesizing module 'mac' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/mac.v:1]
+INFO: [Synth 8-6157] synthesizing module 'compmult' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/compmult.v:2]
+INFO: [Synth 8-6157] synthesizing module 'flmult' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/flmult.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'flmult' (1#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/flmult.v:2]
+INFO: [Synth 8-6157] synthesizing module 'fladder' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fladder.v:2]
+INFO: [Synth 8-6157] synthesizing module 'priority_encoder' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/priority_encoder.v:1]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/priority_encoder.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'priority_encoder' (2#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/priority_encoder.v:1]
+WARNING: [Synth 8-3936] Found unconnected internal register 'sum_reg' and it is trimmed from '25' to '24' bits. [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fladder.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'fladder' (3#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fladder.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'compmult' (4#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/compmult.v:2]
+INFO: [Synth 8-6157] synthesizing module 'compadder' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/compadder.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'compadder' (5#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/compadder.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'mac' (6#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/mac.v:1]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc0.v:263]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc0.v:419]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc0.v:577]
+INFO: [Synth 8-6155] done synthesizing module 'fftc0' (7#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc0.v:2]
+INFO: [Synth 8-6157] synthesizing module 'fftc1' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc1.v:2]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc1.v:126]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc1.v:230]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc1.v:333]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc1.v:436]
+INFO: [Synth 8-6155] done synthesizing module 'fftc1' (8#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc1.v:2]
+INFO: [Synth 8-6157] synthesizing module 'fftc2' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc2.v:2]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc2.v:138]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc2.v:249]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc2.v:359]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc2.v:472]
+INFO: [Synth 8-6155] done synthesizing module 'fftc2' (9#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc2.v:2]
+INFO: [Synth 8-6157] synthesizing module 'fftc3' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc3.v:2]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc3.v:143]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc3.v:247]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc3.v:351]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc3.v:454]
+INFO: [Synth 8-6155] done synthesizing module 'fftc3' (10#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc3.v:2]
+INFO: [Synth 8-6157] synthesizing module 'fftc4' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc4.v:2]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc4.v:162]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc4.v:272]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc4.v:383]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc4.v:495]
+INFO: [Synth 8-6155] done synthesizing module 'fftc4' (11#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc4.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'butterfly' (12#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:3]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 514.348 ; gain = 177.281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 514.348 ; gain = 177.281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 514.348 ; gain = 177.281
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/flmult.v:22]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fladder.v:18]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 667.918 ; gain = 330.852
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------------+------------+----------+
+|      |RTL Partition        |Replication |Instances |
++------+---------------------+------------+----------+
+|1     |mac                  |          20|     13218|
+|2     |fftc0__GC0           |           1|     11908|
+|3     |fftc1__GC0           |           1|      5638|
+|4     |fftc2__GC0           |           1|      5727|
+|5     |fftc3__GC0           |           1|      5786|
+|6     |fftc4__GC0           |           1|      5906|
+|7     |butterfly__GCB0      |           1|     18432|
+|8     |counter__3_butterfly |           1|      8192|
+|9     |butterfly__GCB2      |           1|     10240|
++------+---------------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3538] Detected potentially large (wide) register Reg_outmacst0_reg [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:28]
+INFO: [Synth 8-3538] Detected potentially large (wide) register Reg_Input_reg [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:16]
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     25 Bit       Adders := 160   
+	   2 Input     23 Bit       Adders := 200   
+	   4 Input      8 Bit       Adders := 200   
+	   3 Input      8 Bit       Adders := 320   
+	   2 Input      8 Bit       Adders := 160   
+	   2 Input      5 Bit       Adders := 160   
+	   2 Input      2 Bit       Adders := 5     
++---XORs : 
+	   2 Input      1 Bit         XORs := 200   
++---Registers : 
+	             2048 Bit    Registers := 2     
+	               64 Bit    Registers := 32    
+	                2 Bit    Registers := 5     
++---Muxes : 
+	   4 Input     64 Bit        Muxes := 166   
+	   2 Input     64 Bit        Muxes := 121   
+	   3 Input     64 Bit        Muxes := 2     
+	   2 Input     62 Bit        Muxes := 3     
+	   4 Input     62 Bit        Muxes := 6     
+	   2 Input     47 Bit        Muxes := 200   
+	   2 Input     32 Bit        Muxes := 520   
+	   2 Input     31 Bit        Muxes := 480   
+	   2 Input     25 Bit        Muxes := 160   
+	   2 Input     24 Bit        Muxes := 400   
+	  25 Input      5 Bit        Muxes := 160   
+	   2 Input      1 Bit        Muxes := 160   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3538] Detected potentially large (wide) register Reg_outmacst0_reg [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:28]
+INFO: [Synth 8-3538] Detected potentially large (wide) register Reg_Input_reg [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:16]
+Hierarchical RTL Component report 
+Module butterfly 
+Detailed RTL Component Info : 
++---Registers : 
+	             2048 Bit    Registers := 2     
+Module flmult__9 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module flmult__8 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module flmult__7 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module priority_encoder__7 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Muxes : 
+	  25 Input      5 Bit        Muxes := 1     
+Module fladder__7 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     25 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module flmult__6 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module flmult__5 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module priority_encoder__6 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Muxes : 
+	  25 Input      5 Bit        Muxes := 1     
+Module fladder__6 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     25 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module priority_encoder__5 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Muxes : 
+	  25 Input      5 Bit        Muxes := 1     
+Module fladder__5 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     25 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module priority_encoder__4 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Muxes : 
+	  25 Input      5 Bit        Muxes := 1     
+Module fladder__4 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     25 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module flmult__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module flmult__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module flmult__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module priority_encoder__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Muxes : 
+	  25 Input      5 Bit        Muxes := 1     
+Module fladder__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     25 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module flmult__4 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module flmult 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module priority_encoder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Muxes : 
+	  25 Input      5 Bit        Muxes := 1     
+Module fladder 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     25 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module priority_encoder__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Muxes : 
+	  25 Input      5 Bit        Muxes := 1     
+Module fladder__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     25 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module priority_encoder__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Muxes : 
+	  25 Input      5 Bit        Muxes := 1     
+Module fladder__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     25 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module fftc0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 32    
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     64 Bit        Muxes := 32    
+	   2 Input     64 Bit        Muxes := 24    
+Module fftc1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     64 Bit        Muxes := 32    
+	   2 Input     64 Bit        Muxes := 25    
+	   2 Input     62 Bit        Muxes := 1     
+Module fftc2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     64 Bit        Muxes := 32    
+	   2 Input     64 Bit        Muxes := 24    
+	   3 Input     64 Bit        Muxes := 2     
+	   2 Input     62 Bit        Muxes := 2     
+Module fftc3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     64 Bit        Muxes := 34    
+	   2 Input     64 Bit        Muxes := 24    
+	   4 Input     62 Bit        Muxes := 2     
+Module fftc4 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     64 Bit        Muxes := 36    
+	   2 Input     64 Bit        Muxes := 24    
+	   4 Input     62 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:04:20 ; elapsed = 00:04:18 . Memory (MB): peak = 1256.164 ; gain = 919.098
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3323] Resources of type DSP have been overutilized. Used = 400, Available = 220. Use report_utilization command for details.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------------+------------+----------+
+|      |RTL Partition        |Replication |Instances |
++------+---------------------+------------+----------+
+|1     |mac                  |           4|      7602|
+|2     |fftc0__GC0           |           1|     10756|
+|3     |fftc1__GC0           |           1|      5636|
+|4     |fftc2__GC0           |           1|      5646|
+|5     |fftc3__GC0           |           1|      5659|
+|6     |fftc4__GC0           |           1|      5690|
+|7     |butterfly__GCB0      |           1|     11264|
+|8     |counter__3_butterfly |           1|      4608|
+|9     |butterfly__GCB2      |           1|      6656|
+|10    |mac__1               |           4|      8760|
+|11    |mac__2               |           4|      8783|
+|12    |mac__3               |           2|     10730|
+|13    |mac__4               |           2|     10091|
+|14    |mac__5               |           1|      8760|
+|15    |mac__6               |           1|      8715|
+|16    |mac__7               |           1|      8785|
+|17    |mac__8               |           1|      8665|
++------+---------------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:04:23 ; elapsed = 00:04:21 . Memory (MB): peak = 1256.164 ; gain = 919.098
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------------+------------+----------+
+|      |RTL Partition        |Replication |Instances |
++------+---------------------+------------+----------+
+|1     |mac                  |           4|      7602|
+|2     |fftc0__GC0           |           1|     10756|
+|3     |fftc1__GC0           |           1|      5636|
+|4     |fftc2__GC0           |           1|      5646|
+|5     |fftc3__GC0           |           1|      5659|
+|6     |fftc4__GC0           |           1|      5690|
+|7     |butterfly__GCB0      |           1|     11264|
+|8     |counter__3_butterfly |           1|      4608|
+|9     |butterfly__GCB2      |           1|      6656|
+|10    |mac__1               |           4|      8760|
+|11    |mac__2               |           4|      8783|
+|12    |mac__3               |           2|     10730|
+|13    |mac__4               |           2|     10091|
+|14    |mac__5               |           1|      8760|
+|15    |mac__6               |           1|      8715|
+|16    |mac__7               |           1|      8785|
+|17    |mac__8               |           1|      8665|
++------+---------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:04:49 ; elapsed = 00:04:47 . Memory (MB): peak = 1256.164 ; gain = 919.098
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6064] Net c4n_0_66971 is driving 66 big block pins (URAM, BRAM and DSP loads). Created 7 replicas of its driver. 
+INFO: [Synth 8-6064] Net c4n_0_67321 is driving 68 big block pins (URAM, BRAM and DSP loads). Created 7 replicas of its driver. 
+INFO: [Synth 8-6064] Net p_0_out_inferred__2n_0_53024 is driving 96 big block pins (URAM, BRAM and DSP loads). Created 10 replicas of its driver. 
+INFO: [Synth 8-6064] Net p_0_out_inferred__1n_0_53020 is driving 96 big block pins (URAM, BRAM and DSP loads). Created 10 replicas of its driver. 
+INFO: [Synth 8-6064] Net p_0_out_inferred__0n_0_52891 is driving 96 big block pins (URAM, BRAM and DSP loads). Created 10 replicas of its driver. 
+INFO: [Synth 8-6064] Net p_0_out_inferredn_0_52887 is driving 96 big block pins (URAM, BRAM and DSP loads). Created 10 replicas of its driver. 
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:04:59 ; elapsed = 00:04:57 . Memory (MB): peak = 1256.164 ; gain = 919.098
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:59 ; elapsed = 00:04:58 . Memory (MB): peak = 1256.164 ; gain = 919.098
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:05:09 ; elapsed = 00:05:07 . Memory (MB): peak = 1256.164 ; gain = 919.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:05:12 ; elapsed = 00:05:11 . Memory (MB): peak = 1256.164 ; gain = 919.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:05:14 ; elapsed = 00:05:13 . Memory (MB): peak = 1256.164 ; gain = 919.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:05:15 ; elapsed = 00:05:14 . Memory (MB): peak = 1256.164 ; gain = 919.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |  7760|
+|3     |DSP48E1 |   256|
+|4     |LUT1    |  1477|
+|5     |LUT2    |  7847|
+|6     |LUT3    | 18250|
+|7     |LUT4    | 18671|
+|8     |LUT5    | 18507|
+|9     |LUT6    | 28525|
+|10    |FDRE    | 14468|
+|11    |IBUF    |  2050|
+|12    |OBUF    |  2048|
++------+--------+------+
+
+Report Instance Areas: 
++------+---------------+--------------+-------+
+|      |Instance       |Module        |Cells  |
++------+---------------+--------------+-------+
+|1     |top            |              | 119860|
+|2     |  c0           |fftc0         |  18764|
+|3     |    mac1       |mac_363       |   4038|
+|4     |      cmpadd0  |compadder_415 |    656|
+|5     |        fl0    |fladder_429   |    277|
+|6     |        fl1    |fladder_430   |    379|
+|7     |      cmpadd1  |compadder_416 |    650|
+|8     |        fl0    |fladder_427   |    275|
+|9     |        fl1    |fladder_428   |    375|
+|10    |      cmpmult0 |compmult_417  |    895|
+|11    |        add0   |fladder_423   |    400|
+|12    |        add1   |fladder_424   |    353|
+|13    |        mul0   |flmult_425    |     86|
+|14    |        mul3   |flmult_426    |     56|
+|15    |      cmpmult1 |compmult_418  |    895|
+|16    |        add0   |fladder_419   |    400|
+|17    |        add1   |fladder_420   |    353|
+|18    |        mul0   |flmult_421    |     86|
+|19    |        mul3   |flmult_422    |     56|
+|20    |    mac2       |mac_364       |   4038|
+|21    |      cmpadd0  |compadder_399 |    656|
+|22    |        fl0    |fladder_413   |    277|
+|23    |        fl1    |fladder_414   |    379|
+|24    |      cmpadd1  |compadder_400 |    650|
+|25    |        fl0    |fladder_411   |    275|
+|26    |        fl1    |fladder_412   |    375|
+|27    |      cmpmult0 |compmult_401  |    895|
+|28    |        add0   |fladder_407   |    400|
+|29    |        add1   |fladder_408   |    353|
+|30    |        mul0   |flmult_409    |     86|
+|31    |        mul3   |flmult_410    |     56|
+|32    |      cmpmult1 |compmult_402  |    895|
+|33    |        add0   |fladder_403   |    400|
+|34    |        add1   |fladder_404   |    353|
+|35    |        mul0   |flmult_405    |     86|
+|36    |        mul3   |flmult_406    |     56|
+|37    |    mac3       |mac_365       |   4038|
+|38    |      cmpadd0  |compadder_383 |    656|
+|39    |        fl0    |fladder_397   |    277|
+|40    |        fl1    |fladder_398   |    379|
+|41    |      cmpadd1  |compadder_384 |    650|
+|42    |        fl0    |fladder_395   |    275|
+|43    |        fl1    |fladder_396   |    375|
+|44    |      cmpmult0 |compmult_385  |    895|
+|45    |        add0   |fladder_391   |    400|
+|46    |        add1   |fladder_392   |    353|
+|47    |        mul0   |flmult_393    |     86|
+|48    |        mul3   |flmult_394    |     56|
+|49    |      cmpmult1 |compmult_386  |    895|
+|50    |        add0   |fladder_387   |    400|
+|51    |        add1   |fladder_388   |    353|
+|52    |        mul0   |flmult_389    |     86|
+|53    |        mul3   |flmult_390    |     56|
+|54    |    mac4       |mac_366       |   4038|
+|55    |      cmpadd0  |compadder_367 |    656|
+|56    |        fl0    |fladder_381   |    277|
+|57    |        fl1    |fladder_382   |    379|
+|58    |      cmpadd1  |compadder_368 |    650|
+|59    |        fl0    |fladder_379   |    275|
+|60    |        fl1    |fladder_380   |    375|
+|61    |      cmpmult0 |compmult_369  |    895|
+|62    |        add0   |fladder_375   |    400|
+|63    |        add1   |fladder_376   |    353|
+|64    |        mul0   |flmult_377    |     86|
+|65    |        mul3   |flmult_378    |     56|
+|66    |      cmpmult1 |compmult_370  |    895|
+|67    |        add0   |fladder_371   |    400|
+|68    |        add1   |fladder_372   |    353|
+|69    |        mul0   |flmult_373    |     86|
+|70    |        mul3   |flmult_374    |     56|
+|71    |  c1           |fftc1         |  20944|
+|72    |    mac1       |mac_271       |   5177|
+|73    |      cmpadd0  |compadder_341 |    493|
+|74    |        fl0    |fladder_361   |    299|
+|75    |        fl1    |fladder_362   |    194|
+|76    |      cmpadd1  |compadder_342 |    488|
+|77    |        fl0    |fladder_359   |    295|
+|78    |        fl1    |fladder_360   |    193|
+|79    |      cmpmult0 |compmult_343  |   1590|
+|80    |        add0   |fladder_352   |    135|
+|81    |        add1   |fladder_353   |    386|
+|82    |        mul0   |flmult_354    |     51|
+|83    |        mul01  |flmult_355    |     70|
+|84    |        mul1   |flmult_356    |    568|
+|85    |        mul2   |flmult_357    |    294|
+|86    |        mul3   |flmult_358    |     86|
+|87    |      cmpmult1 |compmult_344  |   1588|
+|88    |        add0   |fladder_345   |    139|
+|89    |        add1   |fladder_346   |    367|
+|90    |        mul0   |flmult_347    |     44|
+|91    |        mul01  |flmult_348    |     67|
+|92    |        mul1   |flmult_349    |    544|
+|93    |        mul2   |flmult_350    |    318|
+|94    |        mul3   |flmult_351    |    109|
+|95    |    mac2       |mac_272       |   5177|
+|96    |      cmpadd0  |compadder_319 |    493|
+|97    |        fl0    |fladder_339   |    299|
+|98    |        fl1    |fladder_340   |    194|
+|99    |      cmpadd1  |compadder_320 |    488|
+|100   |        fl0    |fladder_337   |    295|
+|101   |        fl1    |fladder_338   |    193|
+|102   |      cmpmult0 |compmult_321  |   1590|
+|103   |        add0   |fladder_330   |    135|
+|104   |        add1   |fladder_331   |    386|
+|105   |        mul0   |flmult_332    |     51|
+|106   |        mul01  |flmult_333    |     70|
+|107   |        mul1   |flmult_334    |    568|
+|108   |        mul2   |flmult_335    |    294|
+|109   |        mul3   |flmult_336    |     86|
+|110   |      cmpmult1 |compmult_322  |   1588|
+|111   |        add0   |fladder_323   |    139|
+|112   |        add1   |fladder_324   |    367|
+|113   |        mul0   |flmult_325    |     44|
+|114   |        mul01  |flmult_326    |     67|
+|115   |        mul1   |flmult_327    |    544|
+|116   |        mul2   |flmult_328    |    318|
+|117   |        mul3   |flmult_329    |    109|
+|118   |    mac3       |mac_273       |   5177|
+|119   |      cmpadd0  |compadder_297 |    493|
+|120   |        fl0    |fladder_317   |    299|
+|121   |        fl1    |fladder_318   |    194|
+|122   |      cmpadd1  |compadder_298 |    488|
+|123   |        fl0    |fladder_315   |    295|
+|124   |        fl1    |fladder_316   |    193|
+|125   |      cmpmult0 |compmult_299  |   1590|
+|126   |        add0   |fladder_308   |    135|
+|127   |        add1   |fladder_309   |    386|
+|128   |        mul0   |flmult_310    |     51|
+|129   |        mul01  |flmult_311    |     70|
+|130   |        mul1   |flmult_312    |    568|
+|131   |        mul2   |flmult_313    |    294|
+|132   |        mul3   |flmult_314    |     86|
+|133   |      cmpmult1 |compmult_300  |   1588|
+|134   |        add0   |fladder_301   |    139|
+|135   |        add1   |fladder_302   |    367|
+|136   |        mul0   |flmult_303    |     44|
+|137   |        mul01  |flmult_304    |     67|
+|138   |        mul1   |flmult_305    |    544|
+|139   |        mul2   |flmult_306    |    318|
+|140   |        mul3   |flmult_307    |    109|
+|141   |    mac4       |mac_274       |   5178|
+|142   |      cmpadd0  |compadder_275 |    493|
+|143   |        fl0    |fladder_295   |    299|
+|144   |        fl1    |fladder_296   |    194|
+|145   |      cmpadd1  |compadder_276 |    488|
+|146   |        fl0    |fladder_293   |    295|
+|147   |        fl1    |fladder_294   |    193|
+|148   |      cmpmult0 |compmult_277  |   1590|
+|149   |        add0   |fladder_286   |    135|
+|150   |        add1   |fladder_287   |    386|
+|151   |        mul0   |flmult_288    |     51|
+|152   |        mul01  |flmult_289    |     70|
+|153   |        mul1   |flmult_290    |    568|
+|154   |        mul2   |flmult_291    |    294|
+|155   |        mul3   |flmult_292    |     86|
+|156   |      cmpmult1 |compmult_278  |   1589|
+|157   |        add0   |fladder_279   |    139|
+|158   |        add1   |fladder_280   |    367|
+|159   |        mul0   |flmult_281    |     44|
+|160   |        mul01  |flmult_282    |     67|
+|161   |        mul1   |flmult_283    |    543|
+|162   |        mul2   |flmult_284    |    319|
+|163   |        mul3   |flmult_285    |    110|
+|164   |  c2           |fftc2         |  20987|
+|165   |    mac1       |mac_179       |   5207|
+|166   |      cmpadd0  |compadder_249 |    603|
+|167   |        fl0    |fladder_269   |    319|
+|168   |        fl1    |fladder_270   |    284|
+|169   |      cmpadd1  |compadder_250 |    674|
+|170   |        fl0    |fladder_267   |    324|
+|171   |        fl1    |fladder_268   |    350|
+|172   |      cmpmult0 |compmult_251  |   1493|
+|173   |        add0   |fladder_260   |    136|
+|174   |        add1   |fladder_261   |    155|
+|175   |        mul0   |flmult_262    |     44|
+|176   |        mul01  |flmult_263    |     71|
+|177   |        mul1   |flmult_264    |    542|
+|178   |        mul2   |flmult_265    |    183|
+|179   |        mul3   |flmult_266    |    362|
+|180   |      cmpmult1 |compmult_252  |   1493|
+|181   |        add0   |fladder_253   |    136|
+|182   |        add1   |fladder_254   |    151|
+|183   |        mul0   |flmult_255    |     44|
+|184   |        mul01  |flmult_256    |     71|
+|185   |        mul1   |flmult_257    |    539|
+|186   |        mul2   |flmult_258    |    167|
+|187   |        mul3   |flmult_259    |    385|
+|188   |    mac2       |mac_180       |   5211|
+|189   |      cmpadd0  |compadder_227 |    603|
+|190   |        fl0    |fladder_247   |    318|
+|191   |        fl1    |fladder_248   |    285|
+|192   |      cmpadd1  |compadder_228 |    674|
+|193   |        fl0    |fladder_245   |    324|
+|194   |        fl1    |fladder_246   |    350|
+|195   |      cmpmult0 |compmult_229  |   1495|
+|196   |        add0   |fladder_238   |    136|
+|197   |        add1   |fladder_239   |    155|
+|198   |        mul0   |flmult_240    |     45|
+|199   |        mul01  |flmult_241    |     71|
+|200   |        mul1   |flmult_242    |    543|
+|201   |        mul2   |flmult_243    |    183|
+|202   |        mul3   |flmult_244    |    362|
+|203   |      cmpmult1 |compmult_230  |   1495|
+|204   |        add0   |fladder_231   |    136|
+|205   |        add1   |fladder_232   |    151|
+|206   |        mul0   |flmult_233    |     45|
+|207   |        mul01  |flmult_234    |     71|
+|208   |        mul1   |flmult_235    |    540|
+|209   |        mul2   |flmult_236    |    167|
+|210   |        mul3   |flmult_237    |    385|
+|211   |    mac3       |mac_181       |   5206|
+|212   |      cmpadd0  |compadder_205 |    602|
+|213   |        fl0    |fladder_225   |    318|
+|214   |        fl1    |fladder_226   |    284|
+|215   |      cmpadd1  |compadder_206 |    674|
+|216   |        fl0    |fladder_223   |    324|
+|217   |        fl1    |fladder_224   |    350|
+|218   |      cmpmult0 |compmult_207  |   1493|
+|219   |        add0   |fladder_216   |    136|
+|220   |        add1   |fladder_217   |    155|
+|221   |        mul0   |flmult_218    |     44|
+|222   |        mul01  |flmult_219    |     71|
+|223   |        mul1   |flmult_220    |    542|
+|224   |        mul2   |flmult_221    |    183|
+|225   |        mul3   |flmult_222    |    362|
+|226   |      cmpmult1 |compmult_208  |   1493|
+|227   |        add0   |fladder_209   |    136|
+|228   |        add1   |fladder_210   |    151|
+|229   |        mul0   |flmult_211    |     44|
+|230   |        mul01  |flmult_212    |     71|
+|231   |        mul1   |flmult_213    |    539|
+|232   |        mul2   |flmult_214    |    167|
+|233   |        mul3   |flmult_215    |    385|
+|234   |    mac4       |mac_182       |   5207|
+|235   |      cmpadd0  |compadder_183 |    603|
+|236   |        fl0    |fladder_203   |    319|
+|237   |        fl1    |fladder_204   |    284|
+|238   |      cmpadd1  |compadder_184 |    675|
+|239   |        fl0    |fladder_201   |    325|
+|240   |        fl1    |fladder_202   |    350|
+|241   |      cmpmult0 |compmult_185  |   1493|
+|242   |        add0   |fladder_194   |    136|
+|243   |        add1   |fladder_195   |    155|
+|244   |        mul0   |flmult_196    |     44|
+|245   |        mul01  |flmult_197    |     71|
+|246   |        mul1   |flmult_198    |    542|
+|247   |        mul2   |flmult_199    |    183|
+|248   |        mul3   |flmult_200    |    362|
+|249   |      cmpmult1 |compmult_186  |   1492|
+|250   |        add0   |fladder_187   |    136|
+|251   |        add1   |fladder_188   |    151|
+|252   |        mul0   |flmult_189    |     44|
+|253   |        mul01  |flmult_190    |     71|
+|254   |        mul1   |flmult_191    |    538|
+|255   |        mul2   |flmult_192    |    167|
+|256   |        mul3   |flmult_193    |    385|
+|257   |  c3           |fftc3         |  21855|
+|258   |    mac1       |mac_87        |   5387|
+|259   |      cmpadd0  |compadder_157 |    619|
+|260   |        fl0    |fladder_177   |    334|
+|261   |        fl1    |fladder_178   |    285|
+|262   |      cmpadd1  |compadder_158 |    652|
+|263   |        fl0    |fladder_175   |    365|
+|264   |        fl1    |fladder_176   |    287|
+|265   |      cmpmult0 |compmult_159  |   1603|
+|266   |        add0   |fladder_168   |    313|
+|267   |        add1   |fladder_169   |    333|
+|268   |        mul0   |flmult_170    |     45|
+|269   |        mul01  |flmult_171    |     85|
+|270   |        mul1   |flmult_172    |    413|
+|271   |        mul2   |flmult_173    |     79|
+|272   |        mul3   |flmult_174    |    335|
+|273   |      cmpmult1 |compmult_160  |   1622|
+|274   |        add0   |fladder_161   |    288|
+|275   |        add1   |fladder_162   |    303|
+|276   |        mul0   |flmult_163    |     46|
+|277   |        mul01  |flmult_164    |     89|
+|278   |        mul1   |flmult_165    |    407|
+|279   |        mul2   |flmult_166    |    103|
+|280   |        mul3   |flmult_167    |    386|
+|281   |    mac2       |mac_88        |   5461|
+|282   |      cmpadd0  |compadder_135 |    699|
+|283   |        fl0    |fladder_155   |    362|
+|284   |        fl1    |fladder_156   |    337|
+|285   |      cmpadd1  |compadder_136 |    619|
+|286   |        fl0    |fladder_153   |    183|
+|287   |        fl1    |fladder_154   |    436|
+|288   |      cmpmult0 |compmult_137  |   1590|
+|289   |        add0   |fladder_146   |    295|
+|290   |        add1   |fladder_147   |    319|
+|291   |        mul0   |flmult_148    |     67|
+|292   |        mul01  |flmult_149    |     86|
+|293   |        mul1   |flmult_150    |    400|
+|294   |        mul2   |flmult_151    |    107|
+|295   |        mul3   |flmult_152    |    316|
+|296   |      cmpmult1 |compmult_138  |   1716|
+|297   |        add0   |fladder_139   |    250|
+|298   |        add1   |fladder_140   |    302|
+|299   |        mul0   |flmult_141    |     44|
+|300   |        mul01  |flmult_142    |     90|
+|301   |        mul1   |flmult_143    |    557|
+|302   |        mul2   |flmult_144    |    352|
+|303   |        mul3   |flmult_145    |    121|
+|304   |    mac3       |mac_89        |   5397|
+|305   |      cmpadd0  |compadder_113 |    621|
+|306   |        fl0    |fladder_133   |    335|
+|307   |        fl1    |fladder_134   |    286|
+|308   |      cmpadd1  |compadder_114 |    653|
+|309   |        fl0    |fladder_131   |    366|
+|310   |        fl1    |fladder_132   |    287|
+|311   |      cmpmult0 |compmult_115  |   1606|
+|312   |        add0   |fladder_124   |    313|
+|313   |        add1   |fladder_125   |    333|
+|314   |        mul0   |flmult_126    |     44|
+|315   |        mul01  |flmult_127    |     85|
+|316   |        mul1   |flmult_128    |    416|
+|317   |        mul2   |flmult_129    |     78|
+|318   |        mul3   |flmult_130    |    337|
+|319   |      cmpmult1 |compmult_116  |   1626|
+|320   |        add0   |fladder_117   |    288|
+|321   |        add1   |fladder_118   |    303|
+|322   |        mul0   |flmult_119    |     45|
+|323   |        mul01  |flmult_120    |     89|
+|324   |        mul1   |flmult_121    |    410|
+|325   |        mul2   |flmult_122    |    102|
+|326   |        mul3   |flmult_123    |    389|
+|327   |    mac4       |mac_90        |   5470|
+|328   |      cmpadd0  |compadder_91  |    699|
+|329   |        fl0    |fladder_111   |    362|
+|330   |        fl1    |fladder_112   |    337|
+|331   |      cmpadd1  |compadder_92  |    620|
+|332   |        fl0    |fladder_109   |    183|
+|333   |        fl1    |fladder_110   |    437|
+|334   |      cmpmult0 |compmult_93   |   1594|
+|335   |        add0   |fladder_102   |    295|
+|336   |        add1   |fladder_103   |    319|
+|337   |        mul0   |flmult_104    |     68|
+|338   |        mul01  |flmult_105    |     86|
+|339   |        mul1   |flmult_106    |    401|
+|340   |        mul2   |flmult_107    |    106|
+|341   |        mul3   |flmult_108    |    319|
+|342   |      cmpmult1 |compmult_94   |   1720|
+|343   |        add0   |fladder_95    |    250|
+|344   |        add1   |fladder_96    |    302|
+|345   |        mul0   |flmult_97     |     45|
+|346   |        mul01  |flmult_98     |     90|
+|347   |        mul1   |flmult_99     |    557|
+|348   |        mul2   |flmult_100    |    352|
+|349   |        mul3   |flmult_101    |    124|
+|350   |  c4           |fftc4         |  20923|
+|351   |    mac1       |mac           |   5191|
+|352   |      cmpadd0  |compadder_65  |    626|
+|353   |        fl0    |fladder_85    |    281|
+|354   |        fl1    |fladder_86    |    345|
+|355   |      cmpadd1  |compadder_66  |    556|
+|356   |        fl0    |fladder_83    |    295|
+|357   |        fl1    |fladder_84    |    261|
+|358   |      cmpmult0 |compmult_67   |   1559|
+|359   |        add0   |fladder_76    |    137|
+|360   |        add1   |fladder_77    |    341|
+|361   |        mul0   |flmult_78     |     50|
+|362   |        mul01  |flmult_79     |     64|
+|363   |        mul1   |flmult_80     |    556|
+|364   |        mul2   |flmult_81     |     85|
+|365   |        mul3   |flmult_82     |    326|
+|366   |      cmpmult1 |compmult_68   |   1543|
+|367   |        add0   |fladder_69    |    136|
+|368   |        add1   |fladder_70    |    153|
+|369   |        mul0   |flmult_71     |     44|
+|370   |        mul01  |flmult_72     |     67|
+|371   |        mul1   |flmult_73     |    548|
+|372   |        mul2   |flmult_74     |     92|
+|373   |        mul3   |flmult_75     |    503|
+|374   |    mac2       |mac_0         |   5191|
+|375   |      cmpadd0  |compadder_43  |    646|
+|376   |        fl0    |fladder_63    |    296|
+|377   |        fl1    |fladder_64    |    350|
+|378   |      cmpadd1  |compadder_44  |    640|
+|379   |        fl0    |fladder_61    |    297|
+|380   |        fl1    |fladder_62    |    343|
+|381   |      cmpmult0 |compmult_45   |   1527|
+|382   |        add0   |fladder_54    |    126|
+|383   |        add1   |fladder_55    |    326|
+|384   |        mul0   |flmult_56     |     44|
+|385   |        mul01  |flmult_57     |     75|
+|386   |        mul1   |flmult_58     |    556|
+|387   |        mul2   |flmult_59     |     77|
+|388   |        mul3   |flmult_60     |    323|
+|389   |      cmpmult1 |compmult_46   |   1504|
+|390   |        add0   |fladder_47    |    126|
+|391   |        add1   |fladder_48    |    150|
+|392   |        mul0   |flmult_49     |     45|
+|393   |        mul01  |flmult_50     |     75|
+|394   |        mul1   |flmult_51     |    543|
+|395   |        mul2   |flmult_52     |    151|
+|396   |        mul3   |flmult_53     |    414|
+|397   |    mac3       |mac_1         |   5205|
+|398   |      cmpadd0  |compadder_21  |    627|
+|399   |        fl0    |fladder_41    |    271|
+|400   |        fl1    |fladder_42    |    356|
+|401   |      cmpadd1  |compadder_22  |    649|
+|402   |        fl0    |fladder_39    |    304|
+|403   |        fl1    |fladder_40    |    345|
+|404   |      cmpmult0 |compmult_23   |   1508|
+|405   |        add0   |fladder_32    |    128|
+|406   |        add1   |fladder_33    |    146|
+|407   |        mul0   |flmult_34     |     45|
+|408   |        mul01  |flmult_35     |     63|
+|409   |        mul1   |flmult_36     |    578|
+|410   |        mul2   |flmult_37     |    136|
+|411   |        mul3   |flmult_38     |    412|
+|412   |      cmpmult1 |compmult_24   |   1571|
+|413   |        add0   |fladder_25    |    131|
+|414   |        add1   |fladder_26    |    308|
+|415   |        mul0   |flmult_27     |     45|
+|416   |        mul01  |flmult_28     |     69|
+|417   |        mul1   |flmult_29     |    546|
+|418   |        mul2   |flmult_30     |     92|
+|419   |        mul3   |flmult_31     |    380|
+|420   |    mac4       |mac_2         |   5192|
+|421   |      cmpadd0  |compadder     |    578|
+|422   |        fl0    |fladder_19    |    296|
+|423   |        fl1    |fladder_20    |    282|
+|424   |      cmpadd1  |compadder_3   |    635|
+|425   |        fl0    |fladder_17    |    289|
+|426   |        fl1    |fladder_18    |    346|
+|427   |      cmpmult0 |compmult      |   1582|
+|428   |        add0   |fladder_10    |    126|
+|429   |        add1   |fladder_11    |    348|
+|430   |        mul0   |flmult_12     |     64|
+|431   |        mul01  |flmult_13     |     75|
+|432   |        mul1   |flmult_14     |    570|
+|433   |        mul2   |flmult_15     |    315|
+|434   |        mul3   |flmult_16     |     84|
+|435   |      cmpmult1 |compmult_4    |   1492|
+|436   |        add0   |fladder       |    126|
+|437   |        add1   |fladder_5     |    185|
+|438   |        mul0   |flmult        |     42|
+|439   |        mul01  |flmult_6      |     75|
+|440   |        mul1   |flmult_7      |    543|
+|441   |        mul2   |flmult_8      |    417|
+|442   |        mul3   |flmult_9      |    104|
++------+---------------+--------------+-------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:05:15 ; elapsed = 00:05:14 . Memory (MB): peak = 1256.164 ; gain = 919.098
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:05:15 ; elapsed = 00:05:14 . Memory (MB): peak = 1256.164 ; gain = 919.098
+Synthesis Optimization Complete : Time (s): cpu = 00:05:15 ; elapsed = 00:05:14 . Memory (MB): peak = 1256.164 ; gain = 919.098
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 8016 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1420.332 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+66 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:06:35 ; elapsed = 00:06:34 . Memory (MB): peak = 1420.332 ; gain = 1096.570
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 1420.332 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.runs/synth_1/butterfly.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:29 ; elapsed = 00:00:20 . Memory (MB): peak = 1420.332 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file butterfly_utilization_synth.rpt -pb butterfly_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 30 13:22:40 2021...
