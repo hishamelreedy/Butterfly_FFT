@@ -13,7 +13,7 @@ reg [64-1:0] writemacmem[0:31];
 //Read data from input into regfile
 initial begin
     $display("Loading rom.");
-    $readmemh("../data/column1_output.txt", inpmacmem);
+    $readmemh("../data/Final_output_c1.txt", inpmacmem);
 end
 
 //2D in to 1D

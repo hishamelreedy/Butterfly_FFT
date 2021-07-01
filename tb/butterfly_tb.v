@@ -1,6 +1,8 @@
+
 `timescale 1ns / 1ps
 module butterfly_tb;
 reg clk = 1'b1;
+reg clk2;
 reg reset;
 reg [64*32-1:0] inpmac;
 wire [64*32-1:0] outmac;
@@ -10,6 +12,12 @@ wire [32-1:0] outmacmemreal [0:31];
 wire [32-1:0] outmacmemimag [0:31];
 reg [64-1:0] writemacmem[0:31];
 //integer f;
+//Read data from input into regfile
+//initial begin
+//    $display("Loading rom.");
+//    $readmemh("C:/Users/MuhammedBahaa/Desktop/32-Point FFT/Butterfly_FFT/Data/timesamples.txt", inpmacmem);
+//end
+
 //2D in to 1D
 always @(*)
  begin
@@ -221,37 +229,64 @@ assign outmacmemreal[0]=outmacmem[0][63:32];
 assign outmacmemimag[0]=outmacmem[0][31:0];
 
 //UUT
-butterfly FFT (clk,reset,inpmac,outmac);
+butterfly FFT (clk,clk2,reset,inpmac,outmac);
 
 //clk
-always clk = #10 ~clk;
+always     clk = #10 ~clk;
+//always     clk2 = #50 ~clk2;
 
 //Begin Simulation
 initial begin
+$display("Loading rom.");
+$readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples.txt", inpmacmem);
 reset=1;
+clk2=1'b0;
 #10;
 reset=0;
+#10
+clk2=1'b1;
+#50
+clk2=0;
+#40
 $display("Loading rom.");
-$readmemh("../data/timesamples.txt", inpmacmem);
-#111;
-$writememh("../data/Final_output_c0.txt", FFT.Reg_outmacst0mem);
-#10;
-$display("Removing Input");
-$readmemh("../data/timesamples0.txt", inpmacmem);
-#90;
-$writememh("../data/Final_output_c1.txt", FFT.Reg_outmacst1mem);
-#100;
-$writememh("../data/Final_output_c2.txt", FFT.Reg_outmacst2mem);
-#100;
-$writememh("../data/Final_output_c3.txt", FFT.Reg_outmacst3mem);
-#100;
-$writememh("../data/Final_output_c4.txt", FFT.Reg_outmacst4mem);
-$writememh("../data/Final_output.txt", writemacmem);
-#100;
-$writememh("../data/Final_output4.txt", writemacmem);
-#10;
-
-$finish;
-
+$readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples4.txt", inpmacmem);
+#10 clk2=1;
+#50
+clk2=0;
+#40
+$display("Loading rom.");
+$readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples3.txt", inpmacmem);
+#10 clk2=1;
+#50
+clk2=0;
+#40
+$display("Loading rom.");
+$readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples2.txt", inpmacmem);
+#10 clk2=1;
+#50
+clk2=0;
+#50 clk2=1;
+#50
+clk2=0;
+#50 clk2=1;
+#50
+clk2=0;
+#50 clk2=1;
+$fwrite("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output.txt", writemacmem);
+#50
+clk2=0;
+#50 clk2=1;
+$fwrite("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output4.txt", writemacmem);
+#50
+clk2=0;
+#50 clk2=1;
+$fwrite("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output3.txt", writemacmem);
+#50
+clk2=0;
+#50 clk2=1;
+$fwrite("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output2.txt", writemacmem);
+#50
+clk2=0;
+#50 clk2=1;
 end
 endmodule

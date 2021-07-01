@@ -135,7 +135,6 @@ default : begin
         end
 endcase
 
-
 mac mac1(mac1_muxout1,mac1_muxout2,weights[0],weights[1],mac1_demuxin1w,mac1_demuxin2w);
 
 //Save output
@@ -293,6 +292,8 @@ default : begin
         end
 endcase
 
+
+
 mac mac2(mac2_muxout1,mac2_muxout2,weights[0],weights[1],mac2_demuxin1w,mac2_demuxin2w);
 //Save output
 reg [63:0] mac2_demuxout1r;
@@ -367,6 +368,8 @@ if(reset==1'b1)
 else if(mac2_demuxout8!=64'd0)
         mac2_demuxout8r<=mac2_demuxout8;
 end
+
+
 //-----Mac 3-------
 //Input Mux Assignment
 //Input
