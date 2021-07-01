@@ -89,8 +89,15 @@ for i in range(1,33,1):
     data=IEEE754(float(i))[0][2:]
     data+="00000000"
     places.append(data)
-
 with open('data/timesamples.txt', 'w') as filehandle:
+    for listitem in places:
+        filehandle.write('%s\n' % listitem)
+places=[]
+for i in range(1,33,1):
+    data="00000000"
+    data+="00000000"
+    places.append(data)
+with open('data/timesamples0.txt', 'w') as filehandle:
     for listitem in places:
         filehandle.write('%s\n' % listitem)
 
@@ -185,17 +192,25 @@ for i in range(64*32-1,-1,-64):
     places.append(data)
 
 places=[]
+places.append("always @(*)begin")
+for k in range(31,-1,-1):
+    data='writemacmem[%s]=outmacmem[%s];'%(k,k)
+    places.append(data)
+places.append("end")    
+
+
+places=[]
 for k in range(31,-1,-1):
     data='assign outmacmemreal[%s]=outmacmem[%s][%s:%s];\n'%(k,k,63,32)
     data+='assign outmacmemimag[%s]=outmacmem[%s][%s:%s];'%(k,k,31,0)
     places.append(data)
 
 places=[]
-places.append("always @(*)begin")
-for k in range(31,-1,-1):
-    data='writemacmem[%s]=outmacmem[%s];'%(k,k)
+k=31
+for i in range(64*32-1,-1,-64):
+    data='Reg_outmacst4mem[%s]=Reg_outmacst4[%s:%s];'%(k,i,i-63)
+    k-=1
     places.append(data)
-places.append("end")    
 
 with open('rtl/gencode.txt', 'w') as filehandle:
     for listitem in places:

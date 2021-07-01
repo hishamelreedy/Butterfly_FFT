@@ -169,6 +169,79 @@ default : begin
 endcase
 
 mac mac1(mac1_muxout1,mac1_muxout2,mac1_muxw1out,mac1_muxw2out,mac1_demuxin1w,mac1_demuxin2w);
+//Save output
+reg [63:0] mac1_demuxout1r;
+reg [63:0] mac1_demuxout2r;
+reg [63:0] mac1_demuxout3r;
+reg [63:0] mac1_demuxout4r;
+reg [63:0] mac1_demuxout5r;
+reg [63:0] mac1_demuxout6r;
+reg [63:0] mac1_demuxout7r;
+reg [63:0] mac1_demuxout8r;
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac1_demuxout1r<=64'd0;
+else if(mac1_demuxout1!=64'd0)
+        mac1_demuxout1r<=mac1_demuxout1;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac1_demuxout2r<=64'd0;
+else if(mac1_demuxout2!=64'd0)
+        mac1_demuxout2r<=mac1_demuxout2;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac1_demuxout3r<=64'd0;
+else if(mac1_demuxout3!=64'd0)
+        mac1_demuxout3r<=mac1_demuxout3;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac1_demuxout4r<=64'd0;
+else if(mac1_demuxout4!=64'd0)
+        mac1_demuxout4r<=mac1_demuxout4;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac1_demuxout5r<=64'd0;
+else if(mac1_demuxout5!=64'd0)
+        mac1_demuxout5r<=mac1_demuxout5;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac1_demuxout6r<=64'd0;
+else if(mac1_demuxout6!=64'd0)
+        mac1_demuxout6r<=mac1_demuxout6;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac1_demuxout7r<=64'd0;
+else if(mac1_demuxout7!=64'd0)
+        mac1_demuxout7r<=mac1_demuxout7;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac1_demuxout8r<=64'd0;
+else if(mac1_demuxout8!=64'd0)
+        mac1_demuxout8r<=mac1_demuxout8;
+end
 //-----Mac 2-------
 //Input Mux
 //Input
@@ -279,6 +352,79 @@ default : begin
         end
 endcase
 mac mac2(mac2_muxout1,mac2_muxout2,mac2_muxw1out,mac2_muxw2out,mac2_demuxin1w,mac2_demuxin2w);
+//Save output
+reg [63:0] mac2_demuxout1r;
+reg [63:0] mac2_demuxout2r;
+reg [63:0] mac2_demuxout3r;
+reg [63:0] mac2_demuxout4r;
+reg [63:0] mac2_demuxout5r;
+reg [63:0] mac2_demuxout6r;
+reg [63:0] mac2_demuxout7r;
+reg [63:0] mac2_demuxout8r;
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac2_demuxout1r<=64'd0;
+else if(mac2_demuxout1!=64'd0)
+        mac2_demuxout1r<=mac2_demuxout1;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac2_demuxout2r<=64'd0;
+else if(mac2_demuxout2!=64'd0)
+        mac2_demuxout2r<=mac2_demuxout2;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac2_demuxout3r<=64'd0;
+else if(mac2_demuxout3!=64'd0)
+        mac2_demuxout3r<=mac2_demuxout3;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac2_demuxout4r<=64'd0;
+else if(mac2_demuxout4!=64'd0)
+        mac2_demuxout4r<=mac2_demuxout4;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac2_demuxout5r<=64'd0;
+else if(mac2_demuxout5!=64'd0)
+        mac2_demuxout5r<=mac2_demuxout5;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac2_demuxout6r<=64'd0;
+else if(mac2_demuxout6!=64'd0)
+        mac2_demuxout6r<=mac2_demuxout6;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac2_demuxout7r<=64'd0;
+else if(mac2_demuxout7!=64'd0)
+        mac2_demuxout7r<=mac2_demuxout7;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac2_demuxout8r<=64'd0;
+else if(mac2_demuxout8!=64'd0)
+        mac2_demuxout8r<=mac2_demuxout8;
+end
 //-----Mac 3-------
 //Input Mux
 //Input
@@ -391,7 +537,79 @@ endcase
 
 
 mac mac3(mac3_muxout1,mac3_muxout2,mac3_muxw1out,mac3_muxw2out,mac3_demuxin1w,mac3_demuxin2w);
+//Save output
+reg [63:0] mac3_demuxout1r;
+reg [63:0] mac3_demuxout2r;
+reg [63:0] mac3_demuxout3r;
+reg [63:0] mac3_demuxout4r;
+reg [63:0] mac3_demuxout5r;
+reg [63:0] mac3_demuxout6r;
+reg [63:0] mac3_demuxout7r;
+reg [63:0] mac3_demuxout8r;
 
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac3_demuxout1r<=64'd0;
+else if(mac3_demuxout1!=64'd0)
+        mac3_demuxout1r<=mac3_demuxout1;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac3_demuxout2r<=64'd0;
+else if(mac3_demuxout2!=64'd0)
+        mac3_demuxout2r<=mac3_demuxout2;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac3_demuxout3r<=64'd0;
+else if(mac3_demuxout3!=64'd0)
+        mac3_demuxout3r<=mac3_demuxout3;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac3_demuxout4r<=64'd0;
+else if(mac3_demuxout4!=64'd0)
+        mac3_demuxout4r<=mac3_demuxout4;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac3_demuxout5r<=64'd0;
+else if(mac3_demuxout5!=64'd0)
+        mac3_demuxout5r<=mac3_demuxout5;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac3_demuxout6r<=64'd0;
+else if(mac3_demuxout6!=64'd0)
+        mac3_demuxout6r<=mac3_demuxout6;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac3_demuxout7r<=64'd0;
+else if(mac3_demuxout7!=64'd0)
+        mac3_demuxout7r<=mac3_demuxout7;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac3_demuxout8r<=64'd0;
+else if(mac3_demuxout8!=64'd0)
+        mac3_demuxout8r<=mac3_demuxout8;
+end
 //-----Mac 4-------
 //Input Mux
 //Input
@@ -503,7 +721,79 @@ default : begin
 endcase
 
 mac mac4(mac4_muxout1,mac4_muxout2,mac4_muxw1out,mac4_muxw2out,mac4_demuxin1w,mac4_demuxin2w);
+//Save output
+reg [63:0] mac4_demuxout1r;
+reg [63:0] mac4_demuxout2r;
+reg [63:0] mac4_demuxout3r;
+reg [63:0] mac4_demuxout4r;
+reg [63:0] mac4_demuxout5r;
+reg [63:0] mac4_demuxout6r;
+reg [63:0] mac4_demuxout7r;
+reg [63:0] mac4_demuxout8r;
 
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac4_demuxout1r<=64'd0;
+else if(mac4_demuxout1!=64'd0)
+        mac4_demuxout1r<=mac4_demuxout1;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac4_demuxout2r<=64'd0;
+else if(mac4_demuxout2!=64'd0)
+        mac4_demuxout2r<=mac4_demuxout2;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac4_demuxout3r<=64'd0;
+else if(mac4_demuxout3!=64'd0)
+        mac4_demuxout3r<=mac4_demuxout3;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac4_demuxout4r<=64'd0;
+else if(mac4_demuxout4!=64'd0)
+        mac4_demuxout4r<=mac4_demuxout4;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac4_demuxout5r<=64'd0;
+else if(mac4_demuxout5!=64'd0)
+        mac4_demuxout5r<=mac4_demuxout5;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac4_demuxout6r<=64'd0;
+else if(mac4_demuxout6!=64'd0)
+        mac4_demuxout6r<=mac4_demuxout6;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac4_demuxout7r<=64'd0;
+else if(mac4_demuxout7!=64'd0)
+        mac4_demuxout7r<=mac4_demuxout7;
+end
+
+always @(posedge clk)
+begin
+if(reset==1'b1)
+        mac4_demuxout8r<=64'd0;
+else if(mac4_demuxout8!=64'd0)
+        mac4_demuxout8r<=mac4_demuxout8;
+end
 //Controller
 reg [1:0] macselcounter;
 always @(posedge clk)
@@ -515,41 +805,41 @@ always @(posedge clk)
 assign mac_sel=macselcounter;
 
 //Output 2D
-assign outmacmem[0]=mac1_demuxout1;
-assign outmacmem[1]=mac1_demuxout2;
-assign outmacmem[2]=mac1_demuxout3;
-assign outmacmem[3]=mac1_demuxout4;
-assign outmacmem[4]=mac1_demuxout5;
-assign outmacmem[5]=mac1_demuxout6;
-assign outmacmem[6]=mac1_demuxout7;
-assign outmacmem[7]=mac1_demuxout8;
+assign outmacmem[0]=mac1_demuxout1r;
+assign outmacmem[1]=mac1_demuxout2r;
+assign outmacmem[2]=mac1_demuxout3r;
+assign outmacmem[3]=mac1_demuxout4r;
+assign outmacmem[4]=mac1_demuxout5r;
+assign outmacmem[5]=mac1_demuxout6r;
+assign outmacmem[6]=mac1_demuxout7r;
+assign outmacmem[7]=mac1_demuxout8r;
 
-assign outmacmem[8]=mac2_demuxout1;
-assign outmacmem[9]=mac2_demuxout2;
-assign outmacmem[10]=mac2_demuxout3;
-assign outmacmem[11]=mac2_demuxout4;
-assign outmacmem[12]=mac2_demuxout5;
-assign outmacmem[13]=mac2_demuxout6;
-assign outmacmem[14]=mac2_demuxout7;
-assign outmacmem[15]=mac2_demuxout8;
+assign outmacmem[8]=mac2_demuxout1r;
+assign outmacmem[9]=mac2_demuxout2r;
+assign outmacmem[10]=mac2_demuxout3r;
+assign outmacmem[11]=mac2_demuxout4r;
+assign outmacmem[12]=mac2_demuxout5r;
+assign outmacmem[13]=mac2_demuxout6r;
+assign outmacmem[14]=mac2_demuxout7r;
+assign outmacmem[15]=mac2_demuxout8r;
 
-assign outmacmem[16]=mac3_demuxout1;
-assign outmacmem[17]=mac3_demuxout2;
-assign outmacmem[18]=mac3_demuxout3;
-assign outmacmem[19]=mac3_demuxout4;
-assign outmacmem[20]=mac3_demuxout5;
-assign outmacmem[21]=mac3_demuxout6;
-assign outmacmem[22]=mac3_demuxout7;
-assign outmacmem[23]=mac3_demuxout8;
+assign outmacmem[16]=mac3_demuxout1r;
+assign outmacmem[17]=mac3_demuxout2r;
+assign outmacmem[18]=mac3_demuxout3r;
+assign outmacmem[19]=mac3_demuxout4r;
+assign outmacmem[20]=mac3_demuxout5r;
+assign outmacmem[21]=mac3_demuxout6r;
+assign outmacmem[22]=mac3_demuxout7r;
+assign outmacmem[23]=mac3_demuxout8r;
 
-assign outmacmem[24]=mac4_demuxout1;
-assign outmacmem[25]=mac4_demuxout2;
-assign outmacmem[26]=mac4_demuxout3;
-assign outmacmem[27]=mac4_demuxout4;
-assign outmacmem[28]=mac4_demuxout5;
-assign outmacmem[29]=mac4_demuxout6;
-assign outmacmem[30]=mac4_demuxout7;
-assign outmacmem[31]=mac4_demuxout8;
+assign outmacmem[24]=mac4_demuxout1r;
+assign outmacmem[25]=mac4_demuxout2r;
+assign outmacmem[26]=mac4_demuxout3r;
+assign outmacmem[27]=mac4_demuxout4r;
+assign outmacmem[28]=mac4_demuxout5r;
+assign outmacmem[29]=mac4_demuxout6r;
+assign outmacmem[30]=mac4_demuxout7r;
+assign outmacmem[31]=mac4_demuxout8r;
 
 //Output 1D
 assign outmac={outmacmem[31],outmacmem[30],outmacmem[29],outmacmem[28],

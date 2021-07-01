@@ -9,14 +9,1220 @@
     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
 source butterfly.tcl -notrace
-Command: synth_design -top butterfly -part xc7z045ffg900-2
+Command: synth_design -top butterfly -part xc7z020clg484-1
 Starting synth_design
-Attempting to get a license for feature 'Synthesis' and/or device 'xc7z045'
-WARNING: [Common 17-348] Failed to get the license for feature 'Synthesis' and/or device 'xc7z045'. Explanation: The license feature Synthesis could not be found.
-Resolution: Check the status of your licenses in the Vivado License Manager. For debug help search Xilinx Support for "Licensing FAQ". 
-0 Infos, 1 Warnings, 0 Critical Warnings and 1 Errors encountered.
-synth_design failed
-ERROR: [Common 17-345] A valid license was not found for feature 'Synthesis' and/or device 'xc7z045'. Please run the Vivado License Manager for assistance in determining
-which features and devices are licensed for your system.
-Resolution: Check the status of your licenses in the Vivado License Manager. For debug help search Xilinx Support for "Licensing FAQ". If you are using a license server, verify that the license server is up and running a version of the xilinx daemon that is compatible with the version of Xilinx software that you are using. Please note that Vivado 2017.3 and later requires upgrading your license server tools to the Flex 11.14.1 tools. Please confirm with your license admin that the correct version of the license server tools are installed.
-INFO: [Common 17-206] Exiting Vivado at Wed Jun 30 13:24:59 2021...
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 20156 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 438.035 ; gain = 100.480
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'butterfly' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:3]
+INFO: [Synth 8-6157] synthesizing module 'fftc0' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc0.v:2]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc0.v:105]
+INFO: [Synth 8-6157] synthesizing module 'mac' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/mac.v:1]
+INFO: [Synth 8-6157] synthesizing module 'compmult' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/compmult.v:2]
+INFO: [Synth 8-6157] synthesizing module 'flmult' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/flmult.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'flmult' (1#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/flmult.v:2]
+INFO: [Synth 8-6157] synthesizing module 'fladder' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fladder.v:2]
+INFO: [Synth 8-6157] synthesizing module 'priority_encoder' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/priority_encoder.v:1]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/priority_encoder.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'priority_encoder' (2#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/priority_encoder.v:1]
+WARNING: [Synth 8-3936] Found unconnected internal register 'sum_reg' and it is trimmed from '25' to '24' bits. [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fladder.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'fladder' (3#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fladder.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'compmult' (4#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/compmult.v:2]
+INFO: [Synth 8-6157] synthesizing module 'compadder' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/compadder.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'compadder' (5#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/compadder.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'mac' (6#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/mac.v:1]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc0.v:263]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc0.v:419]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc0.v:577]
+INFO: [Synth 8-6155] done synthesizing module 'fftc0' (7#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc0.v:2]
+INFO: [Synth 8-6157] synthesizing module 'fftc1' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc1.v:2]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc1.v:126]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc1.v:303]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc1.v:478]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc1.v:653]
+INFO: [Synth 8-6155] done synthesizing module 'fftc1' (8#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc1.v:2]
+INFO: [Synth 8-6157] synthesizing module 'fftc2' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc2.v:2]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc2.v:138]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc2.v:322]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc2.v:505]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc2.v:690]
+INFO: [Synth 8-6155] done synthesizing module 'fftc2' (9#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc2.v:2]
+INFO: [Synth 8-6157] synthesizing module 'fftc3' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc3.v:2]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc3.v:143]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc3.v:320]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc3.v:496]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc3.v:671]
+INFO: [Synth 8-6155] done synthesizing module 'fftc3' (10#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc3.v:2]
+INFO: [Synth 8-6157] synthesizing module 'fftc4' [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc4.v:2]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc4.v:162]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc4.v:345]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc4.v:529]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc4.v:713]
+INFO: [Synth 8-6155] done synthesizing module 'fftc4' (11#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fftc4.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'butterfly' (12#1) [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:3]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 519.617 ; gain = 182.062
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 519.617 ; gain = 182.062
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 519.617 ; gain = 182.062
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/flmult.v:22]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/fladder.v:18]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 683.801 ; gain = 346.246
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------+------------+----------+
+|      |RTL Partition  |Replication |Instances |
++------+---------------+------------+----------+
+|1     |mac            |          20|     13218|
+|2     |fftc0__GC0     |           1|     11908|
+|3     |fftc1__GC0     |           1|     11910|
+|4     |fftc2__GC0     |           1|     11999|
+|5     |fftc3__GC0     |           1|     12058|
+|6     |fftc4__GC0     |           1|     12178|
+|7     |butterfly__GC0 |           1|     12288|
++------+---------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3538] Detected potentially large (wide) register Reg_outmacst4_reg [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:76]
+INFO: [Synth 8-3538] Detected potentially large (wide) register Reg_outmacst3_reg [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:64]
+INFO: [Synth 8-3538] Detected potentially large (wide) register Reg_outmacst2_reg [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:52]
+INFO: [Synth 8-3538] Detected potentially large (wide) register Reg_outmacst1_reg [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:40]
+INFO: [Synth 8-3538] Detected potentially large (wide) register Reg_outmacst0_reg [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:28]
+INFO: [Synth 8-3538] Detected potentially large (wide) register Reg_Input_reg [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:16]
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     25 Bit       Adders := 160   
+	   2 Input     23 Bit       Adders := 200   
+	   4 Input      8 Bit       Adders := 200   
+	   3 Input      8 Bit       Adders := 320   
+	   2 Input      8 Bit       Adders := 160   
+	   2 Input      5 Bit       Adders := 160   
+	   2 Input      2 Bit       Adders := 5     
++---XORs : 
+	   2 Input      1 Bit         XORs := 200   
++---Registers : 
+	             2048 Bit    Registers := 6     
+	               64 Bit    Registers := 160   
+	                2 Bit    Registers := 5     
++---Muxes : 
+	   4 Input     64 Bit        Muxes := 166   
+	   2 Input     64 Bit        Muxes := 121   
+	   3 Input     64 Bit        Muxes := 2     
+	   2 Input     62 Bit        Muxes := 3     
+	   4 Input     62 Bit        Muxes := 6     
+	   2 Input     47 Bit        Muxes := 200   
+	   2 Input     32 Bit        Muxes := 520   
+	   2 Input     31 Bit        Muxes := 480   
+	   2 Input     25 Bit        Muxes := 160   
+	   2 Input     24 Bit        Muxes := 400   
+	  25 Input      5 Bit        Muxes := 160   
+	   2 Input      1 Bit        Muxes := 160   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3538] Detected potentially large (wide) register Reg_outmacst4_reg [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:76]
+INFO: [Synth 8-3538] Detected potentially large (wide) register Reg_outmacst3_reg [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:64]
+INFO: [Synth 8-3538] Detected potentially large (wide) register Reg_outmacst2_reg [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:52]
+INFO: [Synth 8-3538] Detected potentially large (wide) register Reg_outmacst1_reg [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:40]
+INFO: [Synth 8-3538] Detected potentially large (wide) register Reg_outmacst0_reg [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:28]
+INFO: [Synth 8-3538] Detected potentially large (wide) register Reg_Input_reg [C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sources_1/imports/rtl/butterfly.v:16]
+Hierarchical RTL Component report 
+Module butterfly 
+Detailed RTL Component Info : 
++---Registers : 
+	             2048 Bit    Registers := 6     
+Module flmult__9 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module flmult__8 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module flmult__7 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module priority_encoder__7 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Muxes : 
+	  25 Input      5 Bit        Muxes := 1     
+Module fladder__7 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     25 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module flmult__6 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module flmult__5 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module priority_encoder__6 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Muxes : 
+	  25 Input      5 Bit        Muxes := 1     
+Module fladder__6 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     25 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module priority_encoder__5 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Muxes : 
+	  25 Input      5 Bit        Muxes := 1     
+Module fladder__5 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     25 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module priority_encoder__4 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Muxes : 
+	  25 Input      5 Bit        Muxes := 1     
+Module fladder__4 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     25 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module flmult__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module flmult__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module flmult__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module priority_encoder__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Muxes : 
+	  25 Input      5 Bit        Muxes := 1     
+Module fladder__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     25 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module flmult__4 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module flmult 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+Module priority_encoder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Muxes : 
+	  25 Input      5 Bit        Muxes := 1     
+Module fladder 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     25 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module priority_encoder__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Muxes : 
+	  25 Input      5 Bit        Muxes := 1     
+Module fladder__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     25 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module priority_encoder__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Muxes : 
+	  25 Input      5 Bit        Muxes := 1     
+Module fladder__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     25 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module fftc0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 32    
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     64 Bit        Muxes := 32    
+	   2 Input     64 Bit        Muxes := 24    
+Module fftc1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 32    
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     64 Bit        Muxes := 32    
+	   2 Input     64 Bit        Muxes := 25    
+	   2 Input     62 Bit        Muxes := 1     
+Module fftc2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 32    
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     64 Bit        Muxes := 32    
+	   2 Input     64 Bit        Muxes := 24    
+	   3 Input     64 Bit        Muxes := 2     
+	   2 Input     62 Bit        Muxes := 2     
+Module fftc3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 32    
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     64 Bit        Muxes := 34    
+	   2 Input     64 Bit        Muxes := 24    
+	   4 Input     62 Bit        Muxes := 2     
+Module fftc4 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 32    
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     64 Bit        Muxes := 36    
+	   2 Input     64 Bit        Muxes := 24    
+	   4 Input     62 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: Generating DSP product, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator product is absorbed into DSP product.
+DSP Report: operator product is absorbed into DSP product.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:44 . Memory (MB): peak = 720.945 ; gain = 383.391
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3323] Resources of type DSP have been overutilized. Used = 400, Available = 220. Use report_utilization command for details.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul1/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: operator mul1/product is absorbed into DSP mul1/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul2/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: operator mul2/product is absorbed into DSP mul2/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul3/product, operation Mode is (post resource management): (PCIN>>17)+A*B.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: operator mul3/product is absorbed into DSP mul3/product.
+DSP Report: Generating DSP mul0/product, operation Mode is (post resource management): A*B.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+DSP Report: operator mul0/product is absorbed into DSP mul0/product.
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|flmult      | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------+------------+----------+
+|      |RTL Partition  |Replication |Instances |
++------+---------------+------------+----------+
+|1     |mac            |          20|     21059|
+|2     |fftc0__GC0     |           1|     10756|
+|3     |fftc1__GC0     |           1|     10756|
+|4     |fftc2__GC0     |           1|     10766|
+|5     |fftc3__GC0     |           1|     10779|
+|6     |fftc4__GC0     |           1|     10810|
+|7     |butterfly__GC0 |           1|     12288|
++------+---------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:49 . Memory (MB): peak = 784.895 ; gain = 447.340
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------+------------+----------+
+|      |RTL Partition  |Replication |Instances |
++------+---------------+------------+----------+
+|1     |mac            |           4|     11105|
+|2     |fftc0__GC0     |           1|     10756|
+|3     |fftc1__GC0     |           1|     10756|
+|4     |fftc2__GC0     |           1|     10766|
+|5     |fftc3__GC0     |           1|     10779|
+|6     |fftc4__GC0     |           1|     10810|
+|7     |butterfly__GC0 |           1|     12288|
+|8     |mac__1         |           4|     13227|
+|9     |mac__2         |           4|     14087|
+|10    |mac__3         |           2|     17893|
+|11    |mac__4         |           2|     17889|
+|12    |mac__5         |           1|     17178|
+|13    |mac__6         |           1|     18557|
+|14    |mac__7         |           1|     17284|
+|15    |mac__8         |           1|     18562|
++------+---------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:54 ; elapsed = 00:01:09 . Memory (MB): peak = 788.691 ; gain = 451.137
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------+------------+----------+
+|      |RTL Partition  |Replication |Instances |
++------+---------------+------------+----------+
+|1     |mac            |           4|      3719|
+|2     |fftc0__GC0     |           1|      5508|
+|3     |fftc1__GC0     |           1|      5509|
+|4     |fftc2__GC0     |           1|      5518|
+|5     |fftc3__GC0     |           1|      5530|
+|6     |fftc4__GC0     |           1|      5562|
+|7     |butterfly__GC0 |           1|     12288|
+|8     |mac__1         |           4|      5019|
+|9     |mac__2         |           4|      6284|
+|10    |mac__3         |           2|      6584|
+|11    |mac__4         |           2|      6580|
+|12    |mac__5         |           1|      6503|
+|13    |mac__6         |           1|      6562|
+|14    |mac__7         |           1|      6526|
+|15    |mac__8         |           1|      6570|
++------+---------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6064] Net p_0_out_inferred__1n_0_74198 is driving 96 big block pins (URAM, BRAM and DSP loads). Created 10 replicas of its driver. 
+INFO: [Synth 8-6064] Net p_0_out_inferredn_0_74029 is driving 96 big block pins (URAM, BRAM and DSP loads). Created 10 replicas of its driver. 
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:18 ; elapsed = 00:01:34 . Memory (MB): peak = 1036.707 ; gain = 699.152
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:19 ; elapsed = 00:01:35 . Memory (MB): peak = 1036.707 ; gain = 699.152
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:30 ; elapsed = 00:01:46 . Memory (MB): peak = 1036.707 ; gain = 699.152
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:34 ; elapsed = 00:01:50 . Memory (MB): peak = 1036.707 ; gain = 699.152
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:36 ; elapsed = 00:01:52 . Memory (MB): peak = 1036.707 ; gain = 699.152
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:37 ; elapsed = 00:01:53 . Memory (MB): peak = 1036.707 ; gain = 699.152
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  | 12384|
+|3     |DSP48E1 |   164|
+|4     |LUT1    |  1813|
+|5     |LUT2    | 15618|
+|6     |LUT3    | 25673|
+|7     |LUT4    | 22591|
+|8     |LUT5    | 19084|
+|9     |LUT6    | 33266|
+|10    |FDRE    | 22770|
+|11    |IBUF    |  2050|
+|12    |OBUF    |  2048|
++------+--------+------+
+
+Report Instance Areas: 
++------+---------------+--------------+-------+
+|      |Instance       |Module        |Cells  |
++------+---------------+--------------+-------+
+|1     |top            |              | 157462|
+|2     |  c0           |fftc0         |  19368|
+|3     |    mac1       |mac_363       |   4230|
+|4     |      cmpadd0  |compadder_415 |    528|
+|5     |        fl0    |fladder_429   |    254|
+|6     |        fl1    |fladder_430   |    274|
+|7     |      cmpadd1  |compadder_416 |    569|
+|8     |        fl0    |fladder_427   |    203|
+|9     |        fl1    |fladder_428   |    366|
+|10    |      cmpmult0 |compmult_417  |    988|
+|11    |        add0   |fladder_423   |    275|
+|12    |        add1   |fladder_424   |    249|
+|13    |        mul0   |flmult_425    |    196|
+|14    |        mul3   |flmult_426    |    268|
+|15    |      cmpmult1 |compmult_418  |   1028|
+|16    |        add0   |fladder_419   |    309|
+|17    |        add1   |fladder_420   |    382|
+|18    |        mul0   |flmult_421    |    231|
+|19    |        mul3   |flmult_422    |    106|
+|20    |    mac2       |mac_364       |   4230|
+|21    |      cmpadd0  |compadder_399 |    528|
+|22    |        fl0    |fladder_413   |    254|
+|23    |        fl1    |fladder_414   |    274|
+|24    |      cmpadd1  |compadder_400 |    569|
+|25    |        fl0    |fladder_411   |    203|
+|26    |        fl1    |fladder_412   |    366|
+|27    |      cmpmult0 |compmult_401  |    988|
+|28    |        add0   |fladder_407   |    275|
+|29    |        add1   |fladder_408   |    249|
+|30    |        mul0   |flmult_409    |    196|
+|31    |        mul3   |flmult_410    |    268|
+|32    |      cmpmult1 |compmult_402  |   1028|
+|33    |        add0   |fladder_403   |    309|
+|34    |        add1   |fladder_404   |    382|
+|35    |        mul0   |flmult_405    |    231|
+|36    |        mul3   |flmult_406    |    106|
+|37    |    mac3       |mac_365       |   4230|
+|38    |      cmpadd0  |compadder_383 |    528|
+|39    |        fl0    |fladder_397   |    254|
+|40    |        fl1    |fladder_398   |    274|
+|41    |      cmpadd1  |compadder_384 |    569|
+|42    |        fl0    |fladder_395   |    203|
+|43    |        fl1    |fladder_396   |    366|
+|44    |      cmpmult0 |compmult_385  |    988|
+|45    |        add0   |fladder_391   |    275|
+|46    |        add1   |fladder_392   |    249|
+|47    |        mul0   |flmult_393    |    196|
+|48    |        mul3   |flmult_394    |    268|
+|49    |      cmpmult1 |compmult_386  |   1028|
+|50    |        add0   |fladder_387   |    309|
+|51    |        add1   |fladder_388   |    382|
+|52    |        mul0   |flmult_389    |    231|
+|53    |        mul3   |flmult_390    |    106|
+|54    |    mac4       |mac_366       |   4230|
+|55    |      cmpadd0  |compadder_367 |    528|
+|56    |        fl0    |fladder_381   |    254|
+|57    |        fl1    |fladder_382   |    274|
+|58    |      cmpadd1  |compadder_368 |    569|
+|59    |        fl0    |fladder_379   |    203|
+|60    |        fl1    |fladder_380   |    366|
+|61    |      cmpmult0 |compmult_369  |    988|
+|62    |        add0   |fladder_375   |    275|
+|63    |        add1   |fladder_376   |    249|
+|64    |        mul0   |flmult_377    |    196|
+|65    |        mul3   |flmult_378    |    268|
+|66    |      cmpmult1 |compmult_370  |   1028|
+|67    |        add0   |fladder_371   |    309|
+|68    |        add1   |fladder_372   |    382|
+|69    |        mul0   |flmult_373    |    231|
+|70    |        mul3   |flmult_374    |    106|
+|71    |  c1           |fftc1         |  22834|
+|72    |    mac1       |mac_271       |   4941|
+|73    |      cmpadd0  |compadder_341 |    419|
+|74    |        fl0    |fladder_361   |    181|
+|75    |        fl1    |fladder_362   |    238|
+|76    |      cmpadd1  |compadder_342 |    511|
+|77    |        fl0    |fladder_359   |    273|
+|78    |        fl1    |fladder_360   |    238|
+|79    |      cmpmult0 |compmult_343  |   1450|
+|80    |        add0   |fladder_352   |    193|
+|81    |        add1   |fladder_353   |    243|
+|82    |        mul0   |flmult_354    |     73|
+|83    |        mul01  |flmult_355    |     89|
+|84    |        mul1   |flmult_356    |    426|
+|85    |        mul2   |flmult_357    |    343|
+|86    |        mul3   |flmult_358    |     83|
+|87    |      cmpmult1 |compmult_344  |   1474|
+|88    |        add0   |fladder_345   |    164|
+|89    |        add1   |fladder_346   |    499|
+|90    |        mul0   |flmult_347    |     80|
+|91    |        mul01  |flmult_348    |    354|
+|92    |        mul1   |flmult_349    |    175|
+|93    |        mul2   |flmult_350    |     99|
+|94    |        mul3   |flmult_351    |    103|
+|95    |    mac2       |mac_272       |   4941|
+|96    |      cmpadd0  |compadder_319 |    419|
+|97    |        fl0    |fladder_339   |    181|
+|98    |        fl1    |fladder_340   |    238|
+|99    |      cmpadd1  |compadder_320 |    511|
+|100   |        fl0    |fladder_337   |    273|
+|101   |        fl1    |fladder_338   |    238|
+|102   |      cmpmult0 |compmult_321  |   1450|
+|103   |        add0   |fladder_330   |    193|
+|104   |        add1   |fladder_331   |    243|
+|105   |        mul0   |flmult_332    |     73|
+|106   |        mul01  |flmult_333    |     89|
+|107   |        mul1   |flmult_334    |    426|
+|108   |        mul2   |flmult_335    |    343|
+|109   |        mul3   |flmult_336    |     83|
+|110   |      cmpmult1 |compmult_322  |   1474|
+|111   |        add0   |fladder_323   |    164|
+|112   |        add1   |fladder_324   |    499|
+|113   |        mul0   |flmult_325    |     80|
+|114   |        mul01  |flmult_326    |    354|
+|115   |        mul1   |flmult_327    |    175|
+|116   |        mul2   |flmult_328    |     99|
+|117   |        mul3   |flmult_329    |    103|
+|118   |    mac3       |mac_273       |   4941|
+|119   |      cmpadd0  |compadder_297 |    419|
+|120   |        fl0    |fladder_317   |    181|
+|121   |        fl1    |fladder_318   |    238|
+|122   |      cmpadd1  |compadder_298 |    511|
+|123   |        fl0    |fladder_315   |    273|
+|124   |        fl1    |fladder_316   |    238|
+|125   |      cmpmult0 |compmult_299  |   1450|
+|126   |        add0   |fladder_308   |    193|
+|127   |        add1   |fladder_309   |    243|
+|128   |        mul0   |flmult_310    |     73|
+|129   |        mul01  |flmult_311    |     89|
+|130   |        mul1   |flmult_312    |    426|
+|131   |        mul2   |flmult_313    |    343|
+|132   |        mul3   |flmult_314    |     83|
+|133   |      cmpmult1 |compmult_300  |   1474|
+|134   |        add0   |fladder_301   |    164|
+|135   |        add1   |fladder_302   |    499|
+|136   |        mul0   |flmult_303    |     80|
+|137   |        mul01  |flmult_304    |    354|
+|138   |        mul1   |flmult_305    |    175|
+|139   |        mul2   |flmult_306    |     99|
+|140   |        mul3   |flmult_307    |    103|
+|141   |    mac4       |mac_274       |   4943|
+|142   |      cmpadd0  |compadder_275 |    419|
+|143   |        fl0    |fladder_295   |    181|
+|144   |        fl1    |fladder_296   |    238|
+|145   |      cmpadd1  |compadder_276 |    511|
+|146   |        fl0    |fladder_293   |    273|
+|147   |        fl1    |fladder_294   |    238|
+|148   |      cmpmult0 |compmult_277  |   1452|
+|149   |        add0   |fladder_286   |    193|
+|150   |        add1   |fladder_287   |    243|
+|151   |        mul0   |flmult_288    |     73|
+|152   |        mul01  |flmult_289    |     89|
+|153   |        mul1   |flmult_290    |    426|
+|154   |        mul2   |flmult_291    |    344|
+|155   |        mul3   |flmult_292    |     84|
+|156   |      cmpmult1 |compmult_278  |   1474|
+|157   |        add0   |fladder_279   |    164|
+|158   |        add1   |fladder_280   |    499|
+|159   |        mul0   |flmult_281    |     80|
+|160   |        mul01  |flmult_282    |    354|
+|161   |        mul1   |flmult_283    |    175|
+|162   |        mul2   |flmult_284    |     99|
+|163   |        mul3   |flmult_285    |    103|
+|164   |  c2           |fftc2         |  27651|
+|165   |    mac1       |mac_179       |   5254|
+|166   |      cmpadd0  |compadder_249 |    422|
+|167   |        fl0    |fladder_269   |    181|
+|168   |        fl1    |fladder_270   |    241|
+|169   |      cmpadd1  |compadder_250 |    760|
+|170   |        fl0    |fladder_267   |    368|
+|171   |        fl1    |fladder_268   |    392|
+|172   |      cmpmult0 |compmult_251  |   1321|
+|173   |        add0   |fladder_260   |    139|
+|174   |        add1   |fladder_261   |    148|
+|175   |        mul0   |flmult_262    |     44|
+|176   |        mul01  |flmult_263    |     93|
+|177   |        mul1   |flmult_264    |    418|
+|178   |        mul2   |flmult_265    |    396|
+|179   |        mul3   |flmult_266    |     83|
+|180   |      cmpmult1 |compmult_252  |   1612|
+|181   |        add0   |fladder_253   |    434|
+|182   |        add1   |fladder_254   |    364|
+|183   |        mul0   |flmult_255    |    111|
+|184   |        mul01  |flmult_256    |     83|
+|185   |        mul1   |flmult_257    |    133|
+|186   |        mul2   |flmult_258    |    241|
+|187   |        mul3   |flmult_259    |    246|
+|188   |    mac2       |mac_180       |   5257|
+|189   |      cmpadd0  |compadder_227 |    422|
+|190   |        fl0    |fladder_247   |    181|
+|191   |        fl1    |fladder_248   |    241|
+|192   |      cmpadd1  |compadder_228 |    760|
+|193   |        fl0    |fladder_245   |    368|
+|194   |        fl1    |fladder_246   |    392|
+|195   |      cmpmult0 |compmult_229  |   1323|
+|196   |        add0   |fladder_238   |    139|
+|197   |        add1   |fladder_239   |    148|
+|198   |        mul0   |flmult_240    |     45|
+|199   |        mul01  |flmult_241    |     93|
+|200   |        mul1   |flmult_242    |    419|
+|201   |        mul2   |flmult_243    |    396|
+|202   |        mul3   |flmult_244    |     83|
+|203   |      cmpmult1 |compmult_230  |   1613|
+|204   |        add0   |fladder_231   |    434|
+|205   |        add1   |fladder_232   |    364|
+|206   |        mul0   |flmult_233    |    112|
+|207   |        mul01  |flmult_234    |     83|
+|208   |        mul1   |flmult_235    |    133|
+|209   |        mul2   |flmult_236    |    241|
+|210   |        mul3   |flmult_237    |    246|
+|211   |    mac3       |mac_181       |   5253|
+|212   |      cmpadd0  |compadder_205 |    421|
+|213   |        fl0    |fladder_225   |    181|
+|214   |        fl1    |fladder_226   |    240|
+|215   |      cmpadd1  |compadder_206 |    760|
+|216   |        fl0    |fladder_223   |    368|
+|217   |        fl1    |fladder_224   |    392|
+|218   |      cmpmult0 |compmult_207  |   1321|
+|219   |        add0   |fladder_216   |    139|
+|220   |        add1   |fladder_217   |    148|
+|221   |        mul0   |flmult_218    |     44|
+|222   |        mul01  |flmult_219    |     93|
+|223   |        mul1   |flmult_220    |    418|
+|224   |        mul2   |flmult_221    |    396|
+|225   |        mul3   |flmult_222    |     83|
+|226   |      cmpmult1 |compmult_208  |   1612|
+|227   |        add0   |fladder_209   |    434|
+|228   |        add1   |fladder_210   |    364|
+|229   |        mul0   |flmult_211    |    111|
+|230   |        mul01  |flmult_212    |     83|
+|231   |        mul1   |flmult_213    |    133|
+|232   |        mul2   |flmult_214    |    241|
+|233   |        mul3   |flmult_215    |    246|
+|234   |    mac4       |mac_182       |   5255|
+|235   |      cmpadd0  |compadder_183 |    421|
+|236   |        fl0    |fladder_203   |    181|
+|237   |        fl1    |fladder_204   |    240|
+|238   |      cmpadd1  |compadder_184 |    761|
+|239   |        fl0    |fladder_201   |    369|
+|240   |        fl1    |fladder_202   |    392|
+|241   |      cmpmult0 |compmult_185  |   1322|
+|242   |        add0   |fladder_194   |    139|
+|243   |        add1   |fladder_195   |    148|
+|244   |        mul0   |flmult_196    |     44|
+|245   |        mul01  |flmult_197    |     94|
+|246   |        mul1   |flmult_198    |    418|
+|247   |        mul2   |flmult_199    |    396|
+|248   |        mul3   |flmult_200    |     83|
+|249   |      cmpmult1 |compmult_186  |   1612|
+|250   |        add0   |fladder_187   |    434|
+|251   |        add1   |fladder_188   |    364|
+|252   |        mul0   |flmult_189    |    111|
+|253   |        mul01  |flmult_190    |     83|
+|254   |        mul1   |flmult_191    |    133|
+|255   |        mul2   |flmult_192    |    241|
+|256   |        mul3   |flmult_193    |    246|
+|257   |  c3           |fftc3         |  28969|
+|258   |    mac1       |mac_87        |   5499|
+|259   |      cmpadd0  |compadder_157 |    476|
+|260   |        fl0    |fladder_177   |    238|
+|261   |        fl1    |fladder_178   |    238|
+|262   |      cmpadd1  |compadder_158 |    444|
+|263   |        fl0    |fladder_175   |    257|
+|264   |        fl1    |fladder_176   |    187|
+|265   |      cmpmult0 |compmult_159  |   1386|
+|266   |        add0   |fladder_168   |    121|
+|267   |        add1   |fladder_169   |    218|
+|268   |        mul0   |flmult_170    |     51|
+|269   |        mul01  |flmult_171    |     88|
+|270   |        mul1   |flmult_172    |    453|
+|271   |        mul2   |flmult_173    |    364|
+|272   |        mul3   |flmult_174    |     91|
+|273   |      cmpmult1 |compmult_160  |   1969|
+|274   |        add0   |fladder_161   |    121|
+|275   |        add1   |fladder_162   |    402|
+|276   |        mul0   |flmult_163    |    140|
+|277   |        mul01  |flmult_164    |     88|
+|278   |        mul1   |flmult_165    |    584|
+|279   |        mul2   |flmult_166    |    306|
+|280   |        mul3   |flmult_167    |    328|
+|281   |    mac2       |mac_88        |   5488|
+|282   |      cmpadd0  |compadder_135 |    515|
+|283   |        fl0    |fladder_155   |    220|
+|284   |        fl1    |fladder_156   |    295|
+|285   |      cmpadd1  |compadder_136 |    647|
+|286   |        fl0    |fladder_153   |    279|
+|287   |        fl1    |fladder_154   |    368|
+|288   |      cmpmult0 |compmult_137  |   1324|
+|289   |        add0   |fladder_146   |    127|
+|290   |        add1   |fladder_147   |    148|
+|291   |        mul0   |flmult_148    |     45|
+|292   |        mul01  |flmult_149    |     84|
+|293   |        mul1   |flmult_150    |    441|
+|294   |        mul2   |flmult_151    |    396|
+|295   |        mul3   |flmult_152    |     83|
+|296   |      cmpmult1 |compmult_138  |   1886|
+|297   |        add0   |fladder_139   |    172|
+|298   |        add1   |fladder_140   |    348|
+|299   |        mul0   |flmult_141    |    451|
+|300   |        mul01  |flmult_142    |     89|
+|301   |        mul1   |flmult_143    |    209|
+|302   |        mul2   |flmult_144    |    308|
+|303   |        mul3   |flmult_145    |    309|
+|304   |    mac3       |mac_89        |   5508|
+|305   |      cmpadd0  |compadder_113 |    477|
+|306   |        fl0    |fladder_133   |    239|
+|307   |        fl1    |fladder_134   |    238|
+|308   |      cmpadd1  |compadder_114 |    447|
+|309   |        fl0    |fladder_131   |    260|
+|310   |        fl1    |fladder_132   |    187|
+|311   |      cmpmult0 |compmult_115  |   1391|
+|312   |        add0   |fladder_124   |    121|
+|313   |        add1   |fladder_125   |    219|
+|314   |        mul0   |flmult_126    |     52|
+|315   |        mul01  |flmult_127    |     88|
+|316   |        mul1   |flmult_128    |    454|
+|317   |        mul2   |flmult_129    |    365|
+|318   |        mul3   |flmult_130    |     92|
+|319   |      cmpmult1 |compmult_116  |   1969|
+|320   |        add0   |fladder_117   |    121|
+|321   |        add1   |fladder_118   |    402|
+|322   |        mul0   |flmult_119    |    140|
+|323   |        mul01  |flmult_120    |     88|
+|324   |        mul1   |flmult_121    |    584|
+|325   |        mul2   |flmult_122    |    306|
+|326   |        mul3   |flmult_123    |    328|
+|327   |    mac4       |mac_90        |   5495|
+|328   |      cmpadd0  |compadder_91  |    516|
+|329   |        fl0    |fladder_111   |    220|
+|330   |        fl1    |fladder_112   |    296|
+|331   |      cmpadd1  |compadder_92  |    650|
+|332   |        fl0    |fladder_109   |    282|
+|333   |        fl1    |fladder_110   |    368|
+|334   |      cmpmult0 |compmult_93   |   1327|
+|335   |        add0   |fladder_102   |    127|
+|336   |        add1   |fladder_103   |    148|
+|337   |        mul0   |flmult_104    |     46|
+|338   |        mul01  |flmult_105    |     84|
+|339   |        mul1   |flmult_106    |    441|
+|340   |        mul2   |flmult_107    |    396|
+|341   |        mul3   |flmult_108    |     85|
+|342   |      cmpmult1 |compmult_94   |   1886|
+|343   |        add0   |fladder_95    |    172|
+|344   |        add1   |fladder_96    |    348|
+|345   |        mul0   |flmult_97     |    451|
+|346   |        mul01  |flmult_98     |     89|
+|347   |        mul1   |flmult_99     |    209|
+|348   |        mul2   |flmult_100    |    308|
+|349   |        mul3   |flmult_101    |    309|
+|350   |  c4           |fftc4         |  28682|
+|351   |    mac1       |mac           |   5449|
+|352   |      cmpadd0  |compadder_65  |    476|
+|353   |        fl0    |fladder_85    |    238|
+|354   |        fl1    |fladder_86    |    238|
+|355   |      cmpadd1  |compadder_66  |    444|
+|356   |        fl0    |fladder_83    |    257|
+|357   |        fl1    |fladder_84    |    187|
+|358   |      cmpmult0 |compmult_67   |   1382|
+|359   |        add0   |fladder_76    |    121|
+|360   |        add1   |fladder_77    |    218|
+|361   |        mul0   |flmult_78     |     49|
+|362   |        mul01  |flmult_79     |     88|
+|363   |        mul1   |flmult_80     |    453|
+|364   |        mul2   |flmult_81     |    363|
+|365   |        mul3   |flmult_82     |     90|
+|366   |      cmpmult1 |compmult_68   |   1921|
+|367   |        add0   |fladder_69    |    121|
+|368   |        add1   |fladder_70    |    402|
+|369   |        mul0   |flmult_71     |    143|
+|370   |        mul01  |flmult_72     |     88|
+|371   |        mul1   |flmult_73     |    558|
+|372   |        mul2   |flmult_74     |    280|
+|373   |        mul3   |flmult_75     |    329|
+|374   |    mac2       |mac_0         |   5496|
+|375   |      cmpadd0  |compadder_43  |    405|
+|376   |        fl0    |fladder_63    |    227|
+|377   |        fl1    |fladder_64    |    178|
+|378   |      cmpadd1  |compadder_44  |    467|
+|379   |        fl0    |fladder_61    |    280|
+|380   |        fl1    |fladder_62    |    187|
+|381   |      cmpmult0 |compmult_45   |   1349|
+|382   |        add0   |fladder_54    |    127|
+|383   |        add1   |fladder_55    |    293|
+|384   |        mul0   |flmult_56     |     46|
+|385   |        mul01  |flmult_57     |     84|
+|386   |        mul1   |flmult_58     |    454|
+|387   |        mul2   |flmult_59     |    264|
+|388   |        mul3   |flmult_60     |     81|
+|389   |      cmpmult1 |compmult_46   |   2021|
+|390   |        add0   |fladder_47    |    172|
+|391   |        add1   |fladder_48    |    404|
+|392   |        mul0   |flmult_49     |    152|
+|393   |        mul01  |flmult_50     |    398|
+|394   |        mul1   |flmult_51     |    227|
+|395   |        mul2   |flmult_52     |    326|
+|396   |        mul3   |flmult_53     |    342|
+|397   |    mac3       |mac_1         |   5459|
+|398   |      cmpadd0  |compadder_21  |    513|
+|399   |        fl0    |fladder_41    |    219|
+|400   |        fl1    |fladder_42    |    294|
+|401   |      cmpadd1  |compadder_22  |    646|
+|402   |        fl0    |fladder_39    |    279|
+|403   |        fl1    |fladder_40    |    367|
+|404   |      cmpmult0 |compmult_23   |   1323|
+|405   |        add0   |fladder_32    |    127|
+|406   |        add1   |fladder_33    |    148|
+|407   |        mul0   |flmult_34     |     44|
+|408   |        mul01  |flmult_35     |     84|
+|409   |        mul1   |flmult_36     |    439|
+|410   |        mul2   |flmult_37     |    396|
+|411   |        mul3   |flmult_38     |     85|
+|412   |      cmpmult1 |compmult_24   |   1857|
+|413   |        add0   |fladder_25    |    172|
+|414   |        add1   |fladder_26    |    348|
+|415   |        mul0   |flmult_27     |    446|
+|416   |        mul01  |flmult_28     |     89|
+|417   |        mul1   |flmult_29     |    210|
+|418   |        mul2   |flmult_30     |    309|
+|419   |        mul3   |flmult_31     |    283|
+|420   |    mac4       |mac_2         |   5518|
+|421   |      cmpadd0  |compadder     |    475|
+|422   |        fl0    |fladder_19    |    236|
+|423   |        fl1    |fladder_20    |    239|
+|424   |      cmpadd1  |compadder_3   |    502|
+|425   |        fl0    |fladder_17    |    268|
+|426   |        fl1    |fladder_18    |    234|
+|427   |      cmpmult0 |compmult      |   1321|
+|428   |        add0   |fladder_10    |    127|
+|429   |        add1   |fladder_11    |    164|
+|430   |        mul0   |flmult_12     |     41|
+|431   |        mul01  |flmult_13     |     84|
+|432   |        mul1   |flmult_14     |    458|
+|433   |        mul2   |flmult_15     |    369|
+|434   |        mul3   |flmult_16     |     78|
+|435   |      cmpmult1 |compmult_4    |   2108|
+|436   |        add0   |fladder       |    172|
+|437   |        add1   |fladder_5     |    483|
+|438   |        mul0   |flmult        |    461|
+|439   |        mul01  |flmult_6      |     89|
+|440   |        mul1   |flmult_7      |    234|
+|441   |        mul2   |flmult_8      |    333|
+|442   |        mul3   |flmult_9      |    336|
++------+---------------+--------------+-------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:37 ; elapsed = 00:01:53 . Memory (MB): peak = 1036.707 ; gain = 699.152
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:37 ; elapsed = 00:01:53 . Memory (MB): peak = 1036.707 ; gain = 699.152
+Synthesis Optimization Complete : Time (s): cpu = 00:01:37 ; elapsed = 00:01:53 . Memory (MB): peak = 1036.707 ; gain = 699.152
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 12548 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 1401.094 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+71 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:19 ; elapsed = 00:02:35 . Memory (MB): peak = 1401.094 ; gain = 1076.316
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 1401.094 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.runs/synth_21/butterfly.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:33 ; elapsed = 00:00:23 . Memory (MB): peak = 1401.094 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file butterfly_utilization_synth.rpt -pb butterfly_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 30 14:58:24 2021...

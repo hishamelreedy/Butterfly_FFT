@@ -77,8 +77,9 @@ for i in range(0,len(mismatch_indices)):
 # Check Column 2 output
 #Sim Results
 f = open("data/c2_output.txt")
+f = open("data/Final_output_c2.txt")
 simresults = f.readlines()
-simresults=simresults[3:]
+#simresults=simresults[3:]
 simresults = [each_string.upper() for each_string in simresults]
 
 import struct
@@ -115,8 +116,9 @@ for i in range(0,len(mismatch_indices)):
 # Check Column 1 output
 #Sim Results
 f = open("data/c1_output.txt")
+f = open("data/Final_output_c1.txt")
 simresults = f.readlines()
-simresults=simresults[3:]
+#simresults=simresults[3:]
 simresults = [each_string.upper() for each_string in simresults]
 
 import struct
@@ -192,7 +194,7 @@ for i in range(0,len(mismatch_indices)):
 #Sim Results
 f = open("data/Final_output.txt")
 simresults = f.readlines()
-simresults=simresults[3:]
+#simresults=simresults[3:]
 simresults = [each_string.upper() for each_string in simresults]
 
 import struct
@@ -225,3 +227,4 @@ print(mismatch_indices)
 for i in range(0,len(mismatch_indices)):
     print("sim Results",simresults_conv[mismatch_indices[i]-1])
     print("True Results",truevalues_conv[mismatch_indices[i]-1])
+

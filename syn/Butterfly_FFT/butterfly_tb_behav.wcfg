@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="butterfly_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="butterfly_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1110000001fs"></ZoomEndTime>
+      <Cursor1Time time="420000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="228"></NameColumnWidth>
+      <ValueColumnWidth column_width="193"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="14" />
+   <wave_markers>
+      <marker time="520000000" label="" />
+      <marker time="20000000" label="" />
+      <marker time="120000000" label="" />
+      <marker time="220000000" label="" />
+      <marker time="320000000" label="" />
+      <marker time="420000000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/butterfly_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/butterfly_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/butterfly_tb/inpmac" type="array">
+      <obj_property name="ElementShortName">inpmac[2047:0]</obj_property>
+      <obj_property name="ObjectShortName">inpmac[2047:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/butterfly_tb/outmac" type="array">
+      <obj_property name="ElementShortName">outmac[2047:0]</obj_property>
+      <obj_property name="ObjectShortName">outmac[2047:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/butterfly_tb/inpmacmem" type="array">
+      <obj_property name="ElementShortName">inpmacmem[0:31][63:0]</obj_property>
+      <obj_property name="ObjectShortName">inpmacmem[0:31][63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/butterfly_tb/outmacmem" type="array">
+      <obj_property name="ElementShortName">outmacmem[0:31][63:0]</obj_property>
+      <obj_property name="ObjectShortName">outmacmem[0:31][63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/butterfly_tb/outmacmemreal" type="array">
+      <obj_property name="ElementShortName">outmacmemreal[0:31][31:0]</obj_property>
+      <obj_property name="ObjectShortName">outmacmemreal[0:31][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/butterfly_tb/outmacmemimag" type="array">
+      <obj_property name="ElementShortName">outmacmemimag[0:31][31:0]</obj_property>
+      <obj_property name="ObjectShortName">outmacmemimag[0:31][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/butterfly_tb/writemacmem" type="array">
+      <obj_property name="ElementShortName">writemacmem[0:31][63:0]</obj_property>
+      <obj_property name="ObjectShortName">writemacmem[0:31][63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/butterfly_tb/FFT/Reg_outmacst0" type="array">
+      <obj_property name="ElementShortName">Reg_outmacst0[2047:0]</obj_property>
+      <obj_property name="ObjectShortName">Reg_outmacst0[2047:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/butterfly_tb/FFT/Reg_outmacst1" type="array">
+      <obj_property name="ElementShortName">Reg_outmacst1[2047:0]</obj_property>
+      <obj_property name="ObjectShortName">Reg_outmacst1[2047:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/butterfly_tb/FFT/Reg_outmacst2" type="array">
+      <obj_property name="ElementShortName">Reg_outmacst2[2047:0]</obj_property>
+      <obj_property name="ObjectShortName">Reg_outmacst2[2047:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/butterfly_tb/FFT/Reg_outmacst3" type="array">
+      <obj_property name="ElementShortName">Reg_outmacst3[2047:0]</obj_property>
+      <obj_property name="ObjectShortName">Reg_outmacst3[2047:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/butterfly_tb/FFT/Reg_outmacst4" type="array">
+      <obj_property name="ElementShortName">Reg_outmacst4[2047:0]</obj_property>
+      <obj_property name="ObjectShortName">Reg_outmacst4[2047:0]</obj_property>
+   </wvobject>
+</wave_config>

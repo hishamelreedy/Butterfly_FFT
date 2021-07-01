@@ -1,6 +1,0 @@
-Vivado Simulator 2018.3
-Time resolution is 1 ps
-Loading rom.
-WARNING: File ../data/timesamples.txt referenced on C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sim_1/imports/tb/fftc0_tb.v at line 16 cannot be opened for reading. Please ensure that this file is available in the current working directory.
-WARNING: file ../data/c0_output.txt could not be opened
-$finish called at time : 1 us : File "C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.srcs/sim_1/imports/tb/fftc0_tb.v" Line 211

@@ -1,5 +1,5 @@
 clear;clc
-x=[1:32];
+x=[140:171];
 OC0=zeros(1,32);
 OC1=zeros(1,32);
 OC2=zeros(1,32);

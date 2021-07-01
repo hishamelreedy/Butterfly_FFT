@@ -17,7 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-create_project -in_memory -part xc7z045ffg900-2
+create_project -in_memory -part xc7z020clg484-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -26,7 +26,7 @@ set_property webtalk.parent_dir {C:/Users/Hisham Elreedy/OneDrive/Documents/Butt
 set_property parent.project_path {C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.xpr} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property board_part xilinx.com:zc706:part0:1.4 [current_project]
+set_property board_part xilinx.com:zc702:part0:1.4 [current_project]
 set_property ip_output_repo {c:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/syn/Butterfly_FFT/Butterfly_FFT.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
@@ -54,7 +54,7 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
-synth_design -top butterfly -part xc7z045ffg900-2
+synth_design -top butterfly -part xc7z020clg484-1
 
 
 # disable binary constraint mode for synth run checkpoints

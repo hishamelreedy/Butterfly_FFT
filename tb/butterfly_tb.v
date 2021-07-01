@@ -9,13 +9,7 @@ wire [64-1:0] outmacmem [0:31];
 wire [32-1:0] outmacmemreal [0:31];
 wire [32-1:0] outmacmemimag [0:31];
 reg [64-1:0] writemacmem[0:31];
-
-//Read data from input into regfile
-initial begin
-    $display("Loading rom.");
-    $readmemh("../data/timesamples.txt", inpmacmem);
-end
-
+//integer f;
 //2D in to 1D
 always @(*)
  begin
@@ -230,46 +224,33 @@ assign outmacmemimag[0]=outmacmem[0][31:0];
 butterfly FFT (clk,reset,inpmac,outmac);
 
 //clk
-//clk
-always clk = #50 ~clk;
+always clk = #10 ~clk;
 
 //Begin Simulation
 initial begin
 reset=1;
-#100;
+#10;
 reset=0;
+$display("Loading rom.");
+$readmemh("../data/timesamples.txt", inpmacmem);
+#111;
+$writememh("../data/Final_output_c0.txt", FFT.Reg_outmacst0mem);
+#10;
+$display("Removing Input");
+$readmemh("../data/timesamples0.txt", inpmacmem);
+#90;
+$writememh("../data/Final_output_c1.txt", FFT.Reg_outmacst1mem);
 #100;
+$writememh("../data/Final_output_c2.txt", FFT.Reg_outmacst2mem);
 #100;
+$writememh("../data/Final_output_c3.txt", FFT.Reg_outmacst3mem);
 #100;
-#100;
-#100;
-
-#100;
-#100;
-#100;
-#100;
-#100;
-
-#100;
-#100;
-#100;
-#100;
-#100;
-
-#100;
-#100;
-#100;
-#100;
-#100;
-
-#100;
-#100;
-#100;
-#100;
-#100;
-
+$writememh("../data/Final_output_c4.txt", FFT.Reg_outmacst4mem);
 $writememh("../data/Final_output.txt", writemacmem);
-#100
+#100;
+$writememh("../data/Final_output4.txt", writemacmem);
+#10;
+
 $finish;
 
 end

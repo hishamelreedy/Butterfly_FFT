@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_21" LaunchPart="xc7z045ffg900-2" LaunchTime="1625052291">
+<GenRun Id="synth_21" LaunchPart="xc7z020clg484-1" LaunchTime="1625057719">
   <File Type="PA-TCL" Name="butterfly.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="butterfly_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="butterfly_reports.tcl"/>
   <File Type="RDS-RDS" Name="butterfly.vds"/>
   <File Type="RDS-UTIL" Name="butterfly_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="butterfly_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="butterfly.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="butterfly_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="butterfly_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/rtl/compadder.v">
@@ -41,7 +38,7 @@
     <File Path="$PSRCDIR/sources_1/imports/rtl/fftc1.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/fftc1.v"/>
-        <Attr Name="ImportTime" Val="1625051603"/>
+        <Attr Name="ImportTime" Val="1625057041"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -50,7 +47,7 @@
     <File Path="$PSRCDIR/sources_1/imports/rtl/fftc2.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/fftc2.v"/>
-        <Attr Name="ImportTime" Val="1625051613"/>
+        <Attr Name="ImportTime" Val="1625057080"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -59,7 +56,7 @@
     <File Path="$PSRCDIR/sources_1/imports/rtl/fftc3.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/fftc3.v"/>
-        <Attr Name="ImportTime" Val="1625051622"/>
+        <Attr Name="ImportTime" Val="1625057116"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -68,7 +65,7 @@
     <File Path="$PSRCDIR/sources_1/imports/rtl/fftc4.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/fftc4.v"/>
-        <Attr Name="ImportTime" Val="1625051630"/>
+        <Attr Name="ImportTime" Val="1625057153"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -113,7 +110,7 @@
     <File Path="$PSRCDIR/sources_1/imports/rtl/butterfly.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/butterfly.v"/>
-        <Attr Name="ImportTime" Val="1625051678"/>
+        <Attr Name="ImportTime" Val="1625056548"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -138,9 +135,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>
