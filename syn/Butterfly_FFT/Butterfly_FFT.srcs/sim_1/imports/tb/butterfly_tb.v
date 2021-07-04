@@ -248,20 +248,20 @@ clk2=1'b1;
 #50
 clk2=0;
 #40
-//$display("Loading rom.");
-//$readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples4.txt", inpmacmem);
+$display("Loading rom.");
+$readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples4.txt", inpmacmem);
 #10 clk2=1;
 #50
 clk2=0;
 #40
-//$display("Loading rom.");
-//$readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples3.txt", inpmacmem);
+$display("Loading rom.");
+$readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples3.txt", inpmacmem);
 #10 clk2=1;
 #50
 clk2=0;
 #40
-//$display("Loading rom.");
-//$readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples2.txt", inpmacmem);
+$display("Loading rom.");
+$readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples2.txt", inpmacmem);
 #10 clk2=1;
 #50
 clk2=0;
@@ -272,19 +272,19 @@ clk2=0;
 #50
 clk2=0;
 #50 clk2=1;
-$fwrite("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output.txt", writemacmem);
+$writememh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output.txt", writemacmem);
 #50
 clk2=0;
 #50 clk2=1;
-$fwrite("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output4.txt", writemacmem);
+$writememh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output4.txt", writemacmem);
 #50
 clk2=0;
 #50 clk2=1;
-$fwrite("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output3.txt", writemacmem);
+$writememh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output3.txt", writemacmem);
 #50
 clk2=0;
 #50 clk2=1;
-$fwrite("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output2.txt", writemacmem);
+$writememh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output2.txt", writemacmem);
 #50
 clk2=0;
 #50 clk2=1;

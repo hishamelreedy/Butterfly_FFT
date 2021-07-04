@@ -12,12 +12,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="920000001fs"></ZoomEndTime>
-      <Cursor1Time time="186087000fs"></Cursor1Time>
+      <ZoomEndTime time="797862070fs"></ZoomEndTime>
+      <Cursor1Time time="820000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="228"></NameColumnWidth>
-      <ValueColumnWidth column_width="183"></ValueColumnWidth>
+      <ValueColumnWidth column_width="178"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="15" />
    <wave_markers>
@@ -28,6 +28,9 @@
       <marker time="320000000" label="" />
       <marker time="420580000" label="" />
       <marker time="520000000" label="" />
+      <marker time="620000000" label="" />
+      <marker time="720000000" label="" />
+      <marker time="820000000" label="" />
    </wave_markers>
    <wvobject fp_name="/butterfly_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
