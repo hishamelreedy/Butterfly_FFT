@@ -2,7 +2,6 @@
 `timescale 1ns / 1ps
 module butterfly_tb;
 reg clk = 1'b1;
-reg clk2;
 reg reset;
 reg [64*32-1:0] inpmac;
 wire [64*32-1:0] outmac;
@@ -229,7 +228,7 @@ assign outmacmemreal[0]=outmacmem[0][63:32];
 assign outmacmemimag[0]=outmacmem[0][31:0];
 
 //UUT
-butterfly FFT (clk,clk2,reset,inpmac,outmac);
+butterfly FFT (clk,reset,inpmac,outmac);
 
 //clk
 always     clk = #10 ~clk;
@@ -240,53 +239,53 @@ initial begin
 $display("Loading rom.");
 $readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples.txt", inpmacmem);
 reset=1;
-clk2=1'b0;
+//clk2=1'b0;
 #10;
 reset=0;
 #10
-clk2=1'b1;
+//clk2=1'b1;
 #50
-clk2=0;
+//clk2=0;
 #40
 $display("Loading rom.");
 $readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples4.txt", inpmacmem);
-#10 clk2=1;
+#10 //clk2=1;
 #50
-clk2=0;
+//clk2=0;
 #40
 $display("Loading rom.");
 $readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples3.txt", inpmacmem);
-#10 clk2=1;
+#10 //clk2=1;
 #50
-clk2=0;
+//clk2=0;
 #40
 $display("Loading rom.");
 $readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples2.txt", inpmacmem);
-#10 clk2=1;
+#10 //clk2=1;
 #50
-clk2=0;
-#50 clk2=1;
+//clk2=0;
+#50 //clk2=1;
 #50
-clk2=0;
-#50 clk2=1;
+//clk2=0;
+#50 //clk2=1;
 #50
-clk2=0;
-#50 clk2=1;
-$fwrite("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output.txt", writemacmem);
+//clk2=0;
+#50 //clk2=1;
+$writememh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output.txt", writemacmem);
 #50
-clk2=0;
-#50 clk2=1;
-$fwrite("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output4.txt", writemacmem);
+//clk2=0;
+#50 //clk2=1;
+$writememh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output4.txt", writemacmem);
 #50
-clk2=0;
-#50 clk2=1;
-$fwrite("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output3.txt", writemacmem);
+//clk2=0;
+#50 //clk2=1;
+$writememh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output3.txt", writemacmem);
 #50
-clk2=0;
-#50 clk2=1;
-$fwrite("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output2.txt", writemacmem);
+//clk2=0;
+#50 //clk2=1;
+$writememh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/Final_output2.txt", writemacmem);
 #50
-clk2=0;
-#50 clk2=1;
+//clk2=0;
+#50; //clk2=1;
 end
 endmodule
