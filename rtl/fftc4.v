@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module fftc0(clk,reset,inpmac,outmac);
+module fftc4(clk,reset,inpmac,outmac);
 input clk,reset;
 input [64*32-1:0] inpmac;
 output [64*32-1:0] outmac;
@@ -9,9 +9,39 @@ reg [64-1:0] inpmacmem [0:31];
 wire [64-1:0] outmacmem [0:31];
 
 //Adjusting weights
-wire [64-1:0] weights [0:1];
-assign weights[0]=64'h3f80000000000000;
-assign weights[1]=64'hbf80000000000000;
+wire [64-1:0] weights [0:31];
+assign weights[0]=64'h3f80000000000000;//1+0j
+assign weights[1]=64'h3f7b15b5be47c84b;//0.9808 - 0.1951i
+assign weights[2]=64'h3f6c84b6bec3f141;//0.9239 - 0.3827i
+assign weights[3]=64'h3f54dd2fbf0e3bcd;//0.8315 - 0.5556i
+assign weights[4]=64'h3f34fdf4bf34fdf4;//0.7071 - 0.7071i
+assign weights[5]=64'h3f0e3bcdbf54dd2f;//0.5556 - 0.8315i
+assign weights[6]=64'h3ec3f141bf6c84b6;// 0.3827 - 0.9239i
+assign weights[7]=64'h3e47c84bbf7b15b5;//0.1951 - 0.9808i
+assign weights[8]=64'h00000000bf800000;//-1j
+assign weights[9]=64'hbe47c84bbf7b15b5;//-0.1951 - 0.9808i
+assign weights[10]=64'hbec3f141bf6c84b6;//-0.3827 - 0.9239i
+assign weights[11]=64'hbf0e3bcdbf54dd2f;//-0.5556 - 0.8315i
+assign weights[12]=64'hbf34fdf4bf34fdf4;//-0.7071 - 0.7071i
+assign weights[13]=64'hbf54dd2fbf0e3bcd;//-0.8315 - 0.5556i
+assign weights[14]=64'hbf6c84b6bec3f141;//-0.9239 - 0.3827i
+assign weights[15]=64'hbf7b15b5be47c84b;//-0.9808 - 0.1951i
+assign weights[16]=64'hbf80000000000000;//-1+0j
+assign weights[17]=64'hbf7b15b53e47c84b;//-0.9808 + 0.1951i
+assign weights[18]=64'hbf6c84b63ec3f141;//-0.9239 + 0.3827i
+assign weights[19]=64'hbf54dd2f3f0e3bcd;//-0.8315 + 0.5556i
+assign weights[20]=64'hbf34fdf43f34fdf4;//-0.7071 + 0.7071i
+assign weights[21]=64'hbf0e3bcd3f54dd2f;//-0.5556 + 0.8315i
+assign weights[22]=64'hbec3f1413f6c84b6;//-0.3827 + 0.9239i
+assign weights[23]=64'hbe47c84b3f7b15b5;//-0.1951 + 0.9808i
+assign weights[24]=64'h000000003f800000;//1j
+assign weights[25]=64'h3e47c84b3f7b15b5;//0.1951 + 0.9808i
+assign weights[26]=64'h3ec3f1413f6c84b6;// 0.3827 + 0.9239i
+assign weights[27]=64'h3f0e3bcd3f54dd2f;//0.5556 + 0.8315i
+assign weights[28]=64'h3f34fdf43f34fdf4;//0.7071 + 0.7071i
+assign weights[29]=64'h3f54dd2f3f0e3bcd;//0.8315 + 0.5556i
+assign weights[30]=64'h3f6c84b63ec3f141;//0.9239 + 0.3827i
+assign weights[31]=64'h3f7b15b53e47c84b;//0.9808 + 0.1951i
 
 //Reading into mem
 always@(*)begin
@@ -48,13 +78,11 @@ inpmacmem[2]=inpmac[191:128];
 inpmacmem[1]=inpmac[127:64];
 inpmacmem[0]=inpmac[63:0];
 end
-
-
 //-----Mac 1-------
 //Selection Lines for MUX and DeMUX
 wire [1:0] mac_sel;
 
-//Input Mux Assignment
+//Input Mux
 //Input
 wire [63:0] mac1_muxin1;
 wire [63:0] mac1_muxin2;
@@ -66,17 +94,46 @@ wire [63:0] mac1_muxout2;
 
 //Read Input from mem
 assign mac1_muxin1=inpmacmem[0];
-assign mac1_muxin2=inpmacmem[8];
-assign mac1_muxin3=inpmacmem[4];
-assign mac1_muxin4=inpmacmem[12];
+assign mac1_muxin2=inpmacmem[1];
+assign mac1_muxin3=inpmacmem[2];
+assign mac1_muxin4=inpmacmem[3];
 assign mac1_muxin5=inpmacmem[16];
-assign mac1_muxin6=inpmacmem[24];
-assign mac1_muxin7=inpmacmem[20];
-assign mac1_muxin8=inpmacmem[28];
+assign mac1_muxin6=inpmacmem[17];
+assign mac1_muxin7=inpmacmem[18];
+assign mac1_muxin8=inpmacmem[19];
 
 //make MUX
 assign mac1_muxout1=mac_sel[1]?(mac_sel[0]?mac1_muxin4:mac1_muxin3):(mac_sel[0]?mac1_muxin2:mac1_muxin1);
 assign mac1_muxout2=mac_sel[1]?(mac_sel[0]?mac1_muxin8:mac1_muxin7):(mac_sel[0]?mac1_muxin6:mac1_muxin5);
+
+//Weights MUX
+//Input
+wire [63:0] mac1_muxw1;
+wire [63:0] mac1_muxw2;
+wire [63:0] mac1_muxw3;
+wire [63:0] mac1_muxw4;
+wire [63:0] mac1_muxw5;
+wire [63:0] mac1_muxw6;
+wire [63:0] mac1_muxw7;
+wire [63:0] mac1_muxw8;
+
+//Output
+wire [63:0] mac1_muxw1out;
+wire [63:0] mac1_muxw2out;
+
+//Read Weights from mem
+assign mac1_muxw1=weights[0];
+assign mac1_muxw2=weights[1];
+assign mac1_muxw3=weights[2];
+assign mac1_muxw4=weights[3];
+assign mac1_muxw5=weights[16];
+assign mac1_muxw6=weights[17];
+assign mac1_muxw7=weights[18];
+assign mac1_muxw8=weights[19];
+
+//make MUX
+assign mac1_muxw1out=mac_sel[1]?(mac_sel[0]?mac1_muxw4:mac1_muxw3):(mac_sel[0]?mac1_muxw2:mac1_muxw1);
+assign mac1_muxw2out=mac_sel[1]?(mac_sel[0]?mac1_muxw8:mac1_muxw7):(mac_sel[0]?mac1_muxw6:mac1_muxw5);
 
 //Output DeMux Assignment
 //Input
@@ -134,10 +191,7 @@ default : begin
         mac1_demuxout4 = 0;     mac1_demuxout8 = 0;        
         end
 endcase
-
-
-mac mac1(mac1_muxout1,mac1_muxout2,weights[0],weights[1],mac1_demuxin1w,mac1_demuxin2w);
-
+mac mac1(mac1_muxout1,mac1_muxout2,mac1_muxw1out,mac1_muxw2out,mac1_demuxin1w,mac1_demuxin2w);
 //Save output
 reg [63:0] mac1_demuxout1r;
 reg [63:0] mac1_demuxout2r;
@@ -212,7 +266,7 @@ else if(mac1_demuxout8!=64'd0)
         mac1_demuxout8r<=mac1_demuxout8;
 end
 //-----Mac 2-------
-//Input Mux Assignment
+//Input Mux
 //Input
 wire [63:0] mac2_muxin1;
 wire [63:0] mac2_muxin2;
@@ -223,18 +277,46 @@ wire [63:0] mac2_muxout1;
 wire [63:0] mac2_muxout2;
 
 //Read Input from mem
-assign mac2_muxin1=inpmacmem[2];
-assign mac2_muxin2=inpmacmem[10];
+assign mac2_muxin1=inpmacmem[4];
+assign mac2_muxin2=inpmacmem[5];
 assign mac2_muxin3=inpmacmem[6];
-assign mac2_muxin4=inpmacmem[14];
-assign mac2_muxin5=inpmacmem[18];
-assign mac2_muxin6=inpmacmem[26];
+assign mac2_muxin4=inpmacmem[7];
+assign mac2_muxin5=inpmacmem[20];
+assign mac2_muxin6=inpmacmem[21];
 assign mac2_muxin7=inpmacmem[22];
-assign mac2_muxin8=inpmacmem[30];
+assign mac2_muxin8=inpmacmem[23];
 
 //make MUX
 assign mac2_muxout1=mac_sel[1]?(mac_sel[0]?mac2_muxin4:mac2_muxin3):(mac_sel[0]?mac2_muxin2:mac2_muxin1);
 assign mac2_muxout2=mac_sel[1]?(mac_sel[0]?mac2_muxin8:mac2_muxin7):(mac_sel[0]?mac2_muxin6:mac2_muxin5);
+
+//Weights MUX
+//Input
+wire [63:0] mac2_muxw1;
+wire [63:0] mac2_muxw2;
+wire [63:0] mac2_muxw3;
+wire [63:0] mac2_muxw4;
+wire [63:0] mac2_muxw5;
+wire [63:0] mac2_muxw6;
+wire [63:0] mac2_muxw7;
+wire [63:0] mac2_muxw8;
+//Output
+wire [63:0] mac2_muxw1out;
+wire [63:0] mac2_muxw2out;
+
+//Read Weights from mem
+assign mac2_muxw1=weights[4];
+assign mac2_muxw2=weights[5];
+assign mac2_muxw3=weights[6];
+assign mac2_muxw4=weights[7];
+assign mac2_muxw5=weights[20];
+assign mac2_muxw6=weights[21];
+assign mac2_muxw7=weights[22];
+assign mac2_muxw8=weights[23];
+
+//make MUX
+assign mac2_muxw1out=mac_sel[1]?(mac_sel[0]?mac2_muxw4:mac2_muxw3):(mac_sel[0]?mac2_muxw2:mac2_muxw1);
+assign mac2_muxw2out=mac_sel[1]?(mac_sel[0]?mac2_muxw8:mac2_muxw7):(mac_sel[0]?mac2_muxw6:mac2_muxw5);
 
 //Output DeMux Assignment
 //Input
@@ -293,7 +375,7 @@ default : begin
         end
 endcase
 
-mac mac2(mac2_muxout1,mac2_muxout2,weights[0],weights[1],mac2_demuxin1w,mac2_demuxin2w);
+mac mac2(mac2_muxout1,mac2_muxout2,mac2_muxw1out,mac2_muxw2out,mac2_demuxin1w,mac2_demuxin2w);
 //Save output
 reg [63:0] mac2_demuxout1r;
 reg [63:0] mac2_demuxout2r;
@@ -368,7 +450,7 @@ else if(mac2_demuxout8!=64'd0)
         mac2_demuxout8r<=mac2_demuxout8;
 end
 //-----Mac 3-------
-//Input Mux Assignment
+//Input Mux
 //Input
 wire [63:0] mac3_muxin1;
 wire [63:0] mac3_muxin2;
@@ -379,18 +461,46 @@ wire [63:0] mac3_muxout1;
 wire [63:0] mac3_muxout2;
 
 //Read Input from mem
-assign mac3_muxin1=inpmacmem[1];
+assign mac3_muxin1=inpmacmem[8];
 assign mac3_muxin2=inpmacmem[9];
-assign mac3_muxin3=inpmacmem[5];
-assign mac3_muxin4=inpmacmem[13];
-assign mac3_muxin5=inpmacmem[17];
+assign mac3_muxin3=inpmacmem[10];
+assign mac3_muxin4=inpmacmem[11];
+assign mac3_muxin5=inpmacmem[24];
 assign mac3_muxin6=inpmacmem[25];
-assign mac3_muxin7=inpmacmem[21];
-assign mac3_muxin8=inpmacmem[29];
+assign mac3_muxin7=inpmacmem[26];
+assign mac3_muxin8=inpmacmem[27];
 
 //make MUX
 assign mac3_muxout1=mac_sel[1]?(mac_sel[0]?mac3_muxin4:mac3_muxin3):(mac_sel[0]?mac3_muxin2:mac3_muxin1);
 assign mac3_muxout2=mac_sel[1]?(mac_sel[0]?mac3_muxin8:mac3_muxin7):(mac_sel[0]?mac3_muxin6:mac3_muxin5);
+
+//Weights MUX
+//Input
+wire [63:0] mac3_muxw1;
+wire [63:0] mac3_muxw2;
+wire [63:0] mac3_muxw3;
+wire [63:0] mac3_muxw4;
+wire [63:0] mac3_muxw5;
+wire [63:0] mac3_muxw6;
+wire [63:0] mac3_muxw7;
+wire [63:0] mac3_muxw8;
+//Output
+wire [63:0] mac3_muxw1out;
+wire [63:0] mac3_muxw2out;
+
+//Read Weights from mem
+assign mac3_muxw1=weights[8];
+assign mac3_muxw2=weights[9];
+assign mac3_muxw3=weights[10];
+assign mac3_muxw4=weights[11];
+assign mac3_muxw5=weights[24];
+assign mac3_muxw6=weights[25];
+assign mac3_muxw7=weights[26];
+assign mac3_muxw8=weights[27];
+
+//make MUX
+assign mac3_muxw1out=mac_sel[1]?(mac_sel[0]?mac3_muxw4:mac3_muxw3):(mac_sel[0]?mac3_muxw2:mac3_muxw1);
+assign mac3_muxw2out=mac_sel[1]?(mac_sel[0]?mac3_muxw8:mac3_muxw7):(mac_sel[0]?mac3_muxw6:mac3_muxw5);
 
 //Output DeMux Assignment
 //Input
@@ -449,8 +559,7 @@ default : begin
         end
 endcase
 
-mac mac3(mac3_muxout1,mac3_muxout2,weights[0],weights[1],mac3_demuxin1w,mac3_demuxin2w);
-
+mac mac3(mac3_muxout1,mac3_muxout2,mac3_muxw1out,mac3_muxw2out,mac3_demuxin1w,mac3_demuxin2w);
 //Save output
 reg [63:0] mac3_demuxout1r;
 reg [63:0] mac3_demuxout2r;
@@ -524,9 +633,8 @@ if(reset==1'b1)
 else if(mac3_demuxout8!=64'd0)
         mac3_demuxout8r<=mac3_demuxout8;
 end
-
 //-----Mac 4-------
-//Input Mux Assignment
+//Input Mux
 //Input
 wire [63:0] mac4_muxin1;
 wire [63:0] mac4_muxin2;
@@ -537,18 +645,46 @@ wire [63:0] mac4_muxout1;
 wire [63:0] mac4_muxout2;
 
 //Read Input from mem
-assign mac4_muxin1=inpmacmem[3];
-assign mac4_muxin2=inpmacmem[11];
-assign mac4_muxin3=inpmacmem[7];
+assign mac4_muxin1=inpmacmem[12];
+assign mac4_muxin2=inpmacmem[13];
+assign mac4_muxin3=inpmacmem[14];
 assign mac4_muxin4=inpmacmem[15];
-assign mac4_muxin5=inpmacmem[19];
-assign mac4_muxin6=inpmacmem[27];
-assign mac4_muxin7=inpmacmem[23];
+assign mac4_muxin5=inpmacmem[28];
+assign mac4_muxin6=inpmacmem[29];
+assign mac4_muxin7=inpmacmem[30];
 assign mac4_muxin8=inpmacmem[31];
 
 //make MUX
 assign mac4_muxout1=mac_sel[1]?(mac_sel[0]?mac4_muxin4:mac4_muxin3):(mac_sel[0]?mac4_muxin2:mac4_muxin1);
 assign mac4_muxout2=mac_sel[1]?(mac_sel[0]?mac4_muxin8:mac4_muxin7):(mac_sel[0]?mac4_muxin6:mac4_muxin5);
+
+//Weights MUX
+//Input
+wire [63:0] mac4_muxw1;
+wire [63:0] mac4_muxw2;
+wire [63:0] mac4_muxw3;
+wire [63:0] mac4_muxw4;
+wire [63:0] mac4_muxw5;
+wire [63:0] mac4_muxw6;
+wire [63:0] mac4_muxw7;
+wire [63:0] mac4_muxw8;
+//Output
+wire [63:0] mac4_muxw1out;
+wire [63:0] mac4_muxw2out;
+
+//Read Weights from mem
+assign mac4_muxw1=weights[12];
+assign mac4_muxw2=weights[13];
+assign mac4_muxw3=weights[14];
+assign mac4_muxw4=weights[15];
+assign mac4_muxw5=weights[28];
+assign mac4_muxw6=weights[29];
+assign mac4_muxw7=weights[30];
+assign mac4_muxw8=weights[31];
+
+//make MUX
+assign mac4_muxw1out=mac_sel[1]?(mac_sel[0]?mac4_muxw4:mac4_muxw3):(mac_sel[0]?mac4_muxw2:mac4_muxw1);
+assign mac4_muxw2out=mac_sel[1]?(mac_sel[0]?mac4_muxw8:mac4_muxw7):(mac_sel[0]?mac4_muxw6:mac4_muxw5);
 
 //Output DeMux Assignment
 //Input
@@ -607,8 +743,8 @@ default : begin
         end
 endcase
 
-mac mac4(mac4_muxout1,mac4_muxout2,weights[0],weights[1],mac4_demuxin1w,mac4_demuxin2w);
 
+mac mac4(mac4_muxout1,mac4_muxout2,mac4_muxw1out,mac4_muxw2out,mac4_demuxin1w,mac4_demuxin2w);
 //Save output
 reg [63:0] mac4_demuxout1r;
 reg [63:0] mac4_demuxout2r;
@@ -694,39 +830,39 @@ assign mac_sel=macselcounter;
 
 //Output 2D
 assign outmacmem[0]=mac1_demuxout1r;
-assign outmacmem[2]=mac1_demuxout2r;
-assign outmacmem[4]=mac1_demuxout3r;
-assign outmacmem[6]=mac1_demuxout4r;
-assign outmacmem[1]=mac1_demuxout5r;
-assign outmacmem[3]=mac1_demuxout6r;
-assign outmacmem[5]=mac1_demuxout7r;
-assign outmacmem[7]=mac1_demuxout8r;
+assign outmacmem[1]=mac1_demuxout2r;
+assign outmacmem[2]=mac1_demuxout3r;
+assign outmacmem[3]=mac1_demuxout4r;
+assign outmacmem[4]=mac2_demuxout1r;
+assign outmacmem[5]=mac2_demuxout2r;
+assign outmacmem[6]=mac2_demuxout3r;
+assign outmacmem[7]=mac2_demuxout4r;
 
-assign outmacmem[8]=mac2_demuxout1r;
-assign outmacmem[10]=mac2_demuxout2r;
-assign outmacmem[12]=mac2_demuxout3r;
-assign outmacmem[14]=mac2_demuxout4r;
-assign outmacmem[9]=mac2_demuxout5r;
-assign outmacmem[11]=mac2_demuxout6r;
-assign outmacmem[13]=mac2_demuxout7r;
-assign outmacmem[15]=mac2_demuxout8r;
+assign outmacmem[8]=mac3_demuxout1r;
+assign outmacmem[9]=mac3_demuxout2r;
+assign outmacmem[10]=mac3_demuxout3r;
+assign outmacmem[11]=mac3_demuxout4r;
+assign outmacmem[12]=mac4_demuxout1r;
+assign outmacmem[13]=mac4_demuxout2r;
+assign outmacmem[14]=mac4_demuxout3r;
+assign outmacmem[15]=mac4_demuxout4r;
 
-assign outmacmem[16]=mac3_demuxout1r;
-assign outmacmem[18]=mac3_demuxout2r;
-assign outmacmem[20]=mac3_demuxout3r;
-assign outmacmem[22]=mac3_demuxout4r;
-assign outmacmem[17]=mac3_demuxout5r;
-assign outmacmem[19]=mac3_demuxout6r;
-assign outmacmem[21]=mac3_demuxout7r;
-assign outmacmem[23]=mac3_demuxout8r;
+assign outmacmem[16]=mac1_demuxout5r;
+assign outmacmem[17]=mac1_demuxout6r;
+assign outmacmem[18]=mac1_demuxout7r;
+assign outmacmem[19]=mac1_demuxout8r;
+assign outmacmem[20]=mac2_demuxout5r;
+assign outmacmem[21]=mac2_demuxout6r;
+assign outmacmem[22]=mac2_demuxout7r;
+assign outmacmem[23]=mac2_demuxout8r;
 
-assign outmacmem[24]=mac4_demuxout1r;
-assign outmacmem[26]=mac4_demuxout2r;
-assign outmacmem[28]=mac4_demuxout3r;
-assign outmacmem[30]=mac4_demuxout4r;
-assign outmacmem[25]=mac4_demuxout5r;
-assign outmacmem[27]=mac4_demuxout6r;
-assign outmacmem[29]=mac4_demuxout7r;
+assign outmacmem[24]=mac3_demuxout5r;
+assign outmacmem[25]=mac3_demuxout6r;
+assign outmacmem[26]=mac3_demuxout7r;
+assign outmacmem[27]=mac3_demuxout8r;
+assign outmacmem[28]=mac4_demuxout5r;
+assign outmacmem[29]=mac4_demuxout6r;
+assign outmacmem[30]=mac4_demuxout7r;
 assign outmacmem[31]=mac4_demuxout8r;
 
 //Output 1D

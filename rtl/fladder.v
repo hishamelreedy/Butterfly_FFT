@@ -1,5 +1,4 @@
 `timescale 1ns / 1ps
-
 module fladder(
     input [31:0] a,
     input [31:0] b,
@@ -13,8 +12,10 @@ module fladder(
 	reg [31:0] result;
 	reg [24:0] sum,sum_norm;
 	reg [4:0] lead0;	//leading zeros can be go up to 23
+	wire [4:0] lead0w;	//leading zeros can be go up to 23
 	reg sig_a, sig_b;
 	
+	priority_encoder pr1 (sum[23:0],lead0w);
 	integer i;
 	
 	always @ (*) begin
@@ -38,13 +39,7 @@ module fladder(
 				sum = {2'b01,val_b[22:0]} - aligned;
 			end		
 	// 4th stage - normalizing
-			for(i=23; i>=0; i=i-1) begin
-				if(sum[i]) begin
-					lead0 = 23 - i;
-					i = -1;
-				end else
-					lead0 = 0;
-			end
+			lead0=lead0w;
 			sum_norm = sum << lead0;	//shift the mantissa
 	// 5th stage - setting the result
 			if(sum[24]) begin
@@ -64,6 +59,6 @@ module fladder(
 			result = 0;
 	end
 	
-	assign ans = result;
+	assign ans =((a=={a[31],b[30:0]}&&a[31]==~b[31])||(b=={b[31],a[30:0]}&&b[31]==~a[31]))?32'h00000000: result;
 	
 endmodule

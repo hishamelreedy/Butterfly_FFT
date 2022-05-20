@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module compadder(op1,op2,ctrl,opr);
 input [63:0] op1,op2;
 input ctrl;
