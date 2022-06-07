@@ -211,18 +211,18 @@ $readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesam
 #20;
 // DATA 2
 #80;
-$display("Loading rom3");
-$readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples3.txt", inpmacmem);
+//$display("Loading rom3");
+//$readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples3.txt", inpmacmem);
 #20;
 // DATA 3
 #80;
-$display("Loading rom4");
-$readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples2.txt", inpmacmem);
+//$display("Loading rom4");
+//$readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples2.txt", inpmacmem);
 #20;
 // DATA 4
 #80;
-$display("Loading rom5");
-$readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples0.txt", inpmacmem);
+//$display("Loading rom5");
+//$readmemh("C:/Users/Hisham Elreedy/OneDrive/Documents/Butterfly_FFT/data/timesamples0.txt", inpmacmem);
 #20;
 #100;
 $display("writing data at time %d", $time);

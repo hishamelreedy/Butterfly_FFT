@@ -1,11 +1,11 @@
 // memory data file (do not edit the following line - required for mem load use)
 // instance=/butterfly_tb/writemacmem
 // format=hex addressradix=h dataradix=h version=1.0 wordsperline=1 noaddress
-452c000002fc0000
+459b800002fc0000
 c1800521432270fa
 c180020a42a0dd24
 c18010bc4252f5de
-c40f000044ac99db
+c1800000421a7efa
 c17fe30741ef7cc7
 c18006ba41bf87ff
 c17ff648419bf9b0
@@ -13,7 +13,7 @@ c180000041800000
 c18000c8415210c0
 c17ff28c412b182e
 c18001084108c932
-c40f0000436ccedc
+c180000040d3f7d0
 c17ff970409b6efc
 c17ffbec404bc540
 c17ffde63fc9eb40
@@ -21,7 +21,7 @@ c180000000000000
 c17ffde6bfc9eb40
 c17ffbecc04bc540
 c17ff970c09b6efc
-c40f0000c36ccedc
+c1800000c0d3f7d0
 c1800108c108c932
 c17ff28cc12b182e
 c18000c8c15210c0
@@ -29,7 +29,7 @@ c1800000c1800000
 c17ff648c19bf9b0
 c18006bac1bf87ff
 c17fe307c1ef7cc7
-c40f0000c4ac99db
+c1800000c21a7efa
 c18010bcc252f5de
 c180020ac2a0dd24
 c1800521c32270fa
